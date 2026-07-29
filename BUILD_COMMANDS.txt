@@ -1,0 +1,13 @@
+پنگ — نسخهٔ ۲.۰
+
+روش سادهٔ پیشنهادی:
+از GitHub Actions استفاده کنید. نیازی به اجرای دستور روی ویندوز نیست.
+
+نام گردش‌کار:
+Build PANG APK - Easy Debug
+
+نام فایل نصب خروجی:
+PANG-Insurance-Platform-v2.0-debug.apk
+
+اگر بعداً خواستید روی سیستم خودتان بسازید:
+gradle assembleDebug --no-daemon
