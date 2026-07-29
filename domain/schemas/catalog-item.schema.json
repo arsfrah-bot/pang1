@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bazdidyar.local/schemas/catalog-item.schema.json",
+  "title": "Bazdidyar versioned catalog item",
+  "type": "object",
+  "required": [
+    "id",
+    "titleFa",
+    "status",
+    "version",
+    "effectiveDate",
+    "verificationStatus",
+    "sourceRefs",
+    "audit"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$"},
+    "titleFa": {"type": "string", "minLength": 1},
+    "titleEn": {"type": ["string", "null"]},
+    "descriptionFa": {"type": "string"},
+    "status": {"enum": ["draft", "active", "retired", "superseded"]},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "effectiveDate": {"type": ["string", "null"], "format": "date"},
+    "expirationDate": {"type": ["string", "null"], "format": "date"},
+    "verificationStatus": {
+      "enum": ["unverified", "needs-current-circular-check", "expert-reviewed", "officially-approved"]
+    },
+    "sourceRefs": {"type": "array", "items": {"type": "string"}},
+    "approvingAuthority": {"type": ["string", "null"]},
+    "applicableProductIds": {"type": "array", "items": {"type": "string"}},
+    "applicableActivityIds": {"type": "array", "items": {"type": "string"}},
+    "conditions": {"type": "array"},
+    "dependencies": {"type": ["array", "object"]},
+    "incompatibilities": {"type": "array", "items": {"type": "string"}},
+    "reportBindings": {"type": ["array", "object"]},
+    "audit": {
+      "type": "object",
+      "required": ["createdAt", "createdBy"],
+      "properties": {
+        "createdAt": {"type": "string"},
+        "createdBy": {"type": "string"},
+        "updatedAt": {"type": ["string", "null"]},
+        "updatedBy": {"type": ["string", "null"]},
+        "changeReason": {"type": "string"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

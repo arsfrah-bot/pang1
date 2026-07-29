@@ -1,0 +1,353 @@
+{
+  "$schema": "https://bazdidyar.local/schemas/domain-catalog-v1.json",
+  "catalogId": "catalog.coverage.fire.special.water-damage",
+  "catalogVersion": "1.0.0",
+  "releaseDate": "2026-07-28",
+  "status": "draft",
+  "verificationStatus": "unverified",
+  "mandatoryVerificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+  "decisionPolicy": {
+    "statusCatalogId": "coverage-decision-status-catalog",
+    "automaticFinalDecisionAllowed": false,
+    "authorizedHumanApprovalRequired": true,
+    "allowedEvaluationStatuses": [
+      "potentially-applicable",
+      "not-yet-established",
+      "additional-evidence-required",
+      "potential-exclusion",
+      "outside-selected-coverage",
+      "requires-senior-review",
+      "approved-by-authorized-user",
+      "rejected-by-authorized-user"
+    ]
+  },
+  "coveragePacks": [
+    {
+      "id": "coverage.fire.special.water.burst-pipe-internal-network",
+      "titleFa": "ترکیدگی لوله و شبکه داخلی آب",
+      "descriptionFa": "بسته قابل تنظیم برای ثبت منشأ و علت خروج آب، تفکیک جزء معیوب از خسارت تبعی و گردآوری مدارک فنی.",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "sourceRefs": ["source.requirements.special-fire-coverage-engine"],
+      "approvingAuthority": null,
+      "applicableProductIds": ["product.fire.property"],
+      "applicableActivityIds": [],
+      "activityApplicabilityStatus": "not_specified_in_source",
+      "applicability": {
+        "all": [
+          { "fact": "case.productFamilyId", "operator": "equals", "value": "product.fire.property" },
+          { "fact": "case.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.water.burst-pipe-internal-network" }
+        ],
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "خروج ناگهانی یا تدریجی آب از لوله، مخزن، وسیله، فاضلاب یا شبکه داخلی که منشأ و سبب آن باید مستند شود.",
+      "coverageScope": "بررسی خسارت تبعی واردشده به اموال بیمه‌شده؛ هزینه تعمیر جزء معیوب خودکار در خسارت قابل بازیافت منظور نمی‌شود.",
+      "conditions": ["condition.fire.special.water.burst-pipe-internal-network"],
+      "incompatibilities": [],
+      "incompatibilityStatus": "not_specified_in_source",
+      "dependencies": {
+        "conditionIds": ["condition.fire.special.water.burst-pipe-internal-network"],
+        "dutyIds": ["duty.fire.water.stop-leak", "duty.fire.water.mitigate-damage", "duty.fire.water.preserve-part", "duty.fire.water.photo-before-repair", "duty.fire.water.obtain-repair-report"],
+        "claimPackId": "claim.fire.special.water.burst-pipe-internal-network",
+        "photoPackId": "photo.fire.special.water.burst-pipe-internal-network"
+      },
+      "questionGroups": {
+        "sourceAndCause": ["exact_water_source", "source_type_pipe_tank_appliance_sewer_network", "network_internal_or_external", "installation_owner", "rupture_cause", "corrosion", "wear_and_tear", "freezing", "blockage", "overflow", "sudden_or_gradual", "failed_component_location"],
+        "damageAndCost": ["resulting_damage", "failed_component_repair_cost", "consequential_damage_repair_cost", "cleanup_and_drying_cost"],
+        "historyAndEvidence": ["previous_leakage", "maintenance_history", "photos_before_repair", "plumber_report", "repair_invoice"]
+      },
+      "requiredEvidence": ["photos_before_repair", "plumber_report", "repair_invoice"],
+      "calculationComponents": ["defective_pipe_or_device", "consequential_insured_property_damage", "cleanup_and_drying", "excluded_wear_and_tear", "recoverable_items", "deductible"],
+      "potentialExclusions": ["wear_and_tear", "gradual_deterioration", "defective_component_repair_cost"],
+      "deductibleRule": { "status": "unknown", "formula": null, "minimum": null, "currency": null, "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت" },
+      "reportBindings": {
+        "sectionId": "report.section.coverage-evaluation",
+        "factPaths": ["coverageTrigger", "supportingEvidence", "missingEvidence", "potentialExclusions", "deductibleRule", "expertDecisionStatus", "finalApprovalStatus"],
+        "wordingKey": "report.fire.water.burst-pipe-internal-network",
+        "includeVerificationNotice": true
+      },
+      "audit": { "createdAt": "2026-07-28", "createdBy": "codex-domain-import", "sourceId": "source.requirements.special-fire-coverage-engine", "lastReviewedAt": null, "lastReviewedBy": null }
+    },
+    {
+      "id": "coverage.fire.special.water.sewer-overflow",
+      "titleFa": "پس‌زدگی و سرریز شبکه فاضلاب",
+      "descriptionFa": "بسته مستقل برای ثبت منشأ پس‌زدگی فاضلاب، آلودگی و تفکیک خسارت تبعی از تعمیر یا پاک‌سازی شبکه.",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "sourceRefs": ["source.requirements.special-fire-coverage-engine"],
+      "approvingAuthority": null,
+      "applicableProductIds": ["product.fire.property"],
+      "applicableActivityIds": [],
+      "activityApplicabilityStatus": "not_specified_in_source",
+      "applicability": {
+        "all": [
+          { "fact": "case.productFamilyId", "operator": "equals", "value": "product.fire.property" },
+          { "fact": "case.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.water.sewer-overflow" }
+        ],
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "ورود یا سرریز آب و مواد از شبکه فاضلاب؛ منشأ داخلی یا خارجی و علت انسداد یا پس‌زدگی باید مشخص شود.",
+      "coverageScope": "ارزیابی خسارت تبعی، آلودگی، پاک‌سازی و خشک‌سازی با تفکیک هزینه رفع نقص شبکه.",
+      "conditions": ["condition.fire.special.water.sewer-overflow"],
+      "incompatibilities": [],
+      "incompatibilityStatus": "not_specified_in_source",
+      "dependencies": {
+        "conditionIds": ["condition.fire.special.water.sewer-overflow"],
+        "dutyIds": ["duty.fire.water.mitigate-damage", "duty.fire.water.photo-before-repair", "duty.fire.water.obtain-repair-report"],
+        "claimPackId": "claim.fire.special.water.sewer-overflow",
+        "photoPackId": "photo.fire.special.water.sewer-overflow"
+      },
+      "questionGroups": {
+        "facts": ["exact_water_source", "network_internal_or_external", "installation_owner", "blockage", "overflow", "entry_route", "contamination", "previous_incident", "maintenance_history"],
+        "evidence": ["photos_before_cleanup", "plumber_report", "municipal_evidence", "cleanup_invoice"]
+      },
+      "requiredEvidence": ["photos_before_cleanup", "plumber_report"],
+      "calculationComponents": ["consequential_insured_property_damage", "cleanup_and_drying", "network_repair", "recoverable_items", "deductible"],
+      "potentialExclusions": ["drain_or_pipe_clearing", "network_repair", "maintenance_deficiency"],
+      "deductibleRule": { "status": "unknown", "formula": null, "minimum": null, "currency": null, "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت" },
+      "reportBindings": { "sectionId": "report.section.coverage-evaluation", "factPaths": ["coverageTrigger", "supportingEvidence", "missingEvidence", "potentialExclusions", "deductibleRule", "expertDecisionStatus", "finalApprovalStatus"], "wordingKey": "report.fire.water.sewer-overflow", "includeVerificationNotice": true },
+      "audit": { "createdAt": "2026-07-28", "createdBy": "codex-domain-import", "sourceId": "source.requirements.special-fire-coverage-engine", "lastReviewedAt": null, "lastReviewedBy": null }
+    },
+    {
+      "id": "coverage.fire.special.water.rain-snow-hail-ingress",
+      "titleFa": "نفوذ آب باران، برف و تگرگ",
+      "descriptionFa": "بسته مستقل برای تشخیص مسیر نفوذ بارش و تفکیک آن از سیل، نقص ساختمان و ضعف نگهداری.",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "sourceRefs": ["source.requirements.special-fire-coverage-engine"],
+      "approvingAuthority": null,
+      "applicableProductIds": ["product.fire.property"],
+      "applicableActivityIds": [],
+      "activityApplicabilityStatus": "not_specified_in_source",
+      "applicability": {
+        "all": [
+          { "fact": "case.productFamilyId", "operator": "equals", "value": "product.fire.property" },
+          { "fact": "case.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.water.rain-snow-hail-ingress" }
+        ],
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "نفوذ آب مرتبط با باران، برف یا تگرگ که مسیر ورود و سبب مستقیم آن باید از سایر خطرها تفکیک شود.",
+      "coverageScope": "تفکیک خسارت تبعی آب از جزء معیوب ساختمان، ضعف نگهداری، تعمیر بام یا عایق، اموال در فضای باز و خسارت ناشی از خطر دیگر.",
+      "conditions": ["condition.fire.special.water.rain-snow-hail-ingress"],
+      "incompatibilities": [],
+      "incompatibilityStatus": "not_specified_in_source",
+      "dependencies": {
+        "conditionIds": ["condition.fire.special.water.rain-snow-hail-ingress"],
+        "dutyIds": ["duty.fire.water.mitigate-damage", "duty.fire.water.photo-before-repair", "duty.fire.water.obtain-repair-report"],
+        "claimPackId": "claim.fire.special.water.rain-snow-hail-ingress",
+        "photoPackId": "photo.fire.special.water.rain-snow-hail-ingress"
+      },
+      "questionGroups": {
+        "entryCause": ["blocked_gutters", "overflowing_drains", "broken_pipes", "overflowing_water_tanks", "damaged_downpipes", "open_windows_or_doors", "defective_roof", "defective_glass_roof", "construction_defect", "lack_of_maintenance", "direct_rainfall", "wind_driven_rain"],
+        "classification": ["consequential_water_damage", "defective_building_component", "maintenance_deficiency", "roof_or_waterproofing_repair", "open_air_property", "other_peril"]
+      },
+      "requiredEvidence": ["entry_route_photos", "roof_and_drainage_photos", "weather_evidence", "repair_assessment"],
+      "calculationComponents": ["consequential_insured_property_damage", "defective_component", "roof_or_waterproofing_repair", "cleanup_and_drying", "recoverable_items", "deductible"],
+      "potentialExclusions": ["defective_building_component", "maintenance_deficiency", "open_air_property", "damage_by_other_peril"],
+      "deductibleRule": { "status": "unknown", "formula": null, "minimum": null, "currency": null, "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت" },
+      "reportBindings": { "sectionId": "report.section.coverage-evaluation", "factPaths": ["coverageTrigger", "waterIngressClassification", "supportingEvidence", "missingEvidence", "potentialExclusions", "deductibleRule", "expertDecisionStatus", "finalApprovalStatus"], "wordingKey": "report.fire.water.rain-snow-hail-ingress", "includeVerificationNotice": true },
+      "audit": { "createdAt": "2026-07-28", "createdBy": "codex-domain-import", "sourceId": "source.requirements.special-fire-coverage-engine", "lastReviewedAt": null, "lastReviewedBy": null }
+    },
+    {
+      "id": "coverage.fire.special.water.flood-river-overflow",
+      "titleFa": "سیل و طغیان رودخانه",
+      "descriptionFa": "بسته مستقل برای ثبت منبع، مسیر، عمق و مدت آب و تفکیک سیل از سایر منشأهای خسارت آب.",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "sourceRefs": ["source.requirements.special-fire-coverage-engine"],
+      "approvingAuthority": null,
+      "applicableProductIds": ["product.fire.property"],
+      "applicableActivityIds": [],
+      "activityApplicabilityStatus": "not_specified_in_source",
+      "applicability": {
+        "all": [
+          { "fact": "case.productFamilyId", "operator": "equals", "value": "product.fire.property" },
+          { "fact": "case.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.water.flood-river-overflow" }
+        ],
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "ورود آب منتسب به رودخانه، کانال، روان‌آب، سد یا دریا؛ خروج آب از بستر طبیعی و مسیر ورود باید مستند شود.",
+      "coverageScope": "ارزیابی رویداد سیلابی و خسارت تبعی با تفکیک از نشت بام، نفوذ باران، ترکیدگی لوله، پس‌زدگی فاضلاب، آب زیرزمینی، رطوبت صعودی، رویداد دریایی و حرکت زمین.",
+      "conditions": ["condition.fire.special.water.flood-river-overflow"],
+      "incompatibilities": [],
+      "incompatibilityStatus": "not_specified_in_source",
+      "dependencies": {
+        "conditionIds": ["condition.fire.special.water.flood-river-overflow"],
+        "dutyIds": ["duty.fire.flood.salvage-measures", "duty.fire.flood.preserve-water-level-evidence", "duty.fire.flood.separate-contaminated-goods", "duty.fire.flood.record-cleanup-salvage-costs"],
+        "claimPackId": "claim.fire.special.water.flood-river-overflow",
+        "photoPackId": "photo.fire.special.water.flood-river-overflow"
+      },
+      "questionGroups": {
+        "sourceAndEntry": ["water_source", "river_channel_runoff_dam_or_sea", "left_natural_bed", "entry_route", "water_depth", "duration"],
+        "site": ["ground_elevation", "basement_or_below_ground", "mud_and_contamination", "maximum_affected_area", "geographic_coordinates", "nearby_waterways", "drainage_condition"],
+        "historyAndEvidence": ["weather_warning", "municipal_or_governmental_evidence", "previous_flood_history"]
+      },
+      "requiredEvidence": ["water_level_photos", "affected_area_photos", "geographic_coordinates", "weather_warning_if_available", "municipal_or_governmental_evidence_if_available"],
+      "calculationComponents": ["consequential_insured_property_damage", "cleanup", "contaminated_goods", "salvage", "excluded_items", "recoverable_items", "deductible"],
+      "potentialExclusions": ["boundary_walls_and_gates", "drain_or_pipe_clearing_or_repair", "underground_water", "tidal_effects", "sea_water_events", "landslide_or_ground_movement", "pipe_thawing", "heavy_rain_roof_leakage"],
+      "deductibleRule": { "status": "unknown", "formula": null, "minimum": null, "currency": null, "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت" },
+      "reportBindings": { "sectionId": "report.section.coverage-evaluation", "factPaths": ["coverageTrigger", "perilClassification", "supportingEvidence", "missingEvidence", "potentialExclusions", "deductibleRule", "expertDecisionStatus", "finalApprovalStatus"], "wordingKey": "report.fire.water.flood-river-overflow", "includeVerificationNotice": true },
+      "audit": { "createdAt": "2026-07-28", "createdBy": "codex-domain-import", "sourceId": "source.requirements.special-fire-coverage-engine", "lastReviewedAt": null, "lastReviewedBy": null }
+    },
+    {
+      "id": "coverage.fire.special.water.sprinkler-leakage-discharge",
+      "titleFa": "نشت یا تخلیه سامانه اسپرینکلر",
+      "descriptionFa": "بسته مستقل برای ثبت علت نشت یا تخلیه اسپرینکلر و تفکیک خسارت تبعی از تعمیر سامانه.",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "sourceRefs": ["source.requirements.special-fire-coverage-engine"],
+      "approvingAuthority": null,
+      "applicableProductIds": ["product.fire.property"],
+      "applicableActivityIds": [],
+      "activityApplicabilityStatus": "not_specified_in_source",
+      "applicability": {
+        "all": [
+          { "fact": "case.productFamilyId", "operator": "equals", "value": "product.fire.property" },
+          { "fact": "case.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.water.sprinkler-leakage-discharge" }
+        ],
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "نشت یا تخلیه آب از سامانه اسپرینکلر؛ علت فعال‌شدن، خرابی یا تخلیه باید مستند شود.",
+      "coverageScope": "تفکیک خسارت تبعی آب از هزینه تعمیر سامانه و اجزای معیوب.",
+      "conditions": ["condition.fire.special.water.sprinkler-leakage-discharge"],
+      "incompatibilities": [],
+      "incompatibilityStatus": "not_specified_in_source",
+      "dependencies": { "conditionIds": ["condition.fire.special.water.sprinkler-leakage-discharge"], "dutyIds": ["duty.fire.water.stop-leak", "duty.fire.water.mitigate-damage", "duty.fire.water.preserve-part", "duty.fire.water.photo-before-repair", "duty.fire.water.obtain-repair-report"], "claimPackId": "claim.fire.special.water.sprinkler-leakage-discharge", "photoPackId": "photo.fire.special.water.sprinkler-leakage-discharge" },
+      "questionGroups": { "facts": ["discharge_location", "activation_or_failure_cause", "system_maintenance_history", "fire_event_present", "failed_component", "resulting_damage"], "evidence": ["system_photos", "maintenance_record", "specialist_report", "repair_invoice"] },
+      "requiredEvidence": ["system_photos", "specialist_report"],
+      "calculationComponents": ["consequential_insured_property_damage", "system_repair", "cleanup_and_drying", "recoverable_items", "deductible"],
+      "potentialExclusions": ["system_repair", "maintenance_deficiency", "wear_and_tear"],
+      "deductibleRule": { "status": "unknown", "formula": null, "minimum": null, "currency": null, "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت" },
+      "reportBindings": { "sectionId": "report.section.coverage-evaluation", "factPaths": ["coverageTrigger", "supportingEvidence", "missingEvidence", "potentialExclusions", "deductibleRule", "expertDecisionStatus", "finalApprovalStatus"], "wordingKey": "report.fire.water.sprinkler-leakage-discharge", "includeVerificationNotice": true },
+      "audit": { "createdAt": "2026-07-28", "createdBy": "codex-domain-import", "sourceId": "source.requirements.special-fire-coverage-engine", "lastReviewedAt": null, "lastReviewedBy": null }
+    },
+    {
+      "id": "coverage.fire.special.water.groundwater-rising-damp",
+      "titleFa": "آب زیرزمینی و رطوبت صعودی",
+      "descriptionFa": "بسته مستقل برای ثبت منشأ و الگوی آب زیرزمینی یا رطوبت صعودی و تفکیک آن از سیل و نشت.",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "sourceRefs": ["source.requirements.special-fire-coverage-engine"],
+      "approvingAuthority": null,
+      "applicableProductIds": ["product.fire.property"],
+      "applicableActivityIds": [],
+      "activityApplicabilityStatus": "not_specified_in_source",
+      "applicability": {
+        "all": [
+          { "fact": "case.productFamilyId", "operator": "equals", "value": "product.fire.property" },
+          { "fact": "case.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.water.groundwater-rising-damp" }
+        ],
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "نفوذ آب زیرزمینی یا رطوبت صعودی؛ منشأ، تراز آب و تدریجی یا ناگهانی بودن باید بررسی شود.",
+      "coverageScope": "ثبت مستقل این خطر و تفکیک آن از سیل، نشت لوله، نفوذ باران و نقص عایق‌کاری.",
+      "conditions": ["condition.fire.special.water.groundwater-rising-damp"],
+      "incompatibilities": [],
+      "incompatibilityStatus": "not_specified_in_source",
+      "dependencies": { "conditionIds": ["condition.fire.special.water.groundwater-rising-damp"], "dutyIds": ["duty.fire.water.mitigate-damage", "duty.fire.water.photo-before-repair", "duty.fire.water.obtain-repair-report"], "claimPackId": "claim.fire.special.water.groundwater-rising-damp", "photoPackId": "photo.fire.special.water.groundwater-rising-damp" },
+      "questionGroups": { "facts": ["water_source", "groundwater_level", "rising_damp_indicators", "sudden_or_gradual", "basement_or_below_ground", "waterproofing_condition", "previous_incident"], "evidence": ["moisture_pattern_photos", "site_report", "groundwater_evidence"] },
+      "requiredEvidence": ["moisture_pattern_photos", "site_report"],
+      "calculationComponents": ["consequential_insured_property_damage", "waterproofing_repair", "drying", "recoverable_items", "deductible"],
+      "potentialExclusions": ["underground_water", "gradual_deterioration", "waterproofing_defect", "maintenance_deficiency"],
+      "deductibleRule": { "status": "unknown", "formula": null, "minimum": null, "currency": null, "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت" },
+      "reportBindings": { "sectionId": "report.section.coverage-evaluation", "factPaths": ["coverageTrigger", "perilClassification", "supportingEvidence", "missingEvidence", "potentialExclusions", "deductibleRule", "expertDecisionStatus", "finalApprovalStatus"], "wordingKey": "report.fire.water.groundwater-rising-damp", "includeVerificationNotice": true },
+      "audit": { "createdAt": "2026-07-28", "createdBy": "codex-domain-import", "sourceId": "source.requirements.special-fire-coverage-engine", "lastReviewedAt": null, "lastReviewedBy": null }
+    },
+    {
+      "id": "coverage.fire.special.water.roof-leakage",
+      "titleFa": "نشت بام",
+      "descriptionFa": "بسته مستقل برای تعیین مسیر نشت بام و تفکیک خسارت تبعی از تعمیر بام، عایق و ضعف نگهداری.",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "sourceRefs": ["source.requirements.special-fire-coverage-engine"],
+      "approvingAuthority": null,
+      "applicableProductIds": ["product.fire.property"],
+      "applicableActivityIds": [],
+      "activityApplicabilityStatus": "not_specified_in_source",
+      "applicability": {
+        "all": [
+          { "fact": "case.productFamilyId", "operator": "equals", "value": "product.fire.property" },
+          { "fact": "case.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.water.roof-leakage" }
+        ],
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "ورود آب از بام یا عایق بام؛ مسیر ورود و علت نقص باید مشخص شود.",
+      "coverageScope": "تفکیک خسارت تبعی داخل ساختمان از هزینه تعمیر بام یا عایق و ضعف نگهداری.",
+      "conditions": ["condition.fire.special.water.roof-leakage"],
+      "incompatibilities": [],
+      "incompatibilityStatus": "not_specified_in_source",
+      "dependencies": { "conditionIds": ["condition.fire.special.water.roof-leakage"], "dutyIds": ["duty.fire.water.mitigate-damage", "duty.fire.water.photo-before-repair", "duty.fire.water.obtain-repair-report"], "claimPackId": "claim.fire.special.water.roof-leakage", "photoPackId": "photo.fire.special.water.roof-leakage" },
+      "questionGroups": { "facts": ["entry_route", "defective_roof", "defective_glass_roof", "blocked_gutters", "overflowing_drains", "construction_defect", "lack_of_maintenance", "direct_rainfall", "wind_driven_rain"], "evidence": ["roof_photos", "interior_damage_photos", "repair_assessment", "maintenance_history"] },
+      "requiredEvidence": ["roof_photos", "interior_damage_photos", "repair_assessment"],
+      "calculationComponents": ["consequential_insured_property_damage", "roof_or_waterproofing_repair", "cleanup_and_drying", "recoverable_items", "deductible"],
+      "potentialExclusions": ["roof_or_waterproofing_repair", "construction_defect", "maintenance_deficiency", "heavy_rain_roof_leakage"],
+      "deductibleRule": { "status": "unknown", "formula": null, "minimum": null, "currency": null, "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت" },
+      "reportBindings": { "sectionId": "report.section.coverage-evaluation", "factPaths": ["coverageTrigger", "supportingEvidence", "missingEvidence", "potentialExclusions", "deductibleRule", "expertDecisionStatus", "finalApprovalStatus"], "wordingKey": "report.fire.water.roof-leakage", "includeVerificationNotice": true },
+      "audit": { "createdAt": "2026-07-28", "createdBy": "codex-domain-import", "sourceId": "source.requirements.special-fire-coverage-engine", "lastReviewedAt": null, "lastReviewedBy": null }
+    },
+    {
+      "id": "coverage.fire.special.water.external-network-damage",
+      "titleFa": "خسارت شبکه خارجی آب",
+      "descriptionFa": "بسته مستقل برای ثبت مالکیت و مسئولیت شبکه خارجی و تفکیک تعمیر شبکه از خسارت تبعی اموال بیمه‌شده.",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "sourceRefs": ["source.requirements.special-fire-coverage-engine"],
+      "approvingAuthority": null,
+      "applicableProductIds": ["product.fire.property"],
+      "applicableActivityIds": [],
+      "activityApplicabilityStatus": "not_specified_in_source",
+      "applicability": {
+        "all": [
+          { "fact": "case.productFamilyId", "operator": "equals", "value": "product.fire.property" },
+          { "fact": "case.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.water.external-network-damage" }
+        ],
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "خروج آب یا خسارت منتسب به شبکه خارجی؛ مالکیت، محل خرابی و مسئول نگهداری باید مشخص شود.",
+      "coverageScope": "تفکیک خسارت تبعی اموال بیمه‌شده از تعمیر شبکه خارجی و مسئولیت اشخاص ثالث.",
+      "conditions": ["condition.fire.special.water.external-network-damage"],
+      "incompatibilities": [],
+      "incompatibilityStatus": "not_specified_in_source",
+      "dependencies": { "conditionIds": ["condition.fire.special.water.external-network-damage"], "dutyIds": ["duty.fire.water.stop-leak", "duty.fire.water.mitigate-damage", "duty.fire.water.photo-before-repair", "duty.fire.water.obtain-repair-report"], "claimPackId": "claim.fire.special.water.external-network-damage", "photoPackId": "photo.fire.special.water.external-network-damage" },
+      "questionGroups": { "facts": ["exact_water_source", "network_internal_or_external", "installation_owner", "failed_component_location", "rupture_cause", "responsible_maintenance_party", "resulting_damage"], "evidence": ["failure_location_photos", "network_owner_report", "repair_report", "repair_invoice"] },
+      "requiredEvidence": ["failure_location_photos", "network_owner_or_repair_report"],
+      "calculationComponents": ["consequential_insured_property_damage", "external_network_repair", "cleanup_and_drying", "third_party_recovery", "recoverable_items", "deductible"],
+      "potentialExclusions": ["external_network_repair", "third_party_owned_installation", "wear_and_tear", "maintenance_deficiency"],
+      "deductibleRule": { "status": "unknown", "formula": null, "minimum": null, "currency": null, "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت" },
+      "reportBindings": { "sectionId": "report.section.coverage-evaluation", "factPaths": ["coverageTrigger", "ownershipAndResponsibility", "supportingEvidence", "missingEvidence", "potentialExclusions", "deductibleRule", "expertDecisionStatus", "finalApprovalStatus"], "wordingKey": "report.fire.water.external-network-damage", "includeVerificationNotice": true },
+      "audit": { "createdAt": "2026-07-28", "createdBy": "codex-domain-import", "sourceId": "source.requirements.special-fire-coverage-engine", "lastReviewedAt": null, "lastReviewedBy": null }
+    }
+  ]
+}

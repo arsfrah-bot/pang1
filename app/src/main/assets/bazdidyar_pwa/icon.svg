@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">آیکن پنگ</title>
+  <desc id="desc">هستهٔ مرکزی و شبکهٔ شاخه‌ای منظم درون سپر محافظ</desc>
+  <rect width="512" height="512" rx="112" fill="#0B3D2E"/>
+  <path fill="#0E5A49" stroke="#BDE9DF" stroke-width="8" stroke-linejoin="round" d="M256 62c48 28 96 42 150 47v126c0 101-58 172-150 213-92-41-150-112-150-213V109c54-5 102-19 150-47Z"/>
+
+  <g fill="none" stroke="#7BD1C2" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M256 137v210"/>
+    <path d="M256 177c-36 4-65 18-87 44l-22 27"/>
+    <path d="M256 177c36 4 65 18 87 44l22 27"/>
+    <path d="M256 229c-47 5-83 24-109 59l-16 21"/>
+    <path d="M256 229c47 5 83 24 109 59l16 21"/>
+    <path d="M224 306c-22 12-39 30-49 53"/>
+    <path d="M288 306c22 12 39 30 49 53"/>
+  </g>
+
+  <g fill="#D6A33C" stroke="#FFE9B3" stroke-width="5">
+    <circle cx="256" cy="130" r="13"/>
+    <circle cx="144" cy="253" r="13"/>
+    <circle cx="368" cy="253" r="13"/>
+    <circle cx="127" cy="315" r="13"/>
+    <circle cx="385" cy="315" r="13"/>
+    <circle cx="172" cy="365" r="13"/>
+    <circle cx="340" cy="365" r="13"/>
+  </g>
+
+  <circle cx="256" cy="292" r="46" fill="#F6FBF8" stroke="#0F8F83" stroke-width="9"/>
+  <path fill="#D6A33C" d="m256 260 28 16v32l-28 16-28-16v-32l28-16Z"/>
+  <circle cx="256" cy="292" r="9" fill="#0B3D2E"/>
+</svg>

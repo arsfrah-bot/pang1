@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "claim.fire.special.water.rain-snow-hail-ingress",
+  "version": "1.0.0",
+  "status": "draft_requires_source_verification",
+  "titleFa": "نفوذ آب ناشی از باران، برف و تگرگ",
+  "lineId": "insurance.fire-property",
+  "coverageRef": "coverage.fire.special.water.rain-snow-hail-ingress",
+  "sourceRequirementRef": "source.requirements.special-fire-coverage-engine",
+  "conditionDocumentRequirement": {
+    "required": true,
+    "resolution": "runtime-by-policy-and-loss-date",
+    "unknownValidityLabelFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+  },
+  "decisionPolicy": {
+    "automatedFinalDecision": false,
+    "authorizedHumanDecisionRequired": true,
+    "missingEvidenceEffect": "additional-evidence-required",
+    "potentialExclusionEffect": "potential-exclusion",
+    "allowedMachineStatuses": ["potentially-applicable", "not-yet-established", "additional-evidence-required", "potential-exclusion", "outside-selected-coverage", "requires-senior-review"],
+    "humanOnlyStatuses": ["approved-by-authorized-user", "rejected-by-authorized-user"]
+  },
+  "trigger": {
+    "all": [
+      {"fact": "claim.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.water.rain-snow-hail-ingress"},
+      {"fact": "claim.lossReported", "operator": "truthy"}
+    ]
+  },
+  "sections": [
+    {"id": "weather-event", "titleFa": "رویداد جوی", "questionIds": ["weatherType", "eventStart", "eventEnd", "weatherWarning", "weatherDescription"]},
+    {"id": "entry-cause", "titleFa": "مسیر و علت ورود آب", "questionIds": ["entryMechanisms", "entryRouteExact", "directRainfall", "windDrivenRain", "anotherPeril", "anotherPerilDetails"]},
+    {"id": "building-condition", "titleFa": "وضعیت اجزای ساختمان", "questionIds": ["defectiveComponent", "maintenanceDeficiency", "outdoorProperty", "previousIssue", "previousIssueDetails"]},
+    {"id": "damage-cost", "titleFa": "خسارت و هزینه‌ها", "questionIds": ["consequentialWaterDamage", "consequentialDamageCost", "defectiveComponentCost", "roofWaterproofingCost", "outdoorPropertyDamageCost", "otherPerilDamageCost"]}
+  ],
+  "questions": [
+    {"id": "weatherType", "fact": "weather.types", "type": "multiChoice", "labelFa": "نوع رویداد جوی", "required": true, "options": [{"value": "rain", "labelFa": "باران"}, {"value": "snow", "labelFa": "برف"}, {"value": "hail", "labelFa": "تگرگ"}, {"value": "wind", "labelFa": "باد همراه بارش"}]},
+    {"id": "eventStart", "fact": "weather.eventStart", "type": "datetime", "labelFa": "زمان شروع تقریبی رویداد", "required": true},
+    {"id": "eventEnd", "fact": "weather.eventEnd", "type": "datetime", "labelFa": "زمان پایان تقریبی رویداد", "required": true},
+    {"id": "weatherWarning", "fact": "weather.warningIssued", "type": "singleChoice", "labelFa": "آیا هشدار هواشناسی صادر شده بود؟", "required": true, "options": [{"value": "yes", "labelFa": "بله"}, {"value": "no", "labelFa": "خیر"}, {"value": "unknown", "labelFa": "نامشخص"}]},
+    {"id": "weatherDescription", "fact": "weather.description", "type": "textarea", "labelFa": "شرح شدت و شرایط جوی مشاهده‌شده", "required": true},
+    {"id": "entryMechanisms", "fact": "ingress.mechanisms", "type": "multiChoice", "labelFa": "علت یا مسیر احتمالی ورود آب", "required": true, "options": [{"value": "blockedGutters", "labelFa": "گرفتگی ناودان"}, {"value": "overflowingDrains", "labelFa": "سرریز آبرو یا کف‌شور"}, {"value": "brokenPipes", "labelFa": "شکستگی لوله"}, {"value": "overflowingWaterTanks", "labelFa": "سرریز مخزن آب"}, {"value": "damagedDownpipes", "labelFa": "خرابی لوله هدایت آب باران"}, {"value": "openWindowsDoors", "labelFa": "بازبودن پنجره یا در"}, {"value": "defectiveRoof", "labelFa": "نقص بام"}, {"value": "defectiveGlassRoof", "labelFa": "نقص سقف شیشه‌ای"}, {"value": "constructionDefect", "labelFa": "نقص ساخت"}, {"value": "lackOfMaintenance", "labelFa": "ضعف نگهداری"}, {"value": "directRainfall", "labelFa": "بارش مستقیم"}, {"value": "windDrivenRain", "labelFa": "باران رانده‌شده با باد"}, {"value": "undetermined", "labelFa": "هنوز مشخص نشده"}]},
+    {"id": "entryRouteExact", "fact": "ingress.entryRouteExact", "type": "textarea", "labelFa": "مسیر دقیق ورود آب", "required": true},
+    {"id": "directRainfall", "fact": "ingress.directRainfall", "type": "boolean", "labelFa": "آیا ورود ناشی از بارش مستقیم بوده است؟", "required": true},
+    {"id": "windDrivenRain", "fact": "ingress.windDrivenRain", "type": "boolean", "labelFa": "آیا باد، باران را از منفذ ساختمان وارد کرده است؟", "required": true},
+    {"id": "anotherPeril", "fact": "ingress.causedByAnotherPeril", "type": "boolean", "labelFa": "آیا خطر دیگری موجب بازشدن مسیر ورود آب شده است؟", "required": true},
+    {"id": "anotherPerilDetails", "fact": "ingress.anotherPerilDetails", "type": "textarea", "labelFa": "شرح خطر دیگر", "requiredWhen": {"fact": "ingress.causedByAnotherPeril", "operator": "truthy"}},
+    {"id": "defectiveComponent", "fact": "building.defectiveComponent", "type": "textarea", "labelFa": "جزء معیوب ساختمان و نوع عیب", "required": true},
+    {"id": "maintenanceDeficiency", "fact": "building.maintenanceDeficiency", "type": "singleChoice", "labelFa": "آیا نشانه‌ای از ضعف نگهداری وجود دارد؟", "required": true, "options": [{"value": "yes", "labelFa": "بله"}, {"value": "no", "labelFa": "خیر"}, {"value": "undetermined", "labelFa": "نیازمند بررسی"}]},
+    {"id": "outdoorProperty", "fact": "damage.propertyInOpenAir", "type": "boolean", "labelFa": "آیا اموال آسیب‌دیده در فضای باز قرار داشته‌اند؟", "required": true},
+    {"id": "previousIssue", "fact": "history.previousIngress", "type": "boolean", "labelFa": "آیا سابقه نفوذ آب یا تعمیر بام وجود دارد؟", "required": true},
+    {"id": "previousIssueDetails", "fact": "history.previousIngressDetails", "type": "textarea", "labelFa": "شرح سابقه و تعمیرات قبلی", "requiredWhen": {"fact": "history.previousIngress", "operator": "truthy"}},
+    {"id": "consequentialWaterDamage", "fact": "damage.consequentialDescription", "type": "textarea", "labelFa": "شرح خسارت تبعی ناشی از آب", "required": true},
+    {"id": "consequentialDamageCost", "fact": "cost.consequentialWaterDamage", "type": "currency", "labelFa": "هزینه خسارت تبعی", "required": true, "currency": "IRR"},
+    {"id": "defectiveComponentCost", "fact": "cost.defectiveBuildingComponent", "type": "currency", "labelFa": "هزینه جزء معیوب ساختمان", "required": true, "currency": "IRR"},
+    {"id": "roofWaterproofingCost", "fact": "cost.roofOrWaterproofingRepair", "type": "currency", "labelFa": "هزینه تعمیر بام یا عایق‌کاری", "required": true, "currency": "IRR"},
+    {"id": "outdoorPropertyDamageCost", "fact": "cost.openAirPropertyDamage", "type": "currency", "labelFa": "خسارت اموال واقع در فضای باز", "required": true, "currency": "IRR"},
+    {"id": "otherPerilDamageCost", "fact": "cost.otherPerilDamage", "type": "currency", "labelFa": "خسارت منتسب به خطر دیگر", "required": true, "currency": "IRR"}
+  ],
+  "requiredEvidence": [
+    {"id": "ev.ingress-photos", "titleFa": "عکس مسیر ورود، اجزای خارجی و خسارت داخلی", "type": "photoSet", "requiredMode": "always", "photoRequirementPackId": "photo.fire.special.water.rain-snow-hail-ingress", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.weather-record", "titleFa": "گزارش یا سابقه قابل استناد وضعیت جوی محل و زمان حادثه", "type": "externalRecord", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.building-inspection", "titleFa": "گزارش فنی مسیر ورود و وضعیت بام، آبرو یا عایق", "type": "document", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.maintenance-records", "titleFa": "سوابق نگهداری ناودان، بام و عایق‌کاری", "type": "documentOrStatement", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.repair-estimates", "titleFa": "برآوردهای تفکیکی جزء معیوب و خسارت تبعی", "type": "document", "requiredMode": "always", "absenceEffect": "additional-evidence-required"}
+  ],
+  "photos": [{"requirementPackRef": "photo.fire.special.water.rain-snow-hail-ingress", "required": true}],
+  "triggerRules": [
+    {"id": "classification.not-automatically-flood", "when": {"fact": "weather.types", "operator": "contains", "value": "rain"}, "result": {"status": "not-yet-established", "messageFa": "بارندگی به‌تنهایی برای طبقه‌بندی حادثه به‌عنوان سیل کافی نیست؛ منشأ، مسیر و خروج آب از بستر باید جداگانه بررسی شود."}}
+  ],
+  "calculationComponents": [
+    {"id": "calc.consequential-water-damage", "titleFa": "خسارت تبعی آب به اموال بیمه‌شده", "sourceFact": "cost.consequentialWaterDamage", "coverageTreatment": "candidate_recoverable_item"},
+    {"id": "calc.defective-building-component", "titleFa": "جزء معیوب ساختمان", "sourceFact": "cost.defectiveBuildingComponent", "coverageTreatment": "separate_expert_determination"},
+    {"id": "calc.roof-waterproofing", "titleFa": "تعمیر بام یا عایق‌کاری", "sourceFact": "cost.roofOrWaterproofingRepair", "coverageTreatment": "separate_expert_determination"},
+    {"id": "calc.open-air-property", "titleFa": "اموال واقع در فضای باز", "sourceFact": "cost.openAirPropertyDamage", "coverageTreatment": "separate_expert_determination"},
+    {"id": "calc.other-peril", "titleFa": "خسارت ناشی از خطر دیگر", "sourceFact": "cost.otherPerilDamage", "coverageTreatment": "route_to_related_peril_pack"},
+    {"id": "calc.salvage", "titleFa": "بازیافتی", "inputMode": "expert_itemization", "sign": "subtract_after_authorization"},
+    {"id": "calc.deductible", "titleFa": "فرانشیز", "inputMode": "resolved_rule", "deductibleRuleRef": "condition-document-current-version", "hardcodedAmountAllowed": false}
+  ],
+  "deductibleRule": {"source": "verified-condition-document", "required": true, "hardcodedAmountAllowed": false, "unresolvedEffect": "requires-senior-review"},
+  "potentialExclusions": [
+    {"id": "exclusion.blocked-gutters", "titleFa": "گرفتگی ناودان یا آبرو", "when": {"fact": "ingress.mechanisms", "operator": "contains", "value": "blockedGutters"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.open-windows-doors", "titleFa": "بازبودن پنجره یا در", "when": {"fact": "ingress.mechanisms", "operator": "contains", "value": "openWindowsDoors"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.defective-roof", "titleFa": "نقص بام یا سقف شیشه‌ای", "when": {"any": [{"fact": "ingress.mechanisms", "operator": "contains", "value": "defectiveRoof"}, {"fact": "ingress.mechanisms", "operator": "contains", "value": "defectiveGlassRoof"}]}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.construction-defect", "titleFa": "نقص ساخت", "when": {"fact": "ingress.mechanisms", "operator": "contains", "value": "constructionDefect"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.lack-of-maintenance", "titleFa": "ضعف نگهداری", "when": {"any": [{"fact": "ingress.mechanisms", "operator": "contains", "value": "lackOfMaintenance"}, {"fact": "building.maintenanceDeficiency", "operator": "eq", "value": "yes"}]}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.open-air-property", "titleFa": "اموال واقع در فضای باز", "when": {"fact": "damage.propertyInOpenAir", "operator": "truthy"}, "effect": "flag_for_expert_review"}
+  ],
+  "duties": [
+    {"id": "duty.limit-ingress", "titleFa": "انجام اقدامات معقول برای محدودکردن ورود آب", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.prevent-development", "titleFa": "جلوگیری معقول از توسعه خسارت", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.photograph-before-repair", "titleFa": "عکاسی از مسیر ورود و خسارت پیش از تعمیر", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.preserve-repair-evidence", "titleFa": "نگهداری گزارش و مدارک تعمیر", "failureEffect": "record_warning_and_refer_to_expert"}
+  ],
+  "reportBindings": [
+    {"sectionId": "report.coverage-context", "titleFa": "پوشش و سند مبنا", "facts": ["claim.selectedCoverageIds", "coverage.conditionDocumentId", "coverage.documentVersion", "coverage.verificationStatus"]},
+    {"sectionId": "report.weather", "titleFa": "رویداد جوی", "facts": ["weather.types", "weather.eventStart", "weather.eventEnd", "weather.warningIssued", "weather.description"]},
+    {"sectionId": "report.ingress", "titleFa": "مسیر و علت ورود آب", "facts": ["ingress.mechanisms", "ingress.entryRouteExact", "ingress.directRainfall", "ingress.windDrivenRain", "ingress.causedByAnotherPeril"]},
+    {"sectionId": "report.damage-distinction", "titleFa": "تفکیک خسارت و اجزای معیوب", "bind": "calculationComponents"},
+    {"sectionId": "report.evidence", "titleFa": "شواهد موجود و کسری مدارک", "bind": "evidenceAssessment"},
+    {"sectionId": "report.exclusions", "titleFa": "موارد نیازمند بررسی شرایط و استثنائات", "bind": "potentialExclusionFlags"},
+    {"sectionId": "report.decision", "titleFa": "وضعیت تصمیم کارشناس", "bind": "expertDecisionStatus", "humanApprovalRequired": true}
+  ],
+  "reportWording": {
+    "classificationCautionFa": "این رویداد به‌عنوان نفوذ آب ناشی از باران، برف یا تگرگ بررسی شده و صرف وقوع بارندگی به معنای طبقه‌بندی خسارت به‌عنوان سیل نیست.",
+    "componentDistinctionFa": "خسارت تبعی آب، جزء معیوب ساختمان، ضعف نگهداری، تعمیر بام یا عایق، اموال فضای باز و خسارت ناشی از خطر دیگر به‌صورت جداگانه گزارش می‌شوند.",
+    "decisionDisclaimerFa": "این گزارش تصمیم نهایی پوشش یا پرداخت نیست و تأیید یا رد صرفاً توسط کاربر مجاز و پس از بررسی بیمه‌نامه، شرایط معتبر و مدارک انجام می‌شود."
+  }
+}

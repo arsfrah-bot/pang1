@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "photo.fire.special.water.burst-pipe-internal-network",
+  "version": "1.0.0",
+  "status": "active",
+  "titleFa": "الزامات عکس ترکیدگی لوله و شبکه داخلی آب",
+  "claimPackRef": "claim.fire.special.water.burst-pipe-internal-network",
+  "coverageRef": "coverage.fire.special.water.burst-pipe-internal-network",
+  "sourceRequirementRef": "source.requirements.special-fire-coverage-engine",
+  "decisionPolicy": {
+    "automatedFinalDecision": false,
+    "missingPhotoStatus": "additional-evidence-required",
+    "missingPhotoNeverAutoRejects": true
+  },
+  "captureProfile": {
+    "archive": {"maxEdgePx": 2400, "jpegQuality": 0.86},
+    "report": {"maxEdgePx": 1400, "jpegQuality": 0.72},
+    "thumbnail": {"maxEdgePx": 320, "jpegQuality": 0.65},
+    "preserveOriginalWhenSupported": true,
+    "requiredMetadata": ["capturedAt", "source", "sequenceNumber"],
+    "optionalMetadata": ["latitude", "longitude", "accuracyMeters", "captionFa"]
+  },
+  "requirements": [
+    {"id": "photo.water.loss-area-overview", "titleFa": "نمای کلی محل خسارت", "requiredMode": "always", "minCount": 1, "maxCount": 3, "evidenceClassificationId": "photo-visible", "mustShowFa": ["فضای محل", "ارتباط تقریبی منشأ آب با قسمت آسیب‌دیده"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.water.failed-component-before-repair", "titleFa": "جزء معیوب پیش از تعمیر", "requiredMode": "required_or_unavailability_reason", "minCount": 2, "maxCount": 6, "evidenceClassificationId": "photo-visible", "mustShowFa": ["محل پارگی یا خرابی", "اتصالات و محیط اطراف"], "captureBeforeRepair": true, "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.water.failure-closeup", "titleFa": "نمای نزدیک آثار خرابی", "requiredMode": "always", "minCount": 1, "maxCount": 4, "evidenceClassificationId": "photo-visible", "mustShowFa": ["شکاف، پارگی، خوردگی، رسوب یا اثر خرابی", "مقیاس اندازه در صورت امکان"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.water.component-location-context", "titleFa": "محل نصب جزء معیوب", "requiredMode": "always", "minCount": 1, "maxCount": 3, "evidenceClassificationId": "photo-visible", "mustShowFa": ["دیوار، کف، سقف، رایزر یا محل قرارگیری", "مسیر احتمالی انتشار آب"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.water.consequential-damage-overview", "titleFa": "نمای کلی خسارت تبعی", "requiredMode": "always", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "mustShowFa": ["قسمت‌های آسیب‌دیده اموال بیمه‌شده", "گستره رطوبت یا آب"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.water.each-damaged-item", "titleFa": "جزئیات هر گروه مال آسیب‌دیده", "requiredMode": "always", "minCount": 1, "maxCount": 20, "evidenceClassificationId": "photo-visible", "repeatPerDamageGroup": true, "mustShowFa": ["نوع مال", "شدت آسیب", "شناسه یا پلاک در صورت وجود"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.water.removed-defective-part", "titleFa": "جزء معیوب جداشده", "requiredMode": "required_or_unavailability_reason", "minCount": 1, "maxCount": 4, "evidenceClassificationId": "photo-visible", "requiredWhen": {"fact": "repair.defectivePartRemoved", "operator": "truthy"}, "mustShowFa": ["تمام جزء جداشده", "محل خرابی روی آن"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.water.repair-state", "titleFa": "وضعیت پس از مهار یا تعمیر", "requiredMode": "required_or_unavailability_reason", "minCount": 1, "maxCount": 4, "evidenceClassificationId": "photo-visible", "mustShowFa": ["اقدام انجام‌شده برای مهار نشت", "عدم پوشاندن شواهد اصلی در عکس‌های پیش از تعمیر"], "absenceEffect": "additional-evidence-required"}
+  ],
+  "reportBindings": [
+    {"reportSectionId": "report.photos.source", "requirementIds": ["photo.water.failed-component-before-repair", "photo.water.failure-closeup", "photo.water.component-location-context"]},
+    {"reportSectionId": "report.photos.damage", "requirementIds": ["photo.water.loss-area-overview", "photo.water.consequential-damage-overview", "photo.water.each-damaged-item"]},
+    {"reportSectionId": "report.photos.repair", "requirementIds": ["photo.water.removed-defective-part", "photo.water.repair-state"]}
+  ]
+}

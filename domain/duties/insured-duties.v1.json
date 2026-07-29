@@ -1,0 +1,878 @@
+{
+  "$schema": "https://bazdidyar.local/schemas/domain-catalog-v1.json",
+  "catalogId": "catalog.duty.fire.special",
+  "catalogVersion": "1.0.0",
+  "releaseDate": "2026-07-28",
+  "status": "draft",
+  "verificationStatus": "unverified",
+  "mandatoryVerificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+  "failureHandlingPolicy": {
+    "automaticClaimRejectionAllowed": false,
+    "requiredActions": [
+      "record_failure",
+      "identify_related_condition",
+      "display_warning",
+      "refer_to_authorized_claims_expert"
+    ],
+    "prohibitedActions": [
+      "automatic_legal_conclusion",
+      "automatic_coverage_rejection"
+    ],
+    "warningFa": "عدم انجام تکلیف ثبت شده است. تصمیم درباره اثر آن فقط توسط کارشناس خسارت مجاز و پس از تطبیق با شرایط معتبر اتخاذ می‌شود."
+  },
+  "duties": [
+    {
+      "id": "duty.fire.theft.notify-police",
+      "titleFa": "اعلام فوری به پلیس",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.theft.forcible-entry"
+        ],
+        "condition": "وقوع یا کشف سرقت ادعایی",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "police_notification_record",
+        "police_report_number"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.theft.forcible-entry"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "مدرک اعلام به پلیس ثبت نشده است؛ اثر این موضوع نیازمند بررسی کارشناس مجاز است."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.theft.notify-police",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «اعلام فوری به پلیس»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.theft.forcible-entry"
+      ],
+      "incompatibilities": []
+    },
+    {
+      "id": "duty.fire.theft.notify-insurer",
+      "titleFa": "اعلام فوری به بیمه‌گر",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.theft.forcible-entry"
+        ],
+        "condition": "وقوع یا کشف سرقت ادعایی",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "insurer_notification_record"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.theft.forcible-entry"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "مدرک اعلام به بیمه‌گر ثبت نشده است؛ اثر این موضوع نیازمند بررسی کارشناس مجاز است."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.theft.notify-insurer",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «اعلام فوری به بیمه‌گر»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.theft.forcible-entry"
+      ],
+      "incompatibilities": []
+    },
+    {
+      "id": "duty.fire.theft.submit-property-list",
+      "titleFa": "ارائه فهرست تفصیلی اموال",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.theft.forcible-entry"
+        ],
+        "condition": "ادعای سرقت اموال بیمه‌شده",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "detailed_stolen_property_list",
+        "item_values",
+        "ownership_documents_if_available"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.theft.forcible-entry"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "فهرست تفصیلی اموال یا ارزش آن‌ها کامل نیست؛ تکمیل مدارک و بررسی کارشناس لازم است."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.theft.submit-property-list",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «ارائه فهرست تفصیلی اموال»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.theft.forcible-entry"
+      ],
+      "incompatibilities": []
+    },
+    {
+      "id": "duty.fire.theft.cooperate-investigation",
+      "titleFa": "همکاری در رسیدگی و تحقیق",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.theft.forcible-entry"
+        ],
+        "condition": "جریان رسیدگی به ادعای سرقت",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "cooperation_notes",
+        "requested_documents_status"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.theft.forcible-entry"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "وضعیت همکاری در رسیدگی ثبت یا کامل نشده است؛ نتیجه حقوقی خودکار صادر نمی‌شود."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.theft.cooperate-investigation",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «همکاری در رسیدگی و تحقیق»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.theft.forcible-entry"
+      ],
+      "incompatibilities": []
+    },
+    {
+      "id": "duty.fire.theft.notify-later-information",
+      "titleFa": "اعلام اطلاعاتی که بعداً به دست می‌آید",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.theft.forcible-entry"
+        ],
+        "condition": "دستیابی بعدی بیمه‌گذار به اطلاعات مرتبط",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "later_information_notification_record"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.theft.forcible-entry"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "وضعیت اطلاعات بعدی ثبت نشده است؛ در صورت وجود اطلاعات جدید باید توسط کارشناس بررسی شود."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.theft.notify-later-information",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «اعلام اطلاعاتی که بعداً به دست می‌آید»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.theft.forcible-entry"
+      ],
+      "incompatibilities": []
+    },
+    {
+      "id": "duty.fire.water.stop-leak",
+      "titleFa": "متوقف‌کردن نشت آب",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.water.burst-pipe-internal-network",
+          "coverage.fire.special.water.sprinkler-leakage-discharge",
+          "coverage.fire.special.water.external-network-damage"
+        ],
+        "condition": "وجود نشت فعال و امکان اقدام ایمن و متعارف",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "leak_stop_action",
+        "action_time",
+        "supporting_photo_or_report"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.water.burst-pipe-internal-network",
+          "condition.fire.special.water.sprinkler-leakage-discharge",
+          "condition.fire.special.water.external-network-damage"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "اقدام برای توقف نشت ثبت نشده است؛ اثر آن فقط توسط کارشناس مجاز تعیین می‌شود."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.water.stop-leak",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «متوقف‌کردن نشت آب»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.water.burst-pipe-internal-network",
+        "condition.fire.special.water.sprinkler-leakage-discharge",
+        "condition.fire.special.water.external-network-damage"
+      ],
+      "incompatibilities": []
+    },
+    {
+      "id": "duty.fire.water.mitigate-damage",
+      "titleFa": "جلوگیری از توسعه خسارت",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.water.burst-pipe-internal-network",
+          "coverage.fire.special.water.sewer-overflow",
+          "coverage.fire.special.water.rain-snow-hail-ingress",
+          "coverage.fire.special.water.sprinkler-leakage-discharge",
+          "coverage.fire.special.water.groundwater-rising-damp",
+          "coverage.fire.special.water.roof-leakage",
+          "coverage.fire.special.water.external-network-damage"
+        ],
+        "condition": "امکان اقدام ایمن و متعارف برای کاهش توسعه خسارت",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "mitigation_actions",
+        "action_time",
+        "supporting_photos"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.water.burst-pipe-internal-network",
+          "condition.fire.special.water.sewer-overflow",
+          "condition.fire.special.water.rain-snow-hail-ingress",
+          "condition.fire.special.water.sprinkler-leakage-discharge",
+          "condition.fire.special.water.groundwater-rising-damp",
+          "condition.fire.special.water.roof-leakage",
+          "condition.fire.special.water.external-network-damage"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "اقدامات کاهش خسارت ثبت نشده است؛ نرم‌افزار نتیجه حقوقی یا رد خودکار صادر نمی‌کند."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.water.mitigate-damage",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «جلوگیری از توسعه خسارت»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.water.burst-pipe-internal-network",
+        "condition.fire.special.water.sewer-overflow",
+        "condition.fire.special.water.rain-snow-hail-ingress",
+        "condition.fire.special.water.sprinkler-leakage-discharge",
+        "condition.fire.special.water.groundwater-rising-damp",
+        "condition.fire.special.water.roof-leakage",
+        "condition.fire.special.water.external-network-damage"
+      ],
+      "incompatibilities": []
+    },
+    {
+      "id": "duty.fire.water.preserve-part",
+      "titleFa": "حفظ جزء معیوب در صورت امکان",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.water.burst-pipe-internal-network",
+          "coverage.fire.special.water.sprinkler-leakage-discharge"
+        ],
+        "condition": "وجود جزء معیوب و امکان عملی و ایمن نگهداری آن",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "preserved_part_photo",
+        "preservation_status",
+        "reason_if_not_preserved"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.water.burst-pipe-internal-network",
+          "condition.fire.special.water.sprinkler-leakage-discharge"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "جزء معیوب حفظ نشده یا وضعیت آن ثبت نشده است؛ موضوع به کارشناس ارجاع شود."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.water.preserve-part",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «حفظ جزء معیوب در صورت امکان»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.water.burst-pipe-internal-network",
+        "condition.fire.special.water.sprinkler-leakage-discharge"
+      ],
+      "incompatibilities": []
+    },
+    {
+      "id": "duty.fire.water.photo-before-repair",
+      "titleFa": "عکاسی پیش از تعمیر",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.water.burst-pipe-internal-network",
+          "coverage.fire.special.water.sewer-overflow",
+          "coverage.fire.special.water.rain-snow-hail-ingress",
+          "coverage.fire.special.water.sprinkler-leakage-discharge",
+          "coverage.fire.special.water.groundwater-rising-damp",
+          "coverage.fire.special.water.roof-leakage",
+          "coverage.fire.special.water.external-network-damage"
+        ],
+        "condition": "پیش از تعمیر و در صورت امکان عملی و ایمن",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "pre_repair_photos",
+        "photo_time_metadata"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.water.burst-pipe-internal-network",
+          "condition.fire.special.water.sewer-overflow",
+          "condition.fire.special.water.rain-snow-hail-ingress",
+          "condition.fire.special.water.sprinkler-leakage-discharge",
+          "condition.fire.special.water.groundwater-rising-damp",
+          "condition.fire.special.water.roof-leakage",
+          "condition.fire.special.water.external-network-damage"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "عکس پیش از تعمیر موجود نیست؛ دلیل و مدارک جایگزین ثبت و توسط کارشناس بررسی شود."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.water.photo-before-repair",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «عکاسی پیش از تعمیر»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.water.burst-pipe-internal-network",
+        "condition.fire.special.water.sewer-overflow",
+        "condition.fire.special.water.rain-snow-hail-ingress",
+        "condition.fire.special.water.sprinkler-leakage-discharge",
+        "condition.fire.special.water.groundwater-rising-damp",
+        "condition.fire.special.water.roof-leakage",
+        "condition.fire.special.water.external-network-damage"
+      ],
+      "incompatibilities": []
+    },
+    {
+      "id": "duty.fire.water.obtain-repair-report",
+      "titleFa": "دریافت گزارش تعمیر",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.water.burst-pipe-internal-network",
+          "coverage.fire.special.water.sewer-overflow",
+          "coverage.fire.special.water.rain-snow-hail-ingress",
+          "coverage.fire.special.water.sprinkler-leakage-discharge",
+          "coverage.fire.special.water.groundwater-rising-damp",
+          "coverage.fire.special.water.roof-leakage",
+          "coverage.fire.special.water.external-network-damage"
+        ],
+        "condition": "انجام تعمیر یا بررسی فنی توسط تعمیرکار",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "repair_report",
+        "repair_invoice_if_available"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.water.burst-pipe-internal-network",
+          "condition.fire.special.water.sewer-overflow",
+          "condition.fire.special.water.rain-snow-hail-ingress",
+          "condition.fire.special.water.sprinkler-leakage-discharge",
+          "condition.fire.special.water.groundwater-rising-damp",
+          "condition.fire.special.water.roof-leakage",
+          "condition.fire.special.water.external-network-damage"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "گزارش تعمیر ثبت نشده است؛ مدارک تکمیلی یا نظر کارشناس لازم است."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.water.obtain-repair-report",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «دریافت گزارش تعمیر»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.water.burst-pipe-internal-network",
+        "condition.fire.special.water.sewer-overflow",
+        "condition.fire.special.water.rain-snow-hail-ingress",
+        "condition.fire.special.water.sprinkler-leakage-discharge",
+        "condition.fire.special.water.groundwater-rising-damp",
+        "condition.fire.special.water.roof-leakage",
+        "condition.fire.special.water.external-network-damage"
+      ],
+      "incompatibilities": []
+    },
+    {
+      "id": "duty.fire.flood.salvage-measures",
+      "titleFa": "اقدامات متعارف نجات و کاهش خسارت",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.water.flood-river-overflow"
+        ],
+        "condition": "امکان اقدام ایمن و متعارف پس از سیل",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "salvage_actions",
+        "supporting_photos",
+        "action_costs_if_any"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.water.flood-river-overflow"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "اقدامات نجات و کاهش خسارت ثبت نشده است؛ اثر آن نیازمند نظر کارشناس مجاز است."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.flood.salvage-measures",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «اقدامات متعارف نجات و کاهش خسارت»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.water.flood-river-overflow"
+      ],
+      "incompatibilities": []
+    },
+    {
+      "id": "duty.fire.flood.preserve-water-level-evidence",
+      "titleFa": "حفظ شواهد تراز آب",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.water.flood-river-overflow"
+        ],
+        "condition": "وجود آثار قابل ثبت تراز آب",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "water_level_photos",
+        "measurement_reference",
+        "recorded_depth"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.water.flood-river-overflow"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "شواهد تراز آب ثبت نشده است؛ شواهد جایگزین و علت فقدان بررسی شود."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.flood.preserve-water-level-evidence",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «حفظ شواهد تراز آب»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.water.flood-river-overflow"
+      ],
+      "incompatibilities": []
+    },
+    {
+      "id": "duty.fire.flood.separate-contaminated-goods",
+      "titleFa": "تفکیک کالاهای آلوده",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.water.flood-river-overflow"
+        ],
+        "condition": "وجود اموال یا کالاهای آلوده و امکان تفکیک ایمن",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "contaminated_goods_list",
+        "separation_photos",
+        "disposal_or_salvage_status"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.water.flood-river-overflow"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "تفکیک کالاهای آلوده ثبت نشده است؛ وضعیت کالاها توسط کارشناس بررسی شود."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.flood.separate-contaminated-goods",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «تفکیک کالاهای آلوده»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.water.flood-river-overflow"
+      ],
+      "incompatibilities": []
+    },
+    {
+      "id": "duty.fire.flood.record-cleanup-salvage-costs",
+      "titleFa": "ثبت هزینه‌های پاک‌سازی و نجات",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "applicability": {
+        "coverageIds": [
+          "coverage.fire.special.water.flood-river-overflow"
+        ],
+        "condition": "انجام پاک‌سازی، خشک‌سازی یا نجات اموال",
+        "humanReviewRequired": true
+      },
+      "completionEvidence": [
+        "cleanup_cost_records",
+        "salvage_cost_records",
+        "invoices_if_available"
+      ],
+      "dependencies": {
+        "conditionIds": [
+          "condition.fire.special.water.flood-river-overflow"
+        ]
+      },
+      "alert": {
+        "severity": "warning",
+        "onMissing": true,
+        "messageFa": "هزینه‌های پاک‌سازی یا نجات مستند نشده است؛ هزینه قابل قبول باید توسط کارشناس تعیین شود."
+      },
+      "reportBindings": {
+        "sectionId": "report.section.insured-duties",
+        "wordingKey": "report.duty.flood.record-cleanup-salvage-costs",
+        "includeStatus": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      },
+      "descriptionFa": "پیکربندی ثبت و ارزیابی تکلیف «ثبت هزینه‌های پاک‌سازی و نجات»؛ عدم انجام آن موجب رد خودکار پرونده نمی‌شود و به بررسی کارشناس مجاز نیاز دارد.",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "sourceRefs": [
+        "source.requirements.special-fire-coverage-engine"
+      ],
+      "approvingAuthority": null,
+      "applicableProductIds": [
+        "product.fire.property"
+      ],
+      "applicableActivityIds": [],
+      "conditions": [
+        "condition.fire.special.water.flood-river-overflow"
+      ],
+      "incompatibilities": []
+    }
+  ]
+}

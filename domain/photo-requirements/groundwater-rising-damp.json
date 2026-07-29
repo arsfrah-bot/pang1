@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "photo.fire.special.water.groundwater-rising-damp",
+  "version": "1.0.0",
+  "status": "active",
+  "titleFa": "الزامات عکس آب زیرزمینی و رطوبت صعودی",
+  "claimPackRef": "claim.fire.special.water.groundwater-rising-damp",
+  "coverageRef": "coverage.fire.special.water.groundwater-rising-damp",
+  "sourceRequirementRef": "source.requirements.special-fire-coverage-engine",
+  "decisionPolicy": {"automatedFinalDecision": false, "missingPhotoStatus": "additional-evidence-required", "missingPhotoNeverAutoRejects": true},
+  "captureProfile": {"archive": {"maxEdgePx": 2400, "jpegQuality": 0.86}, "report": {"maxEdgePx": 1400, "jpegQuality": 0.72}, "thumbnail": {"maxEdgePx": 320, "jpegQuality": 0.65}, "preserveOriginalWhenSupported": true, "requiredMetadata": ["capturedAt", "source", "sequenceNumber"]},
+  "requirements": [
+    {"id": "photo.groundwater.area-overview", "titleFa": "نمای کلی فضای درگیر", "requiredMode": "always", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.groundwater.moisture-pattern", "titleFa": "الگوی نم و ارتفاع رطوبت", "requiredMode": "always", "minCount": 3, "maxCount": 12, "evidenceClassificationId": "photo-visible", "mustShowFa": ["مرزهای رطوبت", "مقیاس ارتفاع"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.groundwater.measurement", "titleFa": "اندازه‌گیری رطوبت", "requiredMode": "always", "minCount": 2, "maxCount": 12, "evidenceClassificationId": "photo-visible", "mustShowFa": ["نمایشگر ابزار", "محل نقطه اندازه‌گیری"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.groundwater.floor-wall-joint", "titleFa": "اتصال کف و دیوار و مسیر نفوذ", "requiredMode": "always", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.groundwater.drainage-waterproofing", "titleFa": "زهکشی و عایق قابل مشاهده", "requiredMode": "required_or_unavailability_reason", "minCount": 1, "maxCount": 8, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.groundwater.external-ground", "titleFa": "تراز و وضعیت زمین بیرونی", "requiredMode": "always", "minCount": 2, "maxCount": 6, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.groundwater.damage", "titleFa": "خسارت ساختمان و محتویات", "requiredMode": "always", "minCount": 2, "maxCount": 20, "evidenceClassificationId": "photo-visible", "repeatPerDamageGroup": true, "absenceEffect": "additional-evidence-required"}
+  ],
+  "reportBindings": [{"reportSectionId": "report.photos.source-measurement", "requirementIds": ["photo.groundwater.moisture-pattern", "photo.groundwater.measurement", "photo.groundwater.floor-wall-joint", "photo.groundwater.drainage-waterproofing", "photo.groundwater.external-ground"]}, {"reportSectionId": "report.photos.damage", "requirementIds": ["photo.groundwater.area-overview", "photo.groundwater.damage"]}]
+}

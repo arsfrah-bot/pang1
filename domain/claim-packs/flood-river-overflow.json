@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "claim.fire.special.water.flood-river-overflow",
+  "version": "1.0.0",
+  "status": "draft_requires_source_verification",
+  "titleFa": "سیل و طغیان رودخانه",
+  "lineId": "insurance.fire-property",
+  "coverageRef": "coverage.fire.special.water.flood-river-overflow",
+  "sourceRequirementRef": "source.requirements.special-fire-coverage-engine",
+  "conditionDocumentRequirement": {
+    "required": true,
+    "resolution": "runtime-by-policy-and-loss-date",
+    "unknownValidityLabelFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+  },
+  "decisionPolicy": {
+    "automatedFinalDecision": false,
+    "authorizedHumanDecisionRequired": true,
+    "missingEvidenceEffect": "additional-evidence-required",
+    "potentialExclusionEffect": "potential-exclusion",
+    "allowedMachineStatuses": ["potentially-applicable", "not-yet-established", "additional-evidence-required", "potential-exclusion", "outside-selected-coverage", "requires-senior-review"],
+    "humanOnlyStatuses": ["approved-by-authorized-user", "rejected-by-authorized-user"]
+  },
+  "trigger": {
+    "all": [
+      {"fact": "claim.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.water.flood-river-overflow"},
+      {"fact": "claim.lossReported", "operator": "truthy"}
+    ]
+  },
+  "sections": [
+    {"id": "source-classification", "titleFa": "منشأ و طبقه‌بندی آب", "questionIds": ["waterSource", "sourceCategories", "leftNaturalBed", "alternativeWaterSources", "sourceNarrative"]},
+    {"id": "entry-measurements", "titleFa": "ورود و اندازه‌گیری آب", "questionIds": ["entryRoute", "waterDepthCm", "durationHours", "groundElevation", "belowGroundLocation", "mudContamination", "maxAffectedAreaSqm"]},
+    {"id": "external-evidence", "titleFa": "شواهد محیطی", "questionIds": ["weatherWarning", "governmentEvidence", "coordinates", "nearbyWaterways", "drainageCondition"]},
+    {"id": "history-damage", "titleFa": "سابقه و خسارت", "questionIds": ["previousFloodHistory", "previousFloodDetails", "damageDescription", "cleanupCost", "propertyDamageCost", "salvageValue"]}
+  ],
+  "questions": [
+    {"id": "waterSource", "fact": "flood.waterSourceExact", "type": "text", "labelFa": "منشأ دقیق آب", "required": true},
+    {"id": "sourceCategories", "fact": "flood.sourceCategories", "type": "multiChoice", "labelFa": "دسته منشأ آب", "required": true, "options": [{"value": "river", "labelFa": "رودخانه"}, {"value": "channel", "labelFa": "مسیل یا کانال"}, {"value": "surfaceRunoff", "labelFa": "روان‌آب سطحی"}, {"value": "dam", "labelFa": "سد یا رهاسازی آب"}, {"value": "sea", "labelFa": "دریا"}, {"value": "other", "labelFa": "سایر"}, {"value": "undetermined", "labelFa": "هنوز مشخص نشده"}]},
+    {"id": "leftNaturalBed", "fact": "flood.waterLeftNaturalBed", "type": "singleChoice", "labelFa": "آیا آب از بستر طبیعی خود خارج شده است؟", "required": true, "options": [{"value": "yes", "labelFa": "بله"}, {"value": "no", "labelFa": "خیر"}, {"value": "undetermined", "labelFa": "نیازمند بررسی"}]},
+    {"id": "alternativeWaterSources", "fact": "flood.alternativeWaterSources", "type": "multiChoice", "labelFa": "منشأهای جایگزین یا هم‌زمان مشاهده‌شده", "required": true, "options": [{"value": "roofLeakage", "labelFa": "نشت بام"}, {"value": "rainIngress", "labelFa": "نفوذ باران"}, {"value": "burstPipe", "labelFa": "ترکیدگی لوله"}, {"value": "sewerBackup", "labelFa": "پس‌زدگی فاضلاب"}, {"value": "groundwater", "labelFa": "آب زیرزمینی"}, {"value": "risingDamp", "labelFa": "رطوبت صعودی"}, {"value": "tidalSeaWater", "labelFa": "مد یا آب دریا"}, {"value": "landslideSubsidence", "labelFa": "رانش یا نشست زمین"}, {"value": "noneObserved", "labelFa": "مشاهده نشد"}]},
+    {"id": "sourceNarrative", "fact": "flood.sourceNarrative", "type": "textarea", "labelFa": "شرح مسیر آب از منشأ تا محل خطر", "required": true},
+    {"id": "entryRoute", "fact": "flood.entryRoute", "type": "textarea", "labelFa": "مسیر ورود آب به محل خطر", "required": true},
+    {"id": "waterDepthCm", "fact": "flood.maximumWaterDepthCm", "type": "number", "labelFa": "حداکثر عمق آب بر حسب سانتی‌متر", "required": true, "minimum": 0},
+    {"id": "durationHours", "fact": "flood.waterDurationHours", "type": "number", "labelFa": "مدت ماندگاری آب بر حسب ساعت", "required": true, "minimum": 0},
+    {"id": "groundElevation", "fact": "location.groundElevationDescription", "type": "text", "labelFa": "وضعیت ارتفاع محل نسبت به معبر و اطراف", "required": true},
+    {"id": "belowGroundLocation", "fact": "location.belowGround", "type": "boolean", "labelFa": "آیا محل آسیب‌دیده زیرزمین یا پایین‌تر از تراز زمین است؟", "required": true},
+    {"id": "mudContamination", "fact": "flood.mudOrContamination", "type": "multiChoice", "labelFa": "گل‌ولای یا آلودگی همراه آب", "required": true, "options": [{"value": "mud", "labelFa": "گل‌ولای"}, {"value": "sewage", "labelFa": "آلودگی فاضلابی"}, {"value": "chemical", "labelFa": "آلودگی شیمیایی"}, {"value": "debris", "labelFa": "نخاله و پسماند"}, {"value": "none", "labelFa": "مشاهده نشد"}, {"value": "unknown", "labelFa": "نامشخص"}]},
+    {"id": "maxAffectedAreaSqm", "fact": "damage.maximumAffectedAreaSqm", "type": "number", "labelFa": "حداکثر مساحت درگیر بر حسب مترمربع", "required": true, "minimum": 0},
+    {"id": "weatherWarning", "fact": "external.weatherWarning", "type": "singleChoice", "labelFa": "آیا هشدار هواشناسی مرتبط وجود دارد؟", "required": true, "options": [{"value": "yes", "labelFa": "بله"}, {"value": "no", "labelFa": "خیر"}, {"value": "unknown", "labelFa": "نامشخص"}]},
+    {"id": "governmentEvidence", "fact": "external.governmentEvidenceStatus", "type": "singleChoice", "labelFa": "وضعیت مدرک شهرداری، فرمانداری یا مرجع دولتی", "required": true, "options": [{"value": "available", "labelFa": "موجود"}, {"value": "requested", "labelFa": "درخواست شده"}, {"value": "unavailable", "labelFa": "در دسترس نیست"}, {"value": "notChecked", "labelFa": "هنوز بررسی نشده"}]},
+    {"id": "coordinates", "fact": "location.coordinates", "type": "coordinates", "labelFa": "مختصات جغرافیایی محل بازدید", "required": true},
+    {"id": "nearbyWaterways", "fact": "location.nearbyWaterways", "type": "textarea", "labelFa": "آبراهه‌ها، رودخانه‌ها، کانال‌ها یا مسیل‌های نزدیک", "required": true},
+    {"id": "drainageCondition", "fact": "location.drainageCondition", "type": "textarea", "labelFa": "وضعیت زهکشی و تخلیه آب در محل", "required": true},
+    {"id": "previousFloodHistory", "fact": "history.previousFlood", "type": "boolean", "labelFa": "آیا سابقه سیلاب یا آب‌گرفتگی قبلی وجود دارد؟", "required": true},
+    {"id": "previousFloodDetails", "fact": "history.previousFloodDetails", "type": "textarea", "labelFa": "شرح تاریخ، عمق و خسارت رویدادهای قبلی", "requiredWhen": {"fact": "history.previousFlood", "operator": "truthy"}},
+    {"id": "damageDescription", "fact": "damage.description", "type": "textarea", "labelFa": "شرح اموال و قسمت‌های آسیب‌دیده", "required": true},
+    {"id": "cleanupCost", "fact": "cost.cleanupAndDecontamination", "type": "currency", "labelFa": "هزینه پاک‌سازی و رفع آلودگی", "required": true, "currency": "IRR"},
+    {"id": "propertyDamageCost", "fact": "cost.insuredPropertyDamage", "type": "currency", "labelFa": "برآورد خسارت اموال بیمه‌شده", "required": true, "currency": "IRR"},
+    {"id": "salvageValue", "fact": "cost.salvageValue", "type": "currency", "labelFa": "ارزش بازیافتی برآوردی", "required": true, "currency": "IRR"}
+  ],
+  "requiredEvidence": [
+    {"id": "ev.flood-photos", "titleFa": "عکس گستره آب، خط تراز، مسیر ورود، عمق و آلودگی", "type": "photoSet", "requiredMode": "always", "photoRequirementPackId": "photo.fire.special.water.flood-river-overflow", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.coordinates", "titleFa": "مختصات جغرافیایی ثبت‌شده هنگام بازدید", "type": "measurement", "requiredMode": "always", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.water-depth", "titleFa": "اندازه‌گیری یا نشان قابل مشاهده حداکثر عمق آب", "type": "measurementOrPhoto", "requiredMode": "always", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.weather-record", "titleFa": "گزارش هواشناسی یا هشدار مرتبط با زمان و محل", "type": "externalRecord", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.municipal-government", "titleFa": "گواهی یا گزارش مرجع شهری یا دولتی درباره رویداد", "type": "externalRecord", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.location-map", "titleFa": "نقشه یا تصویر محل نسبت به آبراهه نزدیک", "type": "mapOrPhoto", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.cleanup-salvage-records", "titleFa": "صورت‌حساب پاک‌سازی، جداسازی و بازیافت", "type": "document", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"}
+  ],
+  "photos": [{"requirementPackRef": "photo.fire.special.water.flood-river-overflow", "required": true}],
+  "triggerRules": [
+    {"id": "classification.water-left-bed-support", "when": {"all": [{"fact": "flood.waterLeftNaturalBed", "operator": "eq", "value": "yes"}, {"fact": "flood.sourceCategories", "operator": "contains", "value": "river"}]}, "result": {"status": "potentially-applicable", "messageFa": "اطلاعات اولیه از طغیان رودخانه پشتیبانی می‌کند؛ تصمیم نهایی نیازمند بررسی سند پوشش و شواهد است."}},
+    {"id": "classification.alternative-source", "when": {"not": {"fact": "flood.alternativeWaterSources", "operator": "contains", "value": "noneObserved"}}, "result": {"status": "requires-senior-review", "messageFa": "یک منشأ جایگزین یا هم‌زمان ثبت شده و طبقه‌بندی خطر باید توسط کارشناس بررسی شود."}}
+  ],
+  "calculationComponents": [
+    {"id": "calc.insured-property", "titleFa": "خسارت اموال بیمه‌شده", "sourceFact": "cost.insuredPropertyDamage", "coverageTreatment": "candidate_recoverable_item"},
+    {"id": "calc.cleanup-decontamination", "titleFa": "پاک‌سازی و رفع آلودگی", "sourceFact": "cost.cleanupAndDecontamination", "coverageTreatment": "separate_expert_determination"},
+    {"id": "calc.boundary-walls-gates", "titleFa": "دیوار محوطه و دروازه", "inputMode": "expert_itemization", "coverageTreatment": "potentially_excluded_item"},
+    {"id": "calc.drains-pipes", "titleFa": "پاک‌سازی یا تعمیر زهکش و لوله", "inputMode": "expert_itemization", "coverageTreatment": "potentially_excluded_item"},
+    {"id": "calc.ground-movement", "titleFa": "خسارت منتسب به رانش، نشست یا حرکت زمین", "inputMode": "expert_itemization", "coverageTreatment": "route_to_related_peril_pack"},
+    {"id": "calc.salvage", "titleFa": "بازیافتی", "sourceFact": "cost.salvageValue", "sign": "subtract_after_authorization"},
+    {"id": "calc.deductible", "titleFa": "فرانشیز", "inputMode": "resolved_rule", "deductibleRuleRef": "condition-document-current-version", "hardcodedAmountAllowed": false}
+  ],
+  "deductibleRule": {"source": "verified-condition-document", "required": true, "hardcodedAmountAllowed": false, "unresolvedEffect": "requires-senior-review"},
+  "potentialExclusions": [
+    {"id": "exclusion.boundary-walls-gates", "titleFa": "دیوارهای محوطه و دروازه‌ها", "when": {"fact": "damage.componentCategories", "operator": "contains", "value": "boundaryWallsGates"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.drains-pipes", "titleFa": "پاک‌سازی یا تعمیر زهکش‌ها و لوله‌ها", "when": {"fact": "damage.componentCategories", "operator": "contains", "value": "drainsPipes"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.underground-water", "titleFa": "آب زیرزمینی", "when": {"fact": "flood.alternativeWaterSources", "operator": "contains", "value": "groundwater"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.tidal-effects", "titleFa": "اثرات مد", "when": {"fact": "flood.alternativeWaterSources", "operator": "contains", "value": "tidalSeaWater"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.sea-water", "titleFa": "رویداد آب دریا", "when": {"fact": "flood.sourceCategories", "operator": "contains", "value": "sea"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.landslide-ground-movement", "titleFa": "رانش یا حرکت زمین", "when": {"fact": "flood.alternativeWaterSources", "operator": "contains", "value": "landslideSubsidence"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.pipe-thawing", "titleFa": "ذوب‌کردن یخ لوله", "when": {"fact": "flood.relatedActions", "operator": "contains", "value": "pipeThawing"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.heavy-rain-roof-leak", "titleFa": "نشت بام ناشی از بارندگی شدید", "when": {"fact": "flood.alternativeWaterSources", "operator": "contains", "value": "roofLeakage"}, "effect": "flag_for_expert_review"}
+  ],
+  "duties": [
+    {"id": "duty.reasonable-salvage", "titleFa": "انجام اقدامات معقول نجات و کاهش خسارت", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.preserve-water-level", "titleFa": "حفظ شواهد خط تراز و عمق آب", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.separate-contaminated-goods", "titleFa": "جداسازی اموال آلوده", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.record-cleanup-salvage", "titleFa": "ثبت هزینه‌های پاک‌سازی و بازیافت", "failureEffect": "record_warning_and_refer_to_expert"}
+  ],
+  "reportBindings": [
+    {"sectionId": "report.coverage-context", "titleFa": "پوشش و سند مبنا", "facts": ["claim.selectedCoverageIds", "coverage.conditionDocumentId", "coverage.documentVersion", "coverage.verificationStatus"]},
+    {"sectionId": "report.source-classification", "titleFa": "منشأ و طبقه‌بندی آب", "facts": ["flood.waterSourceExact", "flood.sourceCategories", "flood.waterLeftNaturalBed", "flood.alternativeWaterSources", "flood.sourceNarrative"]},
+    {"sectionId": "report.measurements", "titleFa": "اندازه‌گیری و گستره", "facts": ["flood.entryRoute", "flood.maximumWaterDepthCm", "flood.waterDurationHours", "damage.maximumAffectedAreaSqm", "location.groundElevationDescription", "location.coordinates"]},
+    {"sectionId": "report.external-evidence", "titleFa": "شواهد محیطی و رسمی", "facts": ["external.weatherWarning", "external.governmentEvidenceStatus", "location.nearbyWaterways", "location.drainageCondition"]},
+    {"sectionId": "report.evidence", "titleFa": "شواهد موجود و کسری مدارک", "bind": "evidenceAssessment"},
+    {"sectionId": "report.peril-distinctions", "titleFa": "تمایز با سایر منشأهای آب و حرکت زمین", "facts": ["flood.alternativeWaterSources"]},
+    {"sectionId": "report.exclusions", "titleFa": "موارد نیازمند بررسی شرایط و استثنائات", "bind": "potentialExclusionFlags"},
+    {"sectionId": "report.calculation", "titleFa": "تفکیک اجزای محاسبه", "bind": "calculationComponents"},
+    {"sectionId": "report.decision", "titleFa": "وضعیت تصمیم کارشناس", "bind": "expertDecisionStatus", "humanApprovalRequired": true}
+  ],
+  "reportWording": {
+    "classificationCautionFa": "طبقه‌بندی سیل یا طغیان بر پایه منشأ آب، خروج احتمالی از بستر، مسیر ورود و شواهد محیطی انجام می‌شود و صرف بارندگی یا آب‌گرفتگی برای تصمیم پوشش کافی نیست.",
+    "distinctionFa": "نشت بام، نفوذ باران، ترکیدگی لوله، پس‌زدگی فاضلاب، آب زیرزمینی، رطوبت صعودی، رویداد مد یا آب دریا و رانش یا نشست زمین جداگانه بررسی شده‌اند.",
+    "decisionDisclaimerFa": "این گزارش تصمیم نهایی پوشش یا پرداخت نیست و تأیید یا رد صرفاً توسط کاربر مجاز و پس از بررسی بیمه‌نامه، شرایط معتبر و مدارک انجام می‌شود."
+  }
+}

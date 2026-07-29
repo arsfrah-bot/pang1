@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "photo.fire.special.theft.forcible-entry",
+  "version": "1.0.0",
+  "status": "active",
+  "titleFa": "الزامات عکس سرقت با ورود اجباری",
+  "claimPackRef": "claim.fire.special.theft.forcible-entry",
+  "coverageRef": "coverage.fire.special.theft.forcible-entry",
+  "sourceRequirementRef": "source.requirements.special-fire-coverage-engine",
+  "decisionPolicy": {"automatedFinalDecision": false, "missingPhotoStatus": "additional-evidence-required", "missingPhotoNeverAutoRejects": true, "missingPropertyNeverProvesCoveredTheft": true},
+  "captureProfile": {
+    "archive": {"maxEdgePx": 2400, "jpegQuality": 0.86},
+    "report": {"maxEdgePx": 1400, "jpegQuality": 0.72},
+    "thumbnail": {"maxEdgePx": 320, "jpegQuality": 0.65},
+    "preserveOriginalWhenSupported": true,
+    "requiredMetadata": ["capturedAt", "source", "sequenceNumber"],
+    "optionalMetadata": ["latitude", "longitude", "accuracyMeters", "captionFa"]
+  },
+  "requirements": [
+    {"id": "photo.theft.exterior", "titleFa": "نمای بیرونی محل", "requiredMode": "always", "minCount": 2, "maxCount": 6, "evidenceClassificationId": "photo-visible", "mustShowFa": ["نمای کامل ساختمان یا محل", "دیوارها و مسیرهای دسترسی قابل مشاهده"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.theft.entry-point", "titleFa": "نقطه ورود", "requiredMode": "always", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "mustShowFa": ["نقطه ورود در نمای کلی", "اثر ورود در نمای نزدیک"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.theft.broken-lock-door", "titleFa": "قفل یا در شکسته", "requiredMode": "required_or_not_applicable_reason", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "mustShowFa": ["قفل، زبانه، چهارچوب و اثر ابزار", "قطعات جداشده در صورت وجود"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.theft.broken-window", "titleFa": "پنجره شکسته", "requiredMode": "required_or_not_applicable_reason", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "mustShowFa": ["کل پنجره", "شیشه، قاب و جهت پراکندگی قطعات"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.theft.interior-condition", "titleFa": "وضعیت فضای داخلی", "requiredMode": "always", "minCount": 3, "maxCount": 12, "evidenceClassificationId": "photo-visible", "mustShowFa": ["چیدمان و بی‌نظمی احتمالی", "مسیر حرکت در داخل"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.theft.empty-property-location", "titleFa": "محل خالی هر گروه مال ادعایی", "requiredMode": "always", "minCount": 1, "maxCount": 20, "evidenceClassificationId": "photo-visible", "repeatPerStolenItemGroup": true, "mustShowFa": ["محل نگهداری ادعایی", "نشانه‌های پیرامونی برای شناسایی محل"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.theft.security-devices", "titleFa": "وسایل حفاظتی", "requiredMode": "required_or_not_applicable_reason", "minCount": 1, "maxCount": 8, "evidenceClassificationId": "photo-visible", "mustShowFa": ["دزدگیر، حسگر، حفاظ، قفل یا وسیله مرتبط", "وضعیت ظاهری دستگاه"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.theft.cctv-equipment", "titleFa": "تجهیزات دوربین مداربسته", "requiredMode": "required_or_not_applicable_reason", "minCount": 1, "maxCount": 8, "evidenceClassificationId": "photo-visible", "mustShowFa": ["دوربین‌های مرتبط", "دستگاه ضبط یا وضعیت آسیب‌دیدگی"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.theft.exit-point", "titleFa": "نقطه خروج", "requiredMode": "required_or_unavailability_reason", "minCount": 1, "maxCount": 6, "evidenceClassificationId": "photo-visible", "mustShowFa": ["مسیر یا نقطه خروج ادعایی", "اثر باقی‌مانده در صورت وجود"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.theft.building-damage", "titleFa": "خسارت ساختمان ناشی از ورود یا خروج", "requiredMode": "required_or_not_applicable_reason", "minCount": 2, "maxCount": 12, "evidenceClassificationId": "photo-visible", "mustShowFa": ["جزء آسیب‌دیده", "نمای نزدیک و کلی"], "absenceEffect": "additional-evidence-required"}
+  ],
+  "reportBindings": [
+    {"reportSectionId": "report.photos.access", "requirementIds": ["photo.theft.exterior", "photo.theft.entry-point", "photo.theft.exit-point", "photo.theft.broken-lock-door", "photo.theft.broken-window"]},
+    {"reportSectionId": "report.photos.interior-property", "requirementIds": ["photo.theft.interior-condition", "photo.theft.empty-property-location", "photo.theft.building-damage"]},
+    {"reportSectionId": "report.photos.security", "requirementIds": ["photo.theft.security-devices", "photo.theft.cctv-equipment"]}
+  ]
+}

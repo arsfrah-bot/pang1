@@ -1,0 +1,78 @@
+{
+  "$schema": "https://bazdidyar.local/schemas/domain-catalog-v1.json",
+  "catalogId": "catalog.coverage.fire.special.glass-breakage",
+  "catalogVersion": "1.0.0",
+  "releaseDate": "2026-07-28",
+  "status": "draft",
+  "verificationStatus": "unverified",
+  "mandatoryVerificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+  "coveragePacks": [
+    {
+      "id": "coverage.fire.special.glass.breakage",
+      "titleFa": "شکست شیشه",
+      "descriptionFa": "بسته قابل تنظیم برای شناسایی دقیق شیشه، علت شکست، اجزای هزینه و استثنائات بالقوه بدون نتیجه‌گیری خودکار پوشش.",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "sourceRefs": ["source.requirements.special-fire-coverage-engine"],
+      "approvingAuthority": null,
+      "applicableProductIds": ["product.fire.property"],
+      "applicableActivityIds": [],
+      "activityApplicabilityStatus": "not_specified_in_source",
+      "applicability": {
+        "all": [
+          { "fact": "case.productFamilyId", "operator": "equals", "value": "product.fire.property" },
+          { "fact": "case.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.glass.breakage" }
+        ],
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "شکست شیشه بیمه‌شده که محل، نوع، وضعیت نصب و علت آن باید مستند شود.",
+      "conditions": ["condition.fire.special.glass.breakage"],
+      "incompatibilities": [],
+      "incompatibilityStatus": "not_specified_in_source",
+      "dependencies": {
+        "conditionIds": ["condition.fire.special.glass.breakage"],
+        "dutyIds": [],
+        "claimPackId": "claim.fire.special.glass.breakage",
+        "photoPackId": "photo.fire.special.glass.breakage"
+      },
+      "questionGroups": {
+        "identification": ["glass_location", "glass_type", "fixed_or_temporary", "ordinary_tempered_laminated_or_double_glazed", "decorative_or_artistic", "dimensions", "thickness", "pane_count", "installation_method", "frame_type"],
+        "cause": ["breakage_cause", "external_impact", "thermal_stress", "installation_defect", "building_settlement", "previous_crack"],
+        "value": ["salvage", "glass_value", "installation_labor", "transportation", "frame_and_hardware", "associated_refrigeration_or_display_equipment"]
+      },
+      "requiredEvidence": ["measurements", "glass_identification", "cause_evidence", "ownership_or_insurance_evidence"],
+      "requiredPhotographs": ["full_elevation", "broken_glass", "point_of_impact", "remaining_fragments", "frame", "surrounding_area", "measurement_reference", "insured_opening_identification"],
+      "calculationComponents": ["glass", "installation_labor", "frame", "hardware", "display_or_refrigeration_equipment", "goods_behind_glass", "salvage", "deductible"],
+      "potentialExclusions": ["temporary_glass", "decorative_painted_engraved_or_artistic_glass", "glass_manufacturing_premises", "sonic_boom", "frames_doors_windows_and_hardware", "war_riot_and_civil_commotion", "faulty_design", "building_settlement", "unrelated_component_replacement"],
+      "deductibleRule": {
+        "status": "unknown",
+        "formula": null,
+        "minimum": null,
+        "currency": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "decisionPolicy": {
+        "statusCatalogId": "coverage-decision-status-catalog",
+        "automaticFinalDecisionAllowed": false,
+        "authorizedHumanApprovalRequired": true
+      },
+      "reportBindings": {
+        "sectionId": "report.section.coverage-evaluation",
+        "factPaths": ["coverageTrigger", "glassIdentification", "causeClassification", "supportingEvidence", "missingEvidence", "potentialExclusions", "calculationComponents", "deductibleRule", "expertDecisionStatus", "finalApprovalStatus"],
+        "wordingKey": "report.fire.glass.breakage",
+        "includeVerificationNotice": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      }
+    }
+  ]
+}

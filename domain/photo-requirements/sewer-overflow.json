@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "photo.fire.special.water.sewer-overflow",
+  "version": "1.0.0",
+  "status": "active",
+  "titleFa": "الزامات عکس پس‌زدگی و سرریز فاضلاب",
+  "claimPackRef": "claim.fire.special.water.sewer-overflow",
+  "coverageRef": "coverage.fire.special.water.sewer-overflow",
+  "sourceRequirementRef": "source.requirements.special-fire-coverage-engine",
+  "decisionPolicy": {"automatedFinalDecision": false, "missingPhotoStatus": "additional-evidence-required", "missingPhotoNeverAutoRejects": true},
+  "captureProfile": {"archive": {"maxEdgePx": 2400, "jpegQuality": 0.86}, "report": {"maxEdgePx": 1400, "jpegQuality": 0.72}, "thumbnail": {"maxEdgePx": 320, "jpegQuality": 0.65}, "preserveOriginalWhenSupported": true, "requiredMetadata": ["capturedAt", "source", "sequenceNumber"]},
+  "requirements": [
+    {"id": "photo.sewer.loss-area-overview", "titleFa": "نمای کلی محل خسارت", "requiredMode": "always", "minCount": 2, "maxCount": 6, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.sewer.overflow-entry-point", "titleFa": "نقطه پس‌زدگی یا ورود", "requiredMode": "always", "minCount": 2, "maxCount": 6, "evidenceClassificationId": "photo-visible", "mustShowFa": ["کف‌شور، توالت، منهول یا دهانه مرتبط", "محیط اطراف"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.sewer.network-context", "titleFa": "مسیر و اجزای شبکه مرتبط", "requiredMode": "required_or_unavailability_reason", "minCount": 1, "maxCount": 8, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.sewer.contamination", "titleFa": "گل‌ولای و آلودگی", "requiredMode": "always", "minCount": 2, "maxCount": 10, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.sewer.damaged-property", "titleFa": "اموال و سطوح آسیب‌دیده", "requiredMode": "always", "minCount": 2, "maxCount": 20, "evidenceClassificationId": "photo-visible", "repeatPerDamageGroup": true, "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.sewer.cleanup-repair", "titleFa": "پاک‌سازی و وضعیت پس از رفع عیب", "requiredMode": "required_or_unavailability_reason", "minCount": 1, "maxCount": 8, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"}
+  ],
+  "reportBindings": [{"reportSectionId": "report.photos.source", "requirementIds": ["photo.sewer.overflow-entry-point", "photo.sewer.network-context"]}, {"reportSectionId": "report.photos.damage", "requirementIds": ["photo.sewer.loss-area-overview", "photo.sewer.contamination", "photo.sewer.damaged-property", "photo.sewer.cleanup-repair"]}]
+}

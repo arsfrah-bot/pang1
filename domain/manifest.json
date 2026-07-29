@@ -1,0 +1,49 @@
+{
+  "manifestId": "bazdidyar-domain-manifest",
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "status": "draft",
+  "generatedAt": "2026-07-28T00:00:00+03:30",
+  "verificationNoticeFa": "شرایط، پوشش‌ها و فرانشیزها پیش از استفاده عملی نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت هستند.",
+  "files": [
+    {"id": "catalog-product", "kind": "catalog", "path": "products/product_catalog.json", "required": true},
+    {"id": "catalog-activity", "kind": "catalog", "path": "activities/activity_catalog.json", "required": true},
+    {"id": "catalog-coverage-water", "kind": "coverage-catalog", "path": "coverages/water-damage.coverages.v1.json", "required": true},
+    {"id": "catalog-coverage-theft", "kind": "coverage-catalog", "path": "coverages/theft-forcible-entry.coverage.v1.json", "required": true},
+    {"id": "catalog-coverage-glass", "kind": "coverage-catalog", "path": "coverages/glass-breakage.coverage.v1.json", "required": true},
+    {"id": "catalog-special-condition", "kind": "condition-catalog", "path": "conditions/special-fire.conditions.v1.json", "required": true},
+    {"id": "catalog-insured-duty", "kind": "duty-catalog", "path": "duties/insured-duties.v1.json", "required": true},
+    {"id": "catalog-evidence-classification", "kind": "evidence-catalog", "path": "evidence/evidence_classification_catalog.json", "required": true},
+    {"id": "catalog-source", "kind": "source-catalog", "path": "sources/source-registry.v1.json", "required": true},
+    {"id": "catalog-coverage-status", "kind": "status-catalog", "path": "statuses/coverage_decision_status_catalog.json", "required": true},
+
+    {"id": "catalog-claim-pack", "kind": "claim-catalog", "path": "claim-packs/catalog.json", "required": true},
+    {"id": "claim-burst-pipe", "kind": "claim-pack", "path": "claim-packs/burst-pipe-internal-water.json", "required": true},
+    {"id": "claim-sewer-overflow", "kind": "claim-pack", "path": "claim-packs/sewer-overflow.json", "required": true},
+    {"id": "claim-rain-snow-hail", "kind": "claim-pack", "path": "claim-packs/rain-snow-hail-ingress.json", "required": true},
+    {"id": "claim-flood-river", "kind": "claim-pack", "path": "claim-packs/flood-river-overflow.json", "required": true},
+    {"id": "claim-sprinkler", "kind": "claim-pack", "path": "claim-packs/sprinkler-leakage-discharge.json", "required": true},
+    {"id": "claim-groundwater", "kind": "claim-pack", "path": "claim-packs/groundwater-rising-damp.json", "required": true},
+    {"id": "claim-roof-leakage", "kind": "claim-pack", "path": "claim-packs/roof-leakage.json", "required": true},
+    {"id": "claim-external-water", "kind": "claim-pack", "path": "claim-packs/external-water-network-damage.json", "required": true},
+    {"id": "claim-theft-forcible", "kind": "claim-pack", "path": "claim-packs/theft-forcible-entry.json", "required": true},
+    {"id": "claim-glass-breakage", "kind": "claim-pack", "path": "claim-packs/glass-breakage.json", "required": true},
+
+    {"id": "catalog-photo-pack", "kind": "photo-catalog", "path": "photo-requirements/catalog.json", "required": true},
+    {"id": "photo-burst-pipe", "kind": "photo-pack", "path": "photo-requirements/burst-pipe-internal-water.json", "required": true},
+    {"id": "photo-sewer-overflow", "kind": "photo-pack", "path": "photo-requirements/sewer-overflow.json", "required": true},
+    {"id": "photo-rain-snow-hail", "kind": "photo-pack", "path": "photo-requirements/rain-snow-hail-ingress.json", "required": true},
+    {"id": "photo-flood-river", "kind": "photo-pack", "path": "photo-requirements/flood-river-overflow.json", "required": true},
+    {"id": "photo-sprinkler", "kind": "photo-pack", "path": "photo-requirements/sprinkler-leakage-discharge.json", "required": true},
+    {"id": "photo-groundwater", "kind": "photo-pack", "path": "photo-requirements/groundwater-rising-damp.json", "required": true},
+    {"id": "photo-roof-leakage", "kind": "photo-pack", "path": "photo-requirements/roof-leakage.json", "required": true},
+    {"id": "photo-external-water", "kind": "photo-pack", "path": "photo-requirements/external-water-network-damage.json", "required": true},
+    {"id": "photo-theft-forcible", "kind": "photo-pack", "path": "photo-requirements/theft-forcible-entry.json", "required": true},
+    {"id": "photo-glass-breakage", "kind": "photo-pack", "path": "photo-requirements/glass-breakage.json", "required": true}
+  ],
+  "audit": {
+    "createdAt": "2026-07-28T00:00:00+03:30",
+    "createdBy": "codex-assisted-development",
+    "changeReason": "Initial offline domain manifest for the special coverage foundation"
+  }
+}

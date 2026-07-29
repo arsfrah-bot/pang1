@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "catalogId": "catalog.photo-requirements.fire-special-perils",
+  "version": "1.0.0",
+  "titleFa": "فهرست الزامات عکس خسارت‌های ویژه",
+  "defaultLocale": "fa-IR",
+  "decisionPolicy": {
+    "automatedFinalDecision": false,
+    "missingPhotoStatus": "additional-evidence-required"
+  },
+  "packs": [
+    {"id": "photo.fire.special.water.burst-pipe-internal-network", "version": "1.0.0", "file": "burst-pipe-internal-water.json", "claimPackRef": "claim.fire.special.water.burst-pipe-internal-network"},
+    {"id": "photo.fire.special.water.rain-snow-hail-ingress", "version": "1.0.0", "file": "rain-snow-hail-ingress.json", "claimPackRef": "claim.fire.special.water.rain-snow-hail-ingress"},
+    {"id": "photo.fire.special.water.flood-river-overflow", "version": "1.0.0", "file": "flood-river-overflow.json", "claimPackRef": "claim.fire.special.water.flood-river-overflow"},
+    {"id": "photo.fire.special.water.sewer-overflow", "version": "1.0.0", "file": "sewer-overflow.json", "claimPackRef": "claim.fire.special.water.sewer-overflow"},
+    {"id": "photo.fire.special.water.sprinkler-leakage-discharge", "version": "1.0.0", "file": "sprinkler-leakage-discharge.json", "claimPackRef": "claim.fire.special.water.sprinkler-leakage-discharge"},
+    {"id": "photo.fire.special.water.groundwater-rising-damp", "version": "1.0.0", "file": "groundwater-rising-damp.json", "claimPackRef": "claim.fire.special.water.groundwater-rising-damp"},
+    {"id": "photo.fire.special.water.roof-leakage", "version": "1.0.0", "file": "roof-leakage.json", "claimPackRef": "claim.fire.special.water.roof-leakage"},
+    {"id": "photo.fire.special.water.external-network-damage", "version": "1.0.0", "file": "external-water-network-damage.json", "claimPackRef": "claim.fire.special.water.external-network-damage"},
+    {"id": "photo.fire.special.theft.forcible-entry", "version": "1.0.0", "file": "theft-forcible-entry.json", "claimPackRef": "claim.fire.special.theft.forcible-entry"},
+    {"id": "photo.fire.special.glass.breakage", "version": "1.0.0", "file": "glass-breakage.json", "claimPackRef": "claim.fire.special.glass.breakage"}
+  ]
+}

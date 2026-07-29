@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "photo.fire.special.water.rain-snow-hail-ingress",
+  "version": "1.0.0",
+  "status": "active",
+  "titleFa": "الزامات عکس نفوذ آب ناشی از باران، برف و تگرگ",
+  "claimPackRef": "claim.fire.special.water.rain-snow-hail-ingress",
+  "coverageRef": "coverage.fire.special.water.rain-snow-hail-ingress",
+  "sourceRequirementRef": "source.requirements.special-fire-coverage-engine",
+  "decisionPolicy": {"automatedFinalDecision": false, "missingPhotoStatus": "additional-evidence-required", "missingPhotoNeverAutoRejects": true},
+  "captureProfile": {
+    "archive": {"maxEdgePx": 2400, "jpegQuality": 0.86},
+    "report": {"maxEdgePx": 1400, "jpegQuality": 0.72},
+    "thumbnail": {"maxEdgePx": 320, "jpegQuality": 0.65},
+    "preserveOriginalWhenSupported": true,
+    "requiredMetadata": ["capturedAt", "source", "sequenceNumber"],
+    "optionalMetadata": ["latitude", "longitude", "accuracyMeters", "captionFa"]
+  },
+  "requirements": [
+    {"id": "photo.ingress.exterior-elevation", "titleFa": "نمای بیرونی ضلع درگیر", "requiredMode": "always", "minCount": 1, "maxCount": 4, "evidenceClassificationId": "photo-visible", "mustShowFa": ["نمای کامل ساختمان", "جهت تقریبی بارش و ضلع آسیب‌دیده"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.ingress.roof-overview", "titleFa": "نمای کلی بام یا سقف شیشه‌ای", "requiredMode": "required_or_not_applicable_reason", "minCount": 1, "maxCount": 5, "evidenceClassificationId": "photo-visible", "mustShowFa": ["سطح بام", "عایق، شیب و آبروهای قابل مشاهده"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.ingress.entry-route", "titleFa": "مسیر دقیق ورود آب", "requiredMode": "always", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "mustShowFa": ["نقطه ورود", "مسیر حرکت آب تا خسارت داخلی"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.ingress.gutter-drain", "titleFa": "ناودان، آبرو و کف‌شور", "requiredMode": "required_or_not_applicable_reason", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "mustShowFa": ["دهانه و مسیر تخلیه", "گرفتگی، سرریز یا وضعیت تمیزی"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.ingress.downpipe-tank-pipe", "titleFa": "لوله باران، مخزن یا لوله مرتبط", "requiredMode": "required_or_not_applicable_reason", "minCount": 1, "maxCount": 6, "evidenceClassificationId": "photo-visible", "requiredWhen": {"any": [{"fact": "ingress.mechanisms", "operator": "contains", "value": "damagedDownpipes"}, {"fact": "ingress.mechanisms", "operator": "contains", "value": "overflowingWaterTanks"}, {"fact": "ingress.mechanisms", "operator": "contains", "value": "brokenPipes"}]}, "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.ingress.internal-overview", "titleFa": "نمای کلی خسارت داخلی", "requiredMode": "always", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "mustShowFa": ["گستره فضای درگیر", "ارتباط مسیر نفوذ با اموال آسیب‌دیده"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.ingress.damage-closeups", "titleFa": "نمای نزدیک خسارت تبعی", "requiredMode": "always", "minCount": 2, "maxCount": 20, "evidenceClassificationId": "photo-visible", "repeatPerDamageGroup": true, "mustShowFa": ["شدت آسیب", "نوع سطح یا مال آسیب‌دیده"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.ingress.open-window-door", "titleFa": "پنجره یا در باز یا معیوب", "requiredMode": "required_or_not_applicable_reason", "minCount": 1, "maxCount": 4, "evidenceClassificationId": "photo-visible", "requiredWhen": {"fact": "ingress.mechanisms", "operator": "contains", "value": "openWindowsDoors"}, "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.ingress.open-air-property", "titleFa": "اموال واقع در فضای باز", "requiredMode": "required_or_not_applicable_reason", "minCount": 2, "maxCount": 10, "evidenceClassificationId": "photo-visible", "requiredWhen": {"fact": "damage.propertyInOpenAir", "operator": "truthy"}, "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.ingress.pre-repair-defect", "titleFa": "جزء معیوب پیش از تعمیر", "requiredMode": "required_or_unavailability_reason", "minCount": 2, "maxCount": 6, "evidenceClassificationId": "photo-visible", "captureBeforeRepair": true, "mustShowFa": ["نقص بام، عایق، شیشه، درز یا اتصال", "مقیاس و محیط اطراف"], "absenceEffect": "additional-evidence-required"}
+  ],
+  "reportBindings": [
+    {"reportSectionId": "report.photos.external-cause", "requirementIds": ["photo.ingress.exterior-elevation", "photo.ingress.roof-overview", "photo.ingress.gutter-drain", "photo.ingress.downpipe-tank-pipe", "photo.ingress.open-window-door"]},
+    {"reportSectionId": "report.photos.entry", "requirementIds": ["photo.ingress.entry-route", "photo.ingress.pre-repair-defect"]},
+    {"reportSectionId": "report.photos.damage", "requirementIds": ["photo.ingress.internal-overview", "photo.ingress.damage-closeups", "photo.ingress.open-air-property"]}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "photo.fire.special.water.sprinkler-leakage-discharge",
+  "version": "1.0.0",
+  "status": "active",
+  "titleFa": "الزامات عکس نشت یا تخلیه اسپرینکلر",
+  "claimPackRef": "claim.fire.special.water.sprinkler-leakage-discharge",
+  "coverageRef": "coverage.fire.special.water.sprinkler-leakage-discharge",
+  "sourceRequirementRef": "source.requirements.special-fire-coverage-engine",
+  "decisionPolicy": {"automatedFinalDecision": false, "missingPhotoStatus": "additional-evidence-required", "missingPhotoNeverAutoRejects": true},
+  "captureProfile": {"archive": {"maxEdgePx": 2400, "jpegQuality": 0.86}, "report": {"maxEdgePx": 1400, "jpegQuality": 0.72}, "thumbnail": {"maxEdgePx": 320, "jpegQuality": 0.65}, "preserveOriginalWhenSupported": true, "requiredMetadata": ["capturedAt", "source", "sequenceNumber"]},
+  "requirements": [
+    {"id": "photo.sprinkler.system-overview", "titleFa": "نمای کلی سامانه در محل رویداد", "requiredMode": "always", "minCount": 2, "maxCount": 6, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.sprinkler.failed-head-valve-pipe", "titleFa": "هد، شیر، لوله یا جزء مرتبط", "requiredMode": "always", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "captureBeforeRepair": true, "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.sprinkler.control-panel", "titleFa": "کنترل پنل و وضعیت هشدار", "requiredMode": "required_or_not_applicable_reason", "minCount": 1, "maxCount": 5, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.sprinkler.water-path", "titleFa": "مسیر انتشار آب", "requiredMode": "always", "minCount": 1, "maxCount": 6, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.sprinkler.damage", "titleFa": "خسارت تبعی اموال", "requiredMode": "always", "minCount": 2, "maxCount": 20, "evidenceClassificationId": "photo-visible", "repeatPerDamageGroup": true, "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.sprinkler.removed-part-repair", "titleFa": "جزء جداشده و وضعیت تعمیر", "requiredMode": "required_or_unavailability_reason", "minCount": 1, "maxCount": 8, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"}
+  ],
+  "reportBindings": [{"reportSectionId": "report.photos.system", "requirementIds": ["photo.sprinkler.system-overview", "photo.sprinkler.failed-head-valve-pipe", "photo.sprinkler.control-panel"]}, {"reportSectionId": "report.photos.damage", "requirementIds": ["photo.sprinkler.water-path", "photo.sprinkler.damage", "photo.sprinkler.removed-part-repair"]}]
+}

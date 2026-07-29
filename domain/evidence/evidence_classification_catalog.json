@@ -1,0 +1,25 @@
+{
+  "catalogId": "evidence-classification-catalog",
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "status": "active",
+  "items": [
+    {"id": "observed", "titleFa": "مشاهده‌شده", "titleEn": "Observed during inspection", "reliabilityClass": "direct"},
+    {"id": "photo-visible", "titleFa": "مستند تصویری", "titleEn": "Visible in photograph", "reliabilityClass": "direct"},
+    {"id": "insured-declared", "titleFa": "اعلام بیمه‌گذار", "titleEn": "Declared by insured", "reliabilityClass": "declared"},
+    {"id": "representative-declared", "titleFa": "اعلام نماینده", "titleEn": "Declared by representative", "reliabilityClass": "declared"},
+    {"id": "document-supported", "titleFa": "مستند به مدرک", "titleEn": "Supported by document", "reliabilityClass": "documentary"},
+    {"id": "policy-derived", "titleFa": "مندرج در بیمه‌نامه", "titleEn": "Read from policy", "reliabilityClass": "documentary"},
+    {"id": "equipment-plate", "titleFa": "احراز از پلاک دستگاه", "titleEn": "Read from equipment plate", "reliabilityClass": "documentary"},
+    {"id": "expert-inference", "titleFa": "استنباط کارشناسی", "titleEn": "Expert inference", "reliabilityClass": "inferred"},
+    {"id": "calculation-derived", "titleFa": "حاصل محاسبه", "titleEn": "Calculation-derived", "reliabilityClass": "derived"},
+    {"id": "unavailable", "titleFa": "ناموجود", "titleEn": "Unavailable", "reliabilityClass": "missing"},
+    {"id": "requires-confirmation", "titleFa": "نیازمند تأیید", "titleEn": "Requires confirmation", "reliabilityClass": "pending"},
+    {"id": "contradictory", "titleFa": "دارای مغایرت", "titleEn": "Contradictory information", "reliabilityClass": "conflict"}
+  ],
+  "audit": {
+    "createdAt": "2026-07-28T00:00:00+03:30",
+    "createdBy": "codex-assisted-development",
+    "changeReason": "Initial schema-driven evidence classification baseline"
+  }
+}

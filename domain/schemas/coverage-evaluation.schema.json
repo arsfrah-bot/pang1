@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bazdidyar.local/schemas/coverage-evaluation.schema.json",
+  "title": "Coverage evaluation result",
+  "type": "object",
+  "required": [
+    "evaluationId",
+    "coverageId",
+    "coverageVersion",
+    "status",
+    "triggerFacts",
+    "supportingEvidence",
+    "missingEvidence",
+    "potentialExclusions",
+    "deductibleRuleRef",
+    "expertDecision",
+    "finalApproval"
+  ],
+  "properties": {
+    "evaluationId": {"type": "string"},
+    "coverageId": {"type": "string"},
+    "coverageVersion": {"type": "string"},
+    "status": {
+      "enum": [
+        "potentially-applicable",
+        "not-yet-established",
+        "additional-evidence-required",
+        "potential-exclusion",
+        "outside-selected-coverage",
+        "requires-senior-review",
+        "approved-by-authorized-user",
+        "rejected-by-authorized-user"
+      ]
+    },
+    "triggerFacts": {"type": "array", "items": {"type": "object"}},
+    "supportingEvidence": {"type": "array", "items": {"type": "object"}},
+    "missingEvidence": {"type": "array", "items": {"type": "string"}},
+    "potentialExclusions": {"type": "array", "items": {"type": "object"}},
+    "deductibleRuleRef": {"type": ["string", "null"]},
+    "expertDecision": {"type": "object"},
+    "reportParagraph": {"type": "string"},
+    "finalApproval": {"type": "object"}
+  },
+  "additionalProperties": true
+}

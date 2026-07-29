@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "catalogId": "catalog.claim-packs.fire-special-perils",
+  "version": "1.0.0",
+  "titleFa": "فهرست بسته‌های پویای بررسی خسارت‌های ویژه",
+  "defaultLocale": "fa-IR",
+  "decisionPolicy": {
+    "automatedFinalDecision": false,
+    "authorizedHumanDecisionRequired": true
+  },
+  "packs": [
+    {
+      "id": "claim.fire.special.water.burst-pipe-internal-network",
+      "version": "1.0.0",
+      "file": "burst-pipe-internal-water.json",
+      "photoRequirementPackId": "photo.fire.special.water.burst-pipe-internal-network"
+    },
+    {
+      "id": "claim.fire.special.water.rain-snow-hail-ingress",
+      "version": "1.0.0",
+      "file": "rain-snow-hail-ingress.json",
+      "photoRequirementPackId": "photo.fire.special.water.rain-snow-hail-ingress"
+    },
+    {
+      "id": "claim.fire.special.water.flood-river-overflow",
+      "version": "1.0.0",
+      "file": "flood-river-overflow.json",
+      "photoRequirementPackId": "photo.fire.special.water.flood-river-overflow"
+    },
+    {
+      "id": "claim.fire.special.water.sewer-overflow",
+      "version": "1.0.0",
+      "file": "sewer-overflow.json",
+      "photoRequirementPackId": "photo.fire.special.water.sewer-overflow"
+    },
+    {
+      "id": "claim.fire.special.water.sprinkler-leakage-discharge",
+      "version": "1.0.0",
+      "file": "sprinkler-leakage-discharge.json",
+      "photoRequirementPackId": "photo.fire.special.water.sprinkler-leakage-discharge"
+    },
+    {
+      "id": "claim.fire.special.water.groundwater-rising-damp",
+      "version": "1.0.0",
+      "file": "groundwater-rising-damp.json",
+      "photoRequirementPackId": "photo.fire.special.water.groundwater-rising-damp"
+    },
+    {
+      "id": "claim.fire.special.water.roof-leakage",
+      "version": "1.0.0",
+      "file": "roof-leakage.json",
+      "photoRequirementPackId": "photo.fire.special.water.roof-leakage"
+    },
+    {
+      "id": "claim.fire.special.water.external-network-damage",
+      "version": "1.0.0",
+      "file": "external-water-network-damage.json",
+      "photoRequirementPackId": "photo.fire.special.water.external-network-damage"
+    },
+    {
+      "id": "claim.fire.special.theft.forcible-entry",
+      "version": "1.0.0",
+      "file": "theft-forcible-entry.json",
+      "photoRequirementPackId": "photo.fire.special.theft.forcible-entry"
+    },
+    {
+      "id": "claim.fire.special.glass.breakage",
+      "version": "1.0.0",
+      "file": "glass-breakage.json",
+      "photoRequirementPackId": "photo.fire.special.glass.breakage"
+    }
+  ]
+}

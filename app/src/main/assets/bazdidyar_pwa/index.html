@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b3d2e" />
+  <title>پنگ | سکوی یکپارچه بیمه‌ای</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <style>
+    :root{--green:#0b3d2e;--green2:#0f8f83;--teal-light:#7bd1c2;--gold:#d6a33c;--bg:#f4f7f6;--card:#fff;--line:#d9e2df;--text:#111;--muted:#53645f;--danger:#b00020;--ok:#0a7d3b;--warn:#9a5c00;}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.7;font-size:15px;}
+    header{position:sticky;top:0;z-index:5;background:linear-gradient(135deg,var(--green) 10%,#0e5a49 72%,var(--green2));color:white;padding:10px 16px;box-shadow:0 3px 12px #0003;border-bottom:2px solid var(--gold);}
+    .brand{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:12px}.pangLogo{width:56px;height:56px;flex:0 0 56px;filter:drop-shadow(0 2px 4px #0004)}.brandCopy{min-width:0}.brandNames{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}.brandNames h1{font-size:24px;margin:0;font-weight:900;line-height:1.15}.brandLatin{direction:ltr;unicode-bidi:isolate;font:800 14px Arial,sans-serif;letter-spacing:4px;color:#f7e1a8}.tagline{font-size:13px;font-weight:700;margin-top:2px}.versionLine{font-size:11px;opacity:.82;margin-top:1px}
+    main{max-width:980px;margin:0 auto;padding:14px 12px 80px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin:12px 0;box-shadow:0 2px 8px #0000000d}.card h2{font-size:17px;margin:0 0 10px;color:var(--green)}.grid{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:720px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:1fr 1fr 1fr}}
+    label{display:block;font-weight:700;margin-bottom:5px} input,textarea,select{width:100%;border:1px solid #cfd8d5;border-radius:12px;padding:11px 12px;background:white;font-family:Tahoma,Arial,sans-serif;font-size:15px;outline:none} input:focus,textarea:focus,select:focus{border-color:var(--green2);box-shadow:0 0 0 3px #14644b22} textarea{min-height:88px;resize:vertical}.hint{font-size:12px;color:var(--muted);margin-top:4px}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.btn{appearance:none;border:0;border-radius:12px;padding:11px 14px;background:var(--green);color:white;font-weight:800;font-family:Tahoma,Arial,sans-serif;cursor:pointer;min-height:42px}.btn.secondary{background:#e8f0ed;color:var(--green);border:1px solid var(--line)}.btn.danger{background:var(--danger)}.btn.warn{background:var(--warn)}.btn:disabled{opacity:.5;cursor:not-allowed}.status{padding:10px 12px;border-radius:12px;margin:8px 0;font-size:13px}.status.ok{background:#e6f6ec;color:#075e2d;border:1px solid #b7e2c4}.status.err{background:#ffeff2;color:#8f0019;border:1px solid #ffc4ce}.status.warn{background:#fff6e8;color:#7a4700;border:1px solid #f3d49b}.tabs{display:flex;gap:8px;margin:12px 0;overflow:auto}.tab{white-space:nowrap;padding:10px 12px;border-radius:999px;background:#e8f0ed;color:var(--green);font-weight:800;border:1px solid var(--line);cursor:pointer}.tab.active{background:var(--green);color:white}.photoGrid{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:720px){.photoGrid{grid-template-columns:1fr 1fr 1fr}}
+    .photoBox{border:1px solid var(--line);border-radius:14px;padding:10px;background:#fbfdfc}.photoBox .title{font-weight:800;color:var(--green);margin-bottom:7px}.preview{width:100%;min-height:130px;border:1px dashed #b9c7c3;border-radius:12px;background:#f3f8f6;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#7a8581;font-size:13px;text-align:center;margin:8px 0}.preview img{width:100%;height:170px;object-fit:cover;display:block}.small{font-size:12px;color:var(--muted)}.archiveItem{border:1px solid var(--line);border-radius:14px;padding:10px;margin:8px 0;background:#fbfdfc}.archiveItem b{color:var(--green)}.hidden{display:none!important}.footerNote{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid var(--gold);padding:6px 12px;text-align:center;font-size:11px;color:var(--muted);line-height:1.55}.footerNote strong{color:var(--green)}
+    .badge{display:inline-block;background:#eef6f2;color:var(--green);border:1px solid #cfe3db;border-radius:999px;padding:3px 8px;font-size:12px;font-weight:800}.mono{direction:ltr;unicode-bidi:embed;font-family:Consolas,monospace}.checkline{display:flex;align-items:center;gap:7px;font-size:13px}.checkline input{width:auto}.hr{border-top:1px solid var(--line);margin:12px 0}
+  </style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <img class="pangLogo" src="icon.svg" alt="نشان پنگ" width="56" height="56">
+    <div class="brandCopy">
+      <div class="brandNames"><h1>پنگ</h1><span class="brandLatin" lang="en" dir="ltr">PANG</span></div>
+      <div class="tagline">یک هسته، صدها شاخه، یک نظم</div>
+      <div class="versionLine">نسخه ۲.۰ پایه هویت برند | ماژول‌های خودرو و آتش‌سوزی</div>
+    </div>
+  </div>
+</header>
+<main>
+  <section id="setupScreen" class="card hidden">
+    <h2>ثبت اولیه نمایندگی</h2>
+    <div class="status warn">این اطلاعات فقط داخل همین گوشی ذخیره می‌شود. رمز عبور به صورت هش‌شده ذخیره می‌شود، اما این نسخه جایگزین سامانه رسمی متمرکز نیست.</div>
+    <div class="grid two">
+      <div><label>نام نمایندگی</label><input id="regAgencyName" placeholder="مثلاً نمایندگی محمد نصر" /></div>
+      <div><label>کد نمایندگی</label><input id="regAgencyCode" inputmode="numeric" placeholder="مثلاً 8172" /></div>
+      <div><label>آدرس نمایندگی</label><input id="regAddress" placeholder="نشانی کامل" /></div>
+      <div><label>تلفن نمایندگی</label><input id="regPhone" inputmode="tel" placeholder="اختیاری" /></div>
+      <div><label>محل ذخیره‌سازی</label><select id="regStorage"><option value="local">حافظه موبایل / مرورگر</option><option value="cloud" disabled>فضای ابری - نسخه بعدی</option></select></div>
+      <div><label>رمز ورود</label><input id="regPassword" type="password" autocomplete="new-password" /></div>
+      <div><label>تکرار رمز ورود</label><input id="regPassword2" type="password" autocomplete="new-password" /></div>
+    </div>
+    <div class="row" style="margin-top:12px"><button class="btn" onclick="saveProfile()">ثبت و شروع</button></div>
+    <div id="setupMsg"></div>
+  </section>
+
+  <section id="loginScreen" class="card hidden">
+    <h2>ورود نمایندگی</h2>
+    <div class="grid two">
+      <div><label>کد نمایندگی</label><input id="loginCode" inputmode="numeric" /></div>
+      <div><label>رمز ورود</label><input id="loginPassword" type="password" /></div>
+    </div>
+    <div class="row" style="margin-top:12px"><button class="btn" onclick="login()">ورود</button><button class="btn secondary" onclick="showResetWarning()">اصلاح اطلاعات نمایندگی</button></div>
+    <div id="loginMsg"></div>
+  </section>
+
+  <section id="appScreen" class="hidden">
+    <div class="card">
+      <div class="row" style="justify-content:space-between">
+        <div><b id="profileTitle">نمایندگی</b><div class="small" id="profileSub"></div></div>
+        <button class="btn secondary" onclick="logout()">خروج</button>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button id="tabNew" class="tab active" onclick="startNewInspection()">ثبت بازدید جدید</button>
+      <button id="tabArchive" class="tab" onclick="showTab('archive'); loadArchive()">بایگانی</button>
+      <button id="tabHelp" class="tab" onclick="showTab('help')">راهنما</button>
+    </div>
+
+    <section id="newTab">
+      <div class="card">
+        <h2>مشخصات بیمه‌گزار و خودرو</h2>
+        <div class="grid two">
+          <div><label>نام بیمه‌گزار *</label><input id="insuredName" placeholder="نام و نام خانوادگی" oninput="validateInspection()" /></div>
+          <div><label>کد ملی *</label><input id="nationalCode" inputmode="numeric" maxlength="10" placeholder="۱۰ رقم" oninput="validateInspection()" /></div>
+          <div><label>شماره پلاک انتظامی *</label><input id="plateNumber" placeholder="مثلاً 63 ب 456 ایران 93" oninput="validateInspection()" /><div class="hint">در این نسخه آفلاین، پلاک دستی وارد می‌شود. OCR پلاک در نسخه اندروید/هوشمند اضافه می‌شود.</div></div>
+          <div><label>شماره پیشنهاد / کد رهگیری</label><input id="proposalNo" placeholder="اختیاری" /></div>
+          <div><label>شماره بیمه‌نامه قبلی</label><input id="previousPolicy" placeholder="اختیاری" /></div>
+          <div><label>نوع / مدل خودرو</label><input id="vehicleModel" placeholder="اختیاری؛ مثلاً پژو ۲۰۷" /></div>
+          <div><label>شماره موبایل بیمه‌گزار</label><input id="mobile" inputmode="tel" placeholder="اختیاری" /></div>
+        </div>
+        <label style="margin-top:10px">توضیحات تکمیلی نماینده</label>
+        <textarea id="notes" placeholder="در صورت نیاز؛ مثلاً خط و خش آشکار، شکستگی چراغ، تعویض قطعه و ..."></textarea>
+      </div>
+
+      <div class="card">
+        <h2>شش عکس الزامی بازدید اولیه</h2>
+        <div class="status warn">تا زمانی که هر شش عکس الزامی ثبت نشود، امکان نهایی‌سازی و تولید خروجی وجود ندارد.</div>
+        <div class="photoGrid" id="requiredPhotos"></div>
+      </div>
+
+      <div class="card">
+        <h2>عکس‌های تکمیلی</h2>
+        <input type="file" id="extraPhotoInput" accept="image/*" capture="environment" multiple onchange="handleExtraPhotos(event)" />
+        <div class="hint">برای قطعات خاص، آسیب قبلی، کیلومترشمار، کارت خودرو، یا نمای نزدیک شاسی می‌توان عکس اضافه ثبت کرد.</div>
+        <div class="photoGrid" id="extraPhotos"></div>
+      </div>
+
+      <div class="card">
+        <h2>نهایی‌سازی</h2>
+        <div id="validationBox" class="status err">اطلاعات هنوز کامل نیست.</div>
+        <div class="row"><button id="finalBtn" class="btn" disabled onclick="finalizeInspection()">ذخیره و ساخت PDF</button><button class="btn secondary" onclick="clearForm()">پاک‌کردن فرم</button><button class="btn secondary" onclick="startNewInspection(true)">بازدید جدید</button></div>
+        <div id="lastOutput" class="status ok hidden"></div>
+        <div class="hint">بعد از نهایی‌سازی، فرم برای بازدید بعدی پاک می‌شود و فایل PDF از بخش «آخرین خروجی» یا «بایگانی» قابل دانلود و اشتراک‌گذاری است.</div>
+      </div>
+    </section>
+
+    <section id="archiveTab" class="hidden">
+      <div class="card"><h2>بایگانی بازدیدها</h2><div id="archiveList" class="small">در حال بارگذاری...</div></div>
+    </section>
+
+    <section id="helpTab" class="hidden">
+      <div class="card"><h2>راهنمای استفاده بدون Android Studio</h2>
+        <p>این نسخه به صورت فایل HTML اجرا می‌شود. فایل <span class="mono">index.html</span> را روی گوشی باز کنید، اطلاعات نمایندگی را ثبت کنید، عکس‌ها را با دوربین بگیرید و در پایان گزارش A4 را باز کنید.</p>
+        <p>برای PDF گرفتن: در صفحه گزارش، دکمه «چاپ / ذخیره PDF» را بزنید؛ سپس در پنجره چاپ گوشی، مقصد را <b>Save as PDF</b> انتخاب کنید.</p>
+        <p><b>محدودیت مهم:</b> تشخیص خودکار پلاک در نسخه کاملاً آفلاین فعال نیست. پلاک باید دستی وارد شود. برای OCR پلاک باید نسخه اندروید یا سرور هوش مصنوعی داشته باشیم.</p><p><b>خروجی PDF:</b> این نسخه علاوه بر صفحه چاپی، یک PDF داخلی قابل دانلود و اشتراک‌گذاری می‌سازد. در بعضی گوشی‌ها اگر Web Share API فایل را پشتیبانی نکند، دکمه دانلود را بزنید و سپس فایل را از پوشه Downloads منتقل کنید.</p><p><b>بایگانی عکس‌ها:</b> برای هر عکس دو نسخه نگهداری می‌شود: نسخه سبک برای PDF و نسخه باکیفیت‌تر برای چاپ تکی، کنترل مجدد یا ارسال جداگانه. از بخش بایگانی می‌توانید عکس‌ها را جداگانه نمایش و چاپ کنید و همچنین همه عکس‌ها را یکجا در قالب فایل ZIP دانلود نمایید.</p><p><b>ردپای مالکیت:</b> در PDF، واترمارک عکس‌ها، فایل ZIP و راهنما عبارت رسمی «پنگ | ایده، طراحی و توسعه: فاضل رحمانیان | بیمه ایران شعبه جهرم» درج می‌شود تا منبع و مالکیت خروجی روشن بماند.</p>
+      </div>
+    </section>
+  </section>
+</main>
+<div class="footerNote"><strong>پنگ؛ یک هسته، صدها شاخه، یک نظم</strong><br>ایده، طراحی و توسعه: فاضل رحمانیان | بیمه ایران شعبه جهرم</div>
+<script>
+const requiredDefs = [
+  ['front','نمای جلو خودرو'],['rear','نمای عقب خودرو'],['right','نمای سمت راست خودرو'],['left','نمای سمت چپ خودرو'],['engine','نمای موتور خودرو'],['chassis','شماره شاسی حک‌شده']
+];
+const OWNER_NAME='فاضل رحمانیان';
+const OWNER_TRACE='پنگ | ایده، طراحی و توسعه: فاضل رحمانیان | بیمه ایران شعبه جهرم';
+const BRAND_LATIN='PANG';
+let profile=null;
+let requiredImages={};
+let requiredImagesHi={};
+let extraImages=[];
+let extraImagesHi=[];
+let lastInspection=null;
+let lastPdfBlob=null;
+const $=id=>document.getElementById(id);
+
+function normalizeDigits(s){return String(s||'').replace(/[۰-۹]/g,d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d)).replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d));}
+function faDigits(s){return String(s||'').replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);}
+function sanitizeFilePart(s){return String(s||'').trim().replace(/[\\/:*?"<>|\s]+/g,'_').replace(/_+/g,'_').slice(0,40) || 'NA';}
+function drawPangMark(ctx,x,y,size){
+  ctx.save();ctx.translate(x,y);ctx.scale(size/108,size/108);
+  ctx.beginPath();ctx.moveTo(54,7);ctx.bezierCurveTo(65,14,76,18,89,19);ctx.lineTo(89,49);ctx.bezierCurveTo(89,75,74,93,54,102);ctx.bezierCurveTo(34,93,19,75,19,49);ctx.lineTo(19,19);ctx.bezierCurveTo(32,18,43,14,54,7);ctx.closePath();ctx.fillStyle='#0B3D2E';ctx.fill();ctx.strokeStyle='#0F8F83';ctx.lineWidth=2.2;ctx.stroke();
+  ctx.strokeStyle='#7BD1C2';ctx.lineWidth=3;ctx.lineCap='round';ctx.lineJoin='round';const branch=(points)=>{ctx.beginPath();ctx.moveTo(points[0][0],points[0][1]);for(let i=1;i<points.length;i++)ctx.lineTo(points[i][0],points[i][1]);ctx.stroke();};branch([[54,25],[54,76]]);branch([[54,38],[45,40],[36,47],[29,55]]);branch([[54,38],[63,40],[72,47],[79,55]]);branch([[54,50],[43,52],[33,58],[25,68]]);branch([[54,50],[65,52],[75,58],[83,68]]);branch([[48,67],[41,73],[37,81]]);branch([[60,67],[67,73],[71,81]]);
+  const node=(nx,ny,r=3.2)=>{ctx.beginPath();ctx.arc(nx,ny,r,0,Math.PI*2);ctx.fillStyle='#D6A33C';ctx.fill();ctx.strokeStyle='#F7E1A8';ctx.lineWidth=1.2;ctx.stroke();};[[54,23],[28,56],[80,56],[24,69],[84,69],[36,82],[72,82]].forEach(p=>node(p[0],p[1]));
+  ctx.beginPath();ctx.arc(54,62,11,0,Math.PI*2);ctx.fillStyle='#F6FBF8';ctx.fill();ctx.strokeStyle='#0F8F83';ctx.lineWidth=2.3;ctx.stroke();ctx.beginPath();for(let i=0;i<6;i++){const a=-Math.PI/2+i*Math.PI/3,px=54+7*Math.cos(a),py=62+7*Math.sin(a);if(i===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);}ctx.closePath();ctx.fillStyle='#D6A33C';ctx.fill();ctx.beginPath();ctx.arc(54,62,2,0,Math.PI*2);ctx.fillStyle='#0B3D2E';ctx.fill();ctx.restore();
+}
+function nowFa(){return new Intl.DateTimeFormat('fa-IR-u-ca-persian',{dateStyle:'medium',timeStyle:'short'}).format(new Date());}
+function ymdhms(d=new Date()){const pad=n=>String(n).padStart(2,'0');return `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;}
+function makeTrackingNo(proposal=''){
+  const d=new Date();
+  const code=sanitizeFilePart(profile?.agencyCode||'AG');
+  const prop=sanitizeFilePart(normalizeDigits(proposal)||'NO-PROP');
+  const secure=new Uint32Array(1);crypto.getRandomValues(secure);
+  const rnd=String(secure[0]%10000).padStart(4,'0');
+  return `BZD-JAH-${code}-${ymdhms(d)}-${prop}-${rnd}`;
+}
+function fileNameFor(d){return `PANG-Body-${sanitizeFilePart(d.profile.agencyCode)}-${sanitizeFilePart(d.insuredName)}-${sanitizeFilePart(d.plateNumber)}-${sanitizeFilePart(d.reportNo)}.pdf`;}
+async function sha256(text){const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text));return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');}
+async function saveProfile(){const name=$('regAgencyName').value.trim(), code=normalizeDigits($('regAgencyCode').value), address=$('regAddress').value.trim(), phone=$('regPhone').value.trim(), pass=$('regPassword').value, pass2=$('regPassword2').value;if(!name||!code||!address||!pass){$('setupMsg').innerHTML='<div class="status err">همه فیلدهای اصلی را کامل کنید.</div>';return}if(pass.length<4){$('setupMsg').innerHTML='<div class="status err">رمز حداقل ۴ کاراکتر باشد.</div>';return}if(pass!==pass2){$('setupMsg').innerHTML='<div class="status err">تکرار رمز صحیح نیست.</div>';return}profile={agencyName:name,agencyCode:code,address,phone,storage:'local',passwordHash:await sha256(code+':'+pass)};localStorage.setItem('bazdidyar_profile',JSON.stringify(profile));showApp();}
+function loadProfile(){try{profile=JSON.parse(localStorage.getItem('bazdidyar_profile')||'null')}catch(e){profile=null}if(profile){$('loginScreen').classList.remove('hidden');$('loginCode').value=profile.agencyCode}else $('setupScreen').classList.remove('hidden');}
+async function login(){const code=normalizeDigits($('loginCode').value), pass=$('loginPassword').value;const hash=await sha256(code+':'+pass);if(profile&&code===profile.agencyCode&&hash===profile.passwordHash){showApp()}else $('loginMsg').innerHTML='<div class="status err">کد نمایندگی یا رمز ورود نادرست است.</div>';}
+function showResetWarning(){if(confirm('برای اصلاح اطلاعات نمایندگی، پروفایل فعلی حذف می‌شود. بایگانی بازدیدها حذف نمی‌شود. ادامه می‌دهید؟')){localStorage.removeItem('bazdidyar_profile');location.reload();}}
+function showApp(){$('setupScreen').classList.add('hidden');$('loginScreen').classList.add('hidden');$('appScreen').classList.remove('hidden');$('profileTitle').textContent=profile.agencyName+' - کد '+profile.agencyCode;$('profileSub').textContent=profile.address;renderRequiredPhotos();validateInspection();}
+function logout(){location.reload();}
+function showTab(t){['new','archive','help'].forEach(x=>{$(x+'Tab').classList.toggle('hidden',x!==t);$('tab'+(x==='new'?'New':x==='archive'?'Archive':'Help')).classList.toggle('active',x===t);});}
+function isFormDirty(){return ['insuredName','nationalCode','plateNumber','proposalNo','previousPolicy','vehicleModel','mobile','notes'].some(id=>$(id)&&$(id).value.trim()) || Object.keys(requiredImages).length>0 || extraImages.length>0;}
+function startNewInspection(force=false){if(!force && isFormDirty() && !confirm('فرم فعلی پاک و بازدید جدید شروع شود؟')) return;resetForm();showTab('new');}
+function resetForm(){['insuredName','nationalCode','plateNumber','proposalNo','previousPolicy','vehicleModel','mobile','notes'].forEach(id=>{if($(id))$(id).value=''});requiredImages={};requiredImagesHi={};extraImages=[];extraImagesHi=[];renderRequiredPhotos();renderExtraPhotos();validateInspection(true);}
+function renderRequiredPhotos(){const wrap=$('requiredPhotos');wrap.innerHTML='';requiredDefs.forEach(([key,title])=>{const d=document.createElement('div');d.className='photoBox';d.innerHTML=`<div class="title">${title} *</div><div class="preview" id="prev_${key}">${requiredImages[key]?'<img src="'+requiredImages[key]+'">':'ثبت نشده'}</div><input type="file" accept="image/*" capture="environment" onchange="handleRequiredPhoto(event,'${key}')"><div class="hint">نسخه PDF سبک می‌شود؛ نسخه باکیفیت‌تر برای چاپ و بایگانی نگهداری می‌شود.</div>`;wrap.appendChild(d);});}
+function renderExtraPhotos(){const wrap=$('extraPhotos');wrap.innerHTML='';extraImages.forEach((src,i)=>{const d=document.createElement('div');d.className='photoBox';d.innerHTML=`<div class="title">عکس تکمیلی ${i+1}</div><div class="preview"><img src="${src}"></div><button class="btn danger" onclick="removeExtra(${i})">حذف</button>`;wrap.appendChild(d);});}
+async function compressImage(file,max=1050,quality=.62){return new Promise((resolve,reject)=>{const img=new Image();const r=new FileReader();r.onload=()=>{img.onload=()=>{let w=img.naturalWidth||img.width,h=img.naturalHeight||img.height;if(w>h&&w>max){h=Math.round(h*max/w);w=max}else if(h>=w&&h>max){w=Math.round(w*max/h);h=max}const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);ctx.drawImage(img,0,0,w,h);let out=canvas.toDataURL('image/jpeg',quality);try{if(out.length>850000){out=canvas.toDataURL('image/jpeg',.52)}}catch(e){}resolve(out);};img.onerror=reject;img.src=r.result;};r.onerror=reject;r.readAsDataURL(file);});}
+async function makeImageVersions(file){const pdf=await compressImage(file,1050,.62);const high=await compressImage(file,2200,.86);return {pdf,high};}
+async function handleRequiredPhoto(ev,key){const file=ev.target.files[0];if(!file)return;try{const versions=await makeImageVersions(file);requiredImages[key]=versions.pdf;requiredImagesHi[key]=versions.high;$('prev_'+key).innerHTML='<img src="'+requiredImages[key]+'">';validateInspection();}catch(e){alert('خطا در پردازش عکس.')}}
+async function handleExtraPhotos(ev){const files=[...ev.target.files];for(const f of files){const versions=await makeImageVersions(f);extraImages.push(versions.pdf);extraImagesHi.push(versions.high);}renderExtraPhotos();ev.target.value='';}
+function removeExtra(i){extraImages.splice(i,1);extraImagesHi.splice(i,1);renderExtraPhotos();}
+function validateInspection(quiet=false){
+  const name=$('insuredName')?.value.trim(), national=normalizeDigits($('nationalCode')?.value), plate=$('plateNumber')?.value.trim();
+  if($('nationalCode')) $('nationalCode').value=national;
+  const missing=[];
+  if(!name)missing.push('نام بیمه‌گزار');
+  if(!/^\d{10}$/.test(national||''))missing.push('کد ملی ۱۰ رقمی');
+  if(!plate)missing.push('شماره پلاک');
+  requiredDefs.forEach(([k,t])=>{if(!requiredImages[k])missing.push(t)});
+  const ok=missing.length===0;
+  if($('finalBtn'))$('finalBtn').disabled=!ok;
+  const dirty=isFormDirty();
+  if($('validationBox')){
+    if(!dirty || quiet){
+      $('validationBox').className='status warn';
+      $('validationBox').textContent='فرم برای بازدید جدید آماده است. پس از ورود اطلاعات، موارد ناقص اینجا نمایش داده می‌شود.';
+    }else{
+      $('validationBox').className='status '+(ok?'ok':'err');
+      $('validationBox').textContent=ok?'اطلاعات کامل است. امکان ساخت خروجی وجود دارد.':'موارد ناقص: '+missing.join('، ');
+    }
+  }
+  return ok;
+}
+function clearForm(){if(!confirm('فرم فعلی پاک شود؟'))return;resetForm();}
+function openDb(){return new Promise((resolve,reject)=>{const req=indexedDB.open('bazdidyar_db',1);req.onupgradeneeded=e=>{const db=e.target.result;if(!db.objectStoreNames.contains('inspections'))db.createObjectStore('inspections',{keyPath:'id'});};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});}
+async function saveInspectionRecord(data){const db=await openDb();return new Promise((resolve,reject)=>{const tx=db.transaction('inspections','readwrite');tx.objectStore('inspections').put(data);tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error);});}
+async function getAllInspections(){const db=await openDb();return new Promise((resolve,reject)=>{const tx=db.transaction('inspections','readonly');const req=tx.objectStore('inspections').getAll();req.onsuccess=()=>resolve(req.result.sort((a,b)=>b.id-a.id));req.onerror=()=>reject(req.error);});}
+async function getInspection(id){const db=await openDb();return new Promise((resolve,reject)=>{const tx=db.transaction('inspections','readonly');const req=tx.objectStore('inspections').get(id);req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});}
+async function deleteInspection(id){if(!confirm('این بازدید از بایگانی حذف شود؟'))return;const db=await openDb();await new Promise((resolve,reject)=>{const tx=db.transaction('inspections','readwrite');tx.objectStore('inspections').delete(id);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);});loadArchive();}
+async function finalizeInspection(){
+  if(!validateInspection())return;
+  const id=Date.now();
+  const proposal=$('proposalNo').value.trim();
+  const reportNo=makeTrackingNo(proposal);
+  const data={id,reportNo,archiveNo:reportNo,createdAt:new Date().toISOString(),createdAtFa:nowFa(),profile:{agencyName:profile.agencyName,agencyCode:profile.agencyCode,address:profile.address,phone:profile.phone||''},insuredName:$('insuredName').value.trim(),nationalCode:normalizeDigits($('nationalCode').value),plateNumber:$('plateNumber').value.trim(),proposalNo:proposal,previousPolicy:$('previousPolicy').value.trim(),vehicleModel:$('vehicleModel').value.trim(),mobile:$('mobile').value.trim(),notes:$('notes').value.trim(),requiredImages:{...requiredImages},requiredImagesHi:{...requiredImagesHi},extraImages:[...extraImages],extraImagesHi:[...extraImagesHi]};
+  await saveInspectionRecord(data);
+  lastInspection=data;lastPdfBlob=await buildPdfBlob(data);
+  showLastOutput(data,lastPdfBlob);
+  resetForm();
+}
+function showLastOutput(data,blob){const box=$('lastOutput');if(!box)return;const sizeKb=Math.round(blob.size/1024);box.classList.remove('hidden');box.innerHTML=`<b>خروجی ساخته شد.</b><br>شماره نامه/بایگانی: <span class="mono">${esc(data.reportNo)}</span><br>حجم تقریبی PDF: ${faDigits(sizeKb)} کیلوبایت<div class="row" style="margin-top:8px"><button class="btn" onclick="downloadLastPdf()">دانلود PDF</button><button class="btn secondary" onclick="shareLastPdf()">اشتراک‌گذاری PDF</button><button class="btn secondary" onclick="printReport(lastInspection)">چاپ / ذخیره PDF</button><button class="btn secondary" onclick="openPhotoManager(lastInspection)">عکس‌ها / چاپ تکی</button><button class="btn secondary" onclick="downloadAllImages(lastInspection)">دانلود ZIP عکس‌ها</button><button class="btn secondary" onclick="shareAllImages(lastInspection)">اشتراک‌گذاری ZIP عکس‌ها</button></div>`;}
+async function downloadLastPdf(){if(!lastInspection) return alert('خروجی فعالی وجود ندارد.');if(!lastPdfBlob) lastPdfBlob=await buildPdfBlob(lastInspection);downloadBlob(lastPdfBlob,fileNameFor(lastInspection));}
+async function shareLastPdf(){if(!lastInspection) return alert('خروجی فعالی وجود ندارد.');if(!lastPdfBlob) lastPdfBlob=await buildPdfBlob(lastInspection);await shareOrDownload(lastPdfBlob,fileNameFor(lastInspection),'پنگ | ماژول بدنه خودرو','فایل بازدید اولیه بدنه خودرو');}
+async function loadArchive(){const list=(await getAllInspections()).filter(x=>x.module!=='fire');const el=$('archiveList');if(!list.length){el.innerHTML='هیچ بازدیدی ذخیره نشده است.';return}el.innerHTML='';list.forEach(x=>{const d=document.createElement('div');d.className='archiveItem';d.innerHTML=`<b>${esc(x.insuredName)}</b><br>پلاک: ${esc(x.plateNumber||'-')} | کد ملی: ${esc(x.nationalCode||'-')}<br>شماره پیشنهاد: ${esc(x.proposalNo||'-')}<br><span class="small">شماره نامه/بایگانی: <span class="mono">${esc(x.reportNo)}</span> | تاریخ: ${esc(x.createdAtFa||'')}</span><div class="row" style="margin-top:8px"><button class="btn secondary" onclick="reprint(${x.id})">نمایش/چاپ</button><button class="btn" onclick="downloadArchivePdf(${x.id})">دانلود PDF</button><button class="btn secondary" onclick="shareArchivePdf(${x.id})">اشتراک‌گذاری PDF</button><button class="btn secondary" onclick="openArchivePhotos(${x.id})">عکس‌ها / چاپ تکی</button><button class="btn secondary" onclick="downloadArchiveImages(${x.id})">دانلود ZIP عکس‌ها</button><button class="btn secondary" onclick="shareArchiveImages(${x.id})">اشتراک‌گذاری ZIP عکس‌ها</button><button class="btn danger" onclick="deleteInspection(${x.id})">حذف</button></div>`;el.appendChild(d);});}
+async function reprint(id){const data=await getInspection(id);if(data)printReport(data);}
+async function downloadArchivePdf(id){const data=await getInspection(id);if(!data)return;const blob=await buildPdfBlob(data);downloadBlob(blob,fileNameFor(data));}
+async function shareArchivePdf(id){const data=await getInspection(id);if(!data)return;const blob=await buildPdfBlob(data);await shareOrDownload(blob,fileNameFor(data),'پنگ | ماژول بدنه خودرو','فایل بازدید اولیه بدنه خودرو');}
+function esc(s){return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function imgCard(src,title,reportNo,date,agency){return `<div class="photo"><div class="phTitle">${esc(title)}</div><div class="imgWrap"><img src="${src}"><div class="wm">${esc(agency)} | ${esc(date)} | ${esc(reportNo)} | ${esc(OWNER_NAME)}</div></div></div>`;}
+function chunk(arr,n){const out=[];for(let i=0;i<arr.length;i+=n)out.push(arr.slice(i,i+n));return out;}
+function printReport(d){const reqImgs=requiredDefs.map(([k,t])=>({src:d.requiredImages[k],title:t}));const extra=(d.extraImages||[]).map((src,i)=>({src,title:'عکس تکمیلی '+(i+1)}));const extraPages=chunk(extra,6).map(page=>`<section class="page"><h2>عکس‌های تکمیلی بازدید</h2><div class="gridPhotos">${page.map(x=>imgCard(x.src,x.title,d.reportNo,d.createdAtFa,d.profile.agencyCode)).join('')}</div><div class="ownerTrace">${esc(OWNER_TRACE)}</div></section>`).join('');const html=`<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><title>${esc(d.reportNo)}</title><style>@page{size:A4;margin:8mm}*{box-sizing:border-box}body{font-family:Tahoma,Arial,sans-serif;margin:0;color:#000;background:#eee;line-height:1.65}.tools{position:sticky;top:0;background:#0b3d2e;color:#fff;padding:8px;text-align:center}.tools button{border:0;border-radius:9px;background:white;color:#0b3d2e;font-weight:800;padding:9px 12px;margin:2px}.page{width:210mm;min-height:297mm;background:white;margin:8px auto;padding:10mm;border:1px solid #ddd;page-break-after:always;position:relative}.head{text-align:center;border-bottom:2px solid #000;padding-bottom:8px;margin-bottom:12px}.head h1{font-size:18pt;margin:0}.head p{margin:2px 0;font-size:10pt}.subject{font-size:13pt;font-weight:800;text-align:center;margin:12px 0}.tbl{width:100%;border-collapse:collapse;margin:10px 0}.tbl td{border:1px solid #333;padding:6px;font-size:10pt}.tbl td:nth-child(odd){background:#f2f2f2;font-weight:800;width:20%}.letter{font-size:11pt;text-align:justify}.sign{margin-top:28px;display:flex;justify-content:flex-start}.signBox{width:70mm;text-align:center;border-top:1px solid #333;padding-top:8px}.note{font-size:9pt;color:#333;border:1px solid #999;padding:7px;margin-top:10px}.gridPhotos{display:grid;grid-template-columns:1fr 1fr;gap:6mm}.photo{border:1px solid #333;padding:3mm;break-inside:avoid}.phTitle{text-align:center;font-weight:800;font-size:10pt;margin-bottom:2mm}.imgWrap{position:relative;height:71mm;overflow:hidden;background:#f5f5f5}.imgWrap img{width:100%;height:100%;object-fit:cover}.wm{position:absolute;right:0;left:0;bottom:0;background:rgba(255,255,255,.78);font-size:7.5pt;text-align:center;padding:1mm}.ownerTrace{position:absolute;bottom:6mm;left:10mm;right:10mm;text-align:center;font-size:8pt;color:#555}h2{text-align:center;margin:0 0 8mm;font-size:15pt}@media print{body{background:white}.tools{display:none}.page{margin:0;border:0;box-shadow:none}}</style></head><body><div class="tools"><button onclick="window.print()">چاپ / ذخیره PDF</button> <span>برای فایل قابل اشتراک‌گذاری، از دکمه‌های PDF داخل برنامه اصلی یا بایگانی استفاده کنید.</span></div><section class="page"><div class="head"><h1>شرکت سهامی بیمه ایران - شعبه جهرم</h1><p>متمم بازدید اولیه بیمه بدنه خودرو</p><p>شماره نامه/بایگانی: ${esc(d.reportNo)}</p></div><div class="subject">موضوع: ارسال متمم بازدید اولیه خودرو جهت بررسی صدور بیمه‌نامه بدنه</div><table class="tbl"><tr><td>نام بیمه‌گزار</td><td>${esc(d.insuredName)}</td><td>کد ملی</td><td>${esc(d.nationalCode)}</td></tr><tr><td>شماره پلاک</td><td>${esc(d.plateNumber)}</td><td>شماره پیشنهاد</td><td>${esc(d.proposalNo||'-')}</td></tr><tr><td>بیمه‌نامه قبلی</td><td>${esc(d.previousPolicy||'-')}</td><td>شماره موبایل</td><td>${esc(d.mobile||'-')}</td></tr><tr><td>تاریخ بازدید</td><td>${esc(d.createdAtFa)}</td><td>نمایندگی</td><td>${esc(d.profile.agencyName)} - کد ${esc(d.profile.agencyCode)}</td></tr><tr><td>شماره نامه/بایگانی</td><td colspan="3"><span class="mono">${esc(d.reportNo)}</span></td></tr><tr><td>نشانی نمایندگی</td><td colspan="3">${esc(d.profile.address)}</td></tr></table><div class="letter"><p>ریاست محترم شرکت سهامی بیمه ایران – شعبه جهرم</p><p>با سلام و احترام؛</p><p>به پیوست، متمم بازدید اولیه نوشته‌شده در مورد خودروی متعلق به بیمه‌گزار محترم، آقای/خانم <b>${esc(d.insuredName)}</b> به کد ملی <b>${esc(d.nationalCode)}</b>، به همراه مستندات تصویری جهت بررسی و اقدام مقتضی در فرآیند صدور بیمه‌نامه بدنه ارسال می‌گردد.</p><p>مشخصات پلاک انتظامی خودرو برابر اطلاعات ثبت‌شده در فرم بازدید به شماره <b>${esc(d.plateNumber)}</b> می‌باشد. همچنین شماره پیشنهاد/کد رهگیری بازدید، در صورت وجود، برابر <b>${esc(d.proposalNo||'-')}</b> اعلام می‌گردد.</p><p>تصاویر پیوست شامل نمای جلو، عقب، سمت راست، سمت چپ، موتور خودرو و شماره شاسی حک‌شده بوده و صرفاً به عنوان مستندات بازدید اولیه نمایندگی جهت بررسی شعبه ارسال می‌شود. بدیهی است صدور نهایی بیمه‌نامه، احراز شرایط بیمه‌پذیری و هرگونه تصمیم اداری بعدی، مطابق ضوابط، مقررات و اختیارات شرکت سهامی بیمه ایران انجام خواهد شد.</p>${d.notes?'<p><b>توضیحات نماینده:</b> '+esc(d.notes)+'</p>':''}</div><div class="note">این متمم بازدید اولیه، صرفاً مستندات ثبت‌شده نمایندگی در خصوص خودروی فوق‌الذکر را تجمیع می‌کند و به تنهایی به منزله تأیید قطعی اصالت، سلامت کامل خودرو یا ایجاد تعهد برای شرکت سهامی بیمه ایران نیست.</div><div class="sign"><div class="signBox">مهر و امضای نمایندگی<br>${esc(d.profile.agencyName)}<br>کد ${esc(d.profile.agencyCode)}</div></div><div class="ownerTrace">${esc(OWNER_TRACE)}</div></section><section class="page"><h2>تصاویر الزامی بازدید اولیه خودرو</h2><div class="gridPhotos">${reqImgs.map(x=>imgCard(x.src,x.title,d.reportNo,d.createdAtFa,d.profile.agencyCode)).join('')}</div><div class="ownerTrace">${esc(OWNER_TRACE)}</div></section>${extraPages}</body></html>`;const w=window.open('','_blank');if(!w){alert('مرورگر اجازه باز شدن صفحه گزارش را نداد. Pop-up را فعال کنید.');return}w.document.write(html);w.document.close();}
+
+
+const printReportWithoutVisualBrand=printReport;
+printReport=function(d){
+  let reportWindow=null;const originalOpen=window.open;
+  window.open=function(){reportWindow=originalOpen.apply(window,arguments);return reportWindow;};
+  try{printReportWithoutVisualBrand(d);}finally{
+    window.open=originalOpen;
+    if(reportWindow){
+      const addBrand=()=>{const head=reportWindow.document.querySelector('.head');if(!head||head.querySelector('.pangPrintMark'))return;const canvas=reportWindow.document.createElement('canvas');canvas.width=108;canvas.height=108;drawPangMark(canvas.getContext('2d'),0,0,108);const img=reportWindow.document.createElement('img');img.className='pangPrintMark';img.alt='نشان پنگ';img.src=canvas.toDataURL('image/png');img.style.cssText='position:absolute;right:0;top:0;width:17mm;height:17mm';head.style.position='relative';head.style.minHeight='20mm';head.insertBefore(img,head.firstChild);};
+      if(reportWindow.document.readyState==='loading')reportWindow.addEventListener('load',addBrand,{once:true});else addBrand();
+    }
+  }
+};
+
+function photoItemsFor(d){
+  const highReq=d.requiredImagesHi||{};
+  const req=requiredDefs.map(([k,t])=>({key:k,title:t,src:(highReq[k]||d.requiredImages?.[k]),kind:'required'})).filter(x=>x.src);
+  const hiExtras=d.extraImagesHi||[];
+  const ex=(hiExtras.length?hiExtras:(d.extraImages||[])).map((src,i)=>({key:'extra_'+(i+1),title:'عکس تکمیلی '+(i+1),src,kind:'extra'}));
+  return req.concat(ex);
+}
+function dataUrlToBlob(dataUrl){const [meta,b64]=dataUrl.split(',');const mime=(meta.match(/data:(.*?);/)||[])[1]||'image/jpeg';const bin=atob(b64);const arr=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);return new Blob([arr],{type:mime});}
+function imageNameFor(d,item){const names={front:'01-front.jpg',rear:'02-rear.jpg',right:'03-right.jpg',left:'04-left.jpg',engine:'05-engine.jpg',chassis:'06-chassis.jpg'};const extraNo=Number(String(item.key).replace('extra_','')||1);return names[item.key]||`${String(6+extraNo).padStart(2,'0')}-extra-${extraNo}.jpg`;}
+function downloadDataImage(src,name){downloadBlob(dataUrlToBlob(src),name);}
+async function shareDataImage(src,name){const blob=dataUrlToBlob(src);const file=new File([blob],name,{type:blob.type||'image/jpeg'});if(navigator.canShare&&navigator.canShare({files:[file]})&&navigator.share){try{await navigator.share({files:[file],title:'عکس بازدید بدنه خودرو',text:'عکس بازدید اولیه بدنه خودرو'});return;}catch(e){if(e.name==='AbortError')return;}}downloadBlob(blob,name);alert('اشتراک‌گذاری مستقیم عکس در این مرورگر پشتیبانی نشد؛ عکس دانلود شد.');}
+function openSinglePhotoPrint(src,title,reportNo){const w=window.open('','_blank');if(!w){alert('مرورگر اجازه باز شدن صفحه چاپ عکس را نداد.');return;}w.document.write(`<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><title>${esc(title)}</title><style>@page{size:A4;margin:8mm}body{font-family:Tahoma,Arial,sans-serif;margin:0;background:#eee}.tools{position:sticky;top:0;background:#0b3d2e;color:#fff;text-align:center;padding:8px}.tools button{border:0;border-radius:9px;background:white;color:#0b3d2e;font-weight:800;padding:9px 12px}.page{width:210mm;min-height:297mm;background:white;margin:8px auto;padding:10mm;border:1px solid #ddd;text-align:center}.title{font-weight:800;margin-bottom:8mm}.img{max-width:100%;max-height:245mm;object-fit:contain;border:1px solid #333}.meta{font-size:9pt;margin-top:5mm;color:#333}@media print{body{background:white}.tools{display:none}.page{margin:0;border:0}}</style></head><body><div class="tools"><button onclick="window.print()">چاپ / ذخیره همین عکس</button></div><div class="page"><div class="title">${esc(title)}</div><img class="img" src="${src}"><div class="meta">شماره نامه/بایگانی: ${esc(reportNo)}<br>${esc(OWNER_TRACE)}</div></div></body></html>`);w.document.close();}
+function openPhotoManager(d){if(!d)return alert('بازدیدی انتخاب نشده است.');const items=photoItemsFor(d);if(!items.length)return alert('عکسی برای نمایش وجود ندارد.');const payload=JSON.stringify(items.map((it,i)=>({i,title:it.title,src:it.src,name:imageNameFor(d,it)}))).replace(/<\/script/gi,'<\\/script');const cards=items.map((it,i)=>`<div class="card"><h3>${esc(it.title)}</h3><img src="${it.src}"><div class="row"><button onclick="printOne(${i})">چاپ همین عکس</button><a download="${esc(imageNameFor(d,it))}" href="${it.src}">دانلود همین عکس</a></div></div>`).join('');const w=window.open('','_blank');if(!w){alert('مرورگر اجازه باز شدن مدیریت عکس‌ها را نداد.');return;}w.document.write(`<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><title>عکس‌های ${esc(d.reportNo)}</title><style>body{font-family:Tahoma,Arial,sans-serif;margin:0;background:#f4f7f6;color:#111}.top{position:sticky;top:0;background:#0b3d2e;color:white;padding:10px;text-align:center}.top button{border:0;border-radius:9px;background:white;color:#0b3d2e;font-weight:800;padding:9px 12px;margin:2px}.wrap{max-width:980px;margin:0 auto;padding:10px}.card{background:white;border:1px solid #ddd;border-radius:14px;padding:12px;margin:10px 0}.card img{width:100%;max-height:75vh;object-fit:contain;background:#eee;border:1px solid #ccc}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.row button,.row a{border:0;border-radius:9px;background:#0b3d2e;color:white;text-decoration:none;font-weight:800;padding:9px 12px}</style></head><body><div class="top"><b>عکس‌های باکیفیت‌تر بازدید</b><br>شماره نامه/بایگانی: ${esc(d.reportNo)}<br><button onclick="window.print()">چاپ همه عکس‌ها</button><div style="font-size:11px;margin-top:5px">${esc(OWNER_TRACE)}</div></div><div class="wrap">${cards}</div><script>const photos=${payload};function printOne(i){const p=photos[i];const w=window.open('','_blank');w.document.write('<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><style>@page{size:A4;margin:8mm}body{font-family:Tahoma,Arial;margin:0;text-align:center}.tools{background:#0b3d2e;color:white;padding:8px}.tools button{background:white;color:#0b3d2e;border:0;border-radius:9px;padding:9px 12px;font-weight:800}.page{padding:10mm}.page img{max-width:100%;max-height:250mm;object-fit:contain;border:1px solid #333}@media print{.tools{display:none}}</style></head><body><div class="tools"><button onclick="window.print()">چاپ / ذخیره همین عکس</button></div><div class="page"><h3>'+p.title+'</h3><img src="'+p.src+'"></div></body></html>');w.document.close();}<\/script></body></html>`);w.document.close();}
+async function openArchivePhotos(id){const d=await getInspection(id);openPhotoManager(d);}
+function utf8Bytes(s){return new TextEncoder().encode(String(s||''));}
+function concatBytes(parts){const len=parts.reduce((a,b)=>a+b.length,0);const out=new Uint8Array(len);let p=0;for(const part of parts){out.set(part,p);p+=part.length;}return out;}
+const CRC_TABLE=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=(c&1)?(0xedb88320^(c>>>1)):(c>>>1);t[n]=c>>>0;}return t;})();
+function crc32(bytes){let c=0xffffffff;for(const b of bytes)c=CRC_TABLE[(c^b)&255]^(c>>>8);return (c^0xffffffff)>>>0;}
+function dosDateTime(date=new Date()){const y=Math.max(1980,date.getFullYear());return {time:(date.getHours()<<11)|(date.getMinutes()<<5)|Math.floor(date.getSeconds()/2),date:((y-1980)<<9)|((date.getMonth()+1)<<5)|date.getDate()};}
+function u16(view,off,val){view.setUint16(off,val,true);}function u32(view,off,val){view.setUint32(off,val>>>0,true);}
+function makeZipBlob(entries){
+  const locals=[],centrals=[];let offset=0;const dt=dosDateTime(new Date());
+  for(const e of entries){
+    const name=utf8Bytes(e.name), data=e.data instanceof Uint8Array?e.data:utf8Bytes(e.data);const crc=crc32(data);const flag=0x0800;
+    const local=new Uint8Array(30+name.length);const lv=new DataView(local.buffer);u32(lv,0,0x04034b50);u16(lv,4,20);u16(lv,6,flag);u16(lv,8,0);u16(lv,10,dt.time);u16(lv,12,dt.date);u32(lv,14,crc);u32(lv,18,data.length);u32(lv,22,data.length);u16(lv,26,name.length);u16(lv,28,0);local.set(name,30);locals.push(local,data);
+    const central=new Uint8Array(46+name.length);const cv=new DataView(central.buffer);u32(cv,0,0x02014b50);u16(cv,4,20);u16(cv,6,20);u16(cv,8,flag);u16(cv,10,0);u16(cv,12,dt.time);u16(cv,14,dt.date);u32(cv,16,crc);u32(cv,20,data.length);u32(cv,24,data.length);u16(cv,28,name.length);u16(cv,30,0);u16(cv,32,0);u16(cv,34,0);u16(cv,36,0);u32(cv,38,0);u32(cv,42,offset);central.set(name,46);centrals.push(central);
+    offset+=local.length+data.length;
+  }
+  const centralStart=offset;const centralSize=centrals.reduce((a,b)=>a+b.length,0);const end=new Uint8Array(22);const ev=new DataView(end.buffer);u32(ev,0,0x06054b50);u16(ev,8,entries.length);u16(ev,10,entries.length);u32(ev,12,centralSize);u32(ev,16,centralStart);u16(ev,20,0);
+  return new Blob([...locals,...centrals,end],{type:'application/zip'});
+}
+function imagesZipNameFor(d){return `PANG-Body-Photos-${sanitizeFilePart(d.profile.agencyCode)}-${sanitizeFilePart(d.insuredName)}-${sanitizeFilePart(d.reportNo)}.zip`;}
+async function watermarkImageDataUrl(src,d,item){
+  const img=await loadImage(src);const w=img.naturalWidth||img.width,h=img.naturalHeight||img.height;const footer=Math.max(90,Math.round(h*0.045));
+  const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h+footer;const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0,w,h);
+  ctx.fillStyle='rgba(255,255,255,.96)';ctx.fillRect(0,h,w,footer);ctx.fillStyle='#111';ctx.textAlign='center';ctx.direction='rtl';ctx.font=`${Math.max(24,Math.round(w/55))}px Tahoma, Arial`;ctx.fillText(`${item.title} | شماره ${d.reportNo}`,w/2,h+Math.round(footer*.38));ctx.font=`${Math.max(20,Math.round(w/70))}px Tahoma, Arial`;ctx.fillText(`${OWNER_TRACE} | نمایندگی ${d.profile.agencyCode} | ${d.createdAtFa}`,w/2,h+Math.round(footer*.75));
+  return canvas.toDataURL('image/jpeg',0.90);
+}
+async function buildImagesZipBlob(d){
+  const items=photoItemsFor(d);if(!items.length)throw new Error('NO_IMAGES');
+  const entries=[];
+  const readme=`پنگ | ماژول بازدید اولیه بدنه خودرو
+PANG
+شماره نامه/بایگانی: ${d.reportNo}
+نام نمایندگی: ${d.profile.agencyName}
+کد نمایندگی: ${d.profile.agencyCode}
+نام بیمه‌گزار: ${d.insuredName}
+کد ملی: ${d.nationalCode}
+پلاک: ${d.plateNumber}
+شماره پیشنهاد/کد رهگیری: ${d.proposalNo||'-'}
+تاریخ بازدید: ${d.createdAtFa}
+${OWNER_TRACE}
+
+این بسته شامل نسخه باکیفیت‌تر عکس‌های بازدید است. برای جلوگیری از کپی‌برداری بی‌نام، روی خروجی عکس‌ها ردپای مالکیت درج شده است.`;
+  entries.push({name:'README_PANG.txt',data:utf8Bytes(readme)});
+  for(const it of items){const wm=await watermarkImageDataUrl(it.src,d,it);entries.push({name:imageNameFor(d,it),data:dataUrlToBytes(wm)});}
+  return makeZipBlob(entries);
+}
+async function downloadAllImages(d){if(!d)return alert('بازدیدی انتخاب نشده است.');try{const blob=await buildImagesZipBlob(d);downloadBlob(blob,imagesZipNameFor(d));}catch(e){alert('خطا در ساخت فایل ZIP عکس‌ها.');}}
+async function shareAllImages(d){if(!d)return alert('بازدیدی انتخاب نشده است.');try{const blob=await buildImagesZipBlob(d);const name=imagesZipNameFor(d);const file=new File([blob],name,{type:'application/zip'});if(navigator.canShare&&navigator.canShare({files:[file]})&&navigator.share){try{await navigator.share({files:[file],title:'عکس‌های ماژول بدنه پنگ',text:'فایل فشرده عکس‌های بازدید اولیه'});return;}catch(e){if(e.name==='AbortError')return;}}downloadBlob(blob,name);alert('اشتراک‌گذاری مستقیم فایل فشرده در این مرورگر پشتیبانی نشد؛ فایل دانلود شد.');}catch(e){alert('خطا در ساخت فایل فشرده عکس‌ها.');}}
+async function downloadArchiveImages(id){const d=await getInspection(id);downloadAllImages(d);}
+async function shareArchiveImages(id){const d=await getInspection(id);shareAllImages(d);}
+
+function loadImage(src){return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=reject;img.src=src;});}
+function drawText(ctx,text,x,y,maxWidth,lineHeight,opts={}){ctx.save();ctx.direction='rtl';ctx.textAlign=opts.align||'right';ctx.fillStyle=opts.color||'#000';ctx.font=opts.font||'24px Tahoma, Arial';const words=String(text||'').split(/\s+/);let line='';let yy=y;for(const word of words){const test=line?line+' '+word:word;if(ctx.measureText(test).width>maxWidth && line){ctx.fillText(line,x,yy);line=word;yy+=lineHeight;}else line=test;}if(line)ctx.fillText(line,x,yy);ctx.restore();return yy+lineHeight;}
+function drawCentered(ctx,text,y,font='28px Tahoma, Arial',color='#000'){ctx.save();ctx.direction='rtl';ctx.textAlign='center';ctx.font=font;ctx.fillStyle=color;ctx.fillText(text,620,y);ctx.restore();}
+function drawBox(ctx,x,y,w,h,stroke='#222',fill=null){if(fill){ctx.fillStyle=fill;ctx.fillRect(x,y,w,h);}ctx.strokeStyle=stroke;ctx.lineWidth=2;ctx.strokeRect(x,y,w,h);}
+function drawInfoRow(ctx,y,label1,value1,label2,value2){const x=70,w=1100,h=54;const c=[x,x+220,x+550,x+770,x+1100];drawBox(ctx,x,y,w,h);ctx.beginPath();for(const xx of c.slice(1,-1)){ctx.moveTo(xx,y);ctx.lineTo(xx,y+h);}ctx.stroke();ctx.fillStyle='#f1f1f1';ctx.fillRect(c[0],y,c[1]-c[0],h);ctx.fillRect(c[2],y,c[3]-c[2],h);ctx.font='20px Tahoma, Arial';ctx.direction='rtl';ctx.textAlign='right';ctx.fillStyle='#000';ctx.fillText(label1,c[1]-10,y+34);ctx.fillText(label2,c[3]-10,y+34);ctx.font='20px Tahoma, Arial';ctx.fillText(String(value1||'-'),c[2]-10,y+34);ctx.fillText(String(value2||'-'),c[4]-10,y+34);}
+async function makeLetterCanvas(d){const canvas=document.createElement('canvas');canvas.width=1240;canvas.height=1754;const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.strokeStyle='#111';ctx.lineWidth=4;ctx.strokeRect(45,45,1150,1664);drawCentered(ctx,'شرکت سهامی بیمه ایران - شعبه جهرم',105,'34px Tahoma, Arial');drawCentered(ctx,'متمم بازدید اولیه بیمه بدنه خودرو',150,'23px Tahoma, Arial');drawCentered(ctx,'شماره نامه/بایگانی: '+d.reportNo,190,'19px Tahoma, Arial');ctx.beginPath();ctx.moveTo(70,220);ctx.lineTo(1170,220);ctx.stroke();drawCentered(ctx,'موضوع: ارسال متمم بازدید اولیه خودرو جهت بررسی صدور بیمه‌نامه بدنه',270,'25px Tahoma, Arial');let y=315;drawInfoRow(ctx,y,'نام بیمه‌گزار',d.insuredName,'کد ملی',d.nationalCode);y+=54;drawInfoRow(ctx,y,'شماره پلاک',d.plateNumber,'شماره پیشنهاد',d.proposalNo||'-');y+=54;drawInfoRow(ctx,y,'بیمه‌نامه قبلی',d.previousPolicy||'-','شماره موبایل',d.mobile||'-');y+=54;drawInfoRow(ctx,y,'تاریخ بازدید',d.createdAtFa,'نمایندگی',`${d.profile.agencyName} - کد ${d.profile.agencyCode}`);y+=54;drawBox(ctx,70,y,1100,58);ctx.fillStyle='#f1f1f1';ctx.fillRect(70,y,220,58);ctx.font='20px Tahoma, Arial';ctx.textAlign='right';ctx.direction='rtl';ctx.fillStyle='#000';ctx.fillText('شماره نامه/بایگانی',280,y+36);ctx.fillText(d.reportNo,1150,y+36);y+=58;drawBox(ctx,70,y,1100,58);ctx.fillStyle='#f1f1f1';ctx.fillRect(70,y,220,58);ctx.fillStyle='#000';ctx.fillText('نشانی نمایندگی',280,y+36);drawText(ctx,d.profile.address,1150,y+36,830,24,{font:'19px Tahoma, Arial'});y+=85;y=drawText(ctx,'ریاست محترم شرکت سهامی بیمه ایران – شعبه جهرم',1150,y,1080,34,{font:'24px Tahoma, Arial'});y=drawText(ctx,'با سلام و احترام؛',1150,y+8,1080,34,{font:'24px Tahoma, Arial'});y=drawText(ctx,`به پیوست، متمم بازدید اولیه نوشته‌شده در مورد خودروی متعلق به بیمه‌گزار محترم، آقای/خانم ${d.insuredName} به کد ملی ${d.nationalCode}، به همراه مستندات تصویری جهت بررسی و اقدام مقتضی در فرآیند صدور بیمه‌نامه بدنه ارسال می‌گردد.`,1150,y+12,1080,34,{font:'23px Tahoma, Arial'});y=drawText(ctx,`مشخصات پلاک انتظامی خودرو برابر اطلاعات ثبت‌شده در فرم بازدید به شماره ${d.plateNumber} می‌باشد. همچنین شماره پیشنهاد/کد رهگیری بازدید، در صورت وجود، برابر ${d.proposalNo||'-'} اعلام می‌گردد.`,1150,y+8,1080,34,{font:'23px Tahoma, Arial'});y=drawText(ctx,'تصاویر پیوست شامل نمای جلو، عقب، سمت راست، سمت چپ، موتور خودرو و شماره شاسی حک‌شده بوده و صرفاً به عنوان مستندات بازدید اولیه نمایندگی جهت بررسی شعبه ارسال می‌شود. بدیهی است صدور نهایی بیمه‌نامه، احراز شرایط بیمه‌پذیری و هرگونه تصمیم اداری بعدی، مطابق ضوابط، مقررات و اختیارات شرکت سهامی بیمه ایران انجام خواهد شد.',1150,y+8,1080,34,{font:'23px Tahoma, Arial'});if(d.notes){y=drawText(ctx,'توضیحات نماینده: '+d.notes,1150,y+10,1080,32,{font:'22px Tahoma, Arial'});}drawBox(ctx,70,1345,1100,100,'#777','#fafafa');drawText(ctx,'این متمم بازدید اولیه، صرفاً مستندات ثبت‌شده نمایندگی در خصوص خودروی فوق‌الذکر را تجمیع می‌کند و به تنهایی به منزله تأیید قطعی اصالت، سلامت کامل خودرو یا ایجاد تعهد برای شرکت سهامی بیمه ایران نیست.',1135,1380,1030,30,{font:'20px Tahoma, Arial'});ctx.beginPath();ctx.moveTo(90,1540);ctx.lineTo(430,1540);ctx.strokeStyle='#333';ctx.lineWidth=2;ctx.stroke();drawText(ctx,`مهر و امضای نمایندگی\n${d.profile.agencyName}\nکد ${d.profile.agencyCode}`,420,1580,330,32,{font:'21px Tahoma, Arial'});ctx.save();ctx.direction='rtl';ctx.textAlign='center';ctx.fillStyle='#555';ctx.font='16px Tahoma, Arial';ctx.fillText(OWNER_TRACE,620,1685);ctx.restore();return canvas;}
+function drawCoverImage(ctx,img,x,y,w,h){const r=Math.max(w/img.width,h/img.height);const sw=w/r,sh=h/r,sx=(img.width-sw)/2,sy=(img.height-sh)/2;ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h);}
+async function makePhotosCanvas(items,d,title){const canvas=document.createElement('canvas');canvas.width=1240;canvas.height=1754;const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.strokeStyle='#111';ctx.lineWidth=4;ctx.strokeRect(45,45,1150,1664);drawCentered(ctx,title,105,'31px Tahoma, Arial');drawCentered(ctx,'شماره نامه/بایگانی: '+d.reportNo,145,'19px Tahoma, Arial');const startX=90,startY=200,cellW=510,cellH=445,gapX=40,gapY=42;for(let i=0;i<items.length;i++){const col=i%2,row=Math.floor(i/2);const x=startX+col*(cellW+gapX),y=startY+row*(cellH+gapY);drawBox(ctx,x,y,cellW,cellH);ctx.fillStyle='#f5f5f5';ctx.fillRect(x+12,y+58,cellW-24,cellH-96);ctx.direction='rtl';ctx.textAlign='center';ctx.font='22px Tahoma, Arial';ctx.fillStyle='#000';ctx.fillText(items[i].title,x+cellW/2,y+38);try{const img=await loadImage(items[i].src);drawCoverImage(ctx,img,x+12,y+58,cellW-24,cellH-96);}catch(e){}ctx.fillStyle='rgba(255,255,255,.82)';ctx.fillRect(x+12,y+cellH-55,cellW-24,34);ctx.font='14px Tahoma, Arial';ctx.fillStyle='#111';ctx.fillText(`${d.profile.agencyCode} | ${d.createdAtFa} | ${d.reportNo} | ${OWNER_NAME}`,x+cellW/2,y+cellH-33);}ctx.save();ctx.direction='rtl';ctx.textAlign='center';ctx.fillStyle='#555';ctx.font='15px Tahoma, Arial';ctx.fillText(OWNER_TRACE,620,1690);ctx.restore();return canvas;}
+async function buildPdfBlob(d){const reqItems=requiredDefs.map(([k,t])=>({src:d.requiredImages[k],title:t}));const extraItems=(d.extraImages||[]).map((src,i)=>({src,title:'عکس تکمیلی '+(i+1)}));const canvases=[await makeLetterCanvas(d),await makePhotosCanvas(reqItems,d,'تصاویر الزامی بازدید اولیه خودرو')];for(const page of chunk(extraItems,6)){canvases.push(await makePhotosCanvas(page,d,'عکس‌های تکمیلی بازدید'));}return canvasesToPdfBlob(canvases);}
+function dataUrlToBytes(dataUrl){const b64=dataUrl.split(',')[1];const bin=atob(b64);const arr=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);return arr;}
+function canvasesToPdfBlob(canvases){const enc=new TextEncoder();let chunks=[],len=0,offsets=[0];const add=x=>{let b=(typeof x==='string')?enc.encode(x):x;chunks.push(b);len+=b.length;};const obj=(n,parts)=>{offsets[n]=len;add(`${n} 0 obj\n`);for(const part of parts)add(part);add(`\nendobj\n`);};const pageW=595.28,pageH=841.89;let totalObjs=2+canvases.length*3;add('%PDF-1.4\n');let kids='';for(let i=0;i<canvases.length;i++){const pageObj=3+i*3;kids+=`${pageObj} 0 R `;}obj(1,[`<< /Type /Catalog /Pages 2 0 R >>`]);obj(2,[`<< /Type /Pages /Kids [${kids}] /Count ${canvases.length} >>`]);for(let i=0;i<canvases.length;i++){const pageObj=3+i*3,imgObj=pageObj+1,contentObj=pageObj+2;const jpg=dataUrlToBytes(canvases[i].toDataURL('image/jpeg',0.78));const content=`q\n${pageW} 0 0 ${pageH} 0 0 cm\n/Im${i+1} Do\nQ`;obj(pageObj,[`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageW} ${pageH}] /Resources << /XObject << /Im${i+1} ${imgObj} 0 R >> >> /Contents ${contentObj} 0 R >>`]);obj(imgObj,[`<< /Type /XObject /Subtype /Image /Width ${canvases[i].width} /Height ${canvases[i].height} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${jpg.length} >>\nstream\n`,jpg,`\nendstream`]);obj(contentObj,[`<< /Length ${content.length} >>\nstream\n${content}\nendstream`]);}const xref=len;add(`xref\n0 ${totalObjs+1}\n0000000000 65535 f \n`);for(let i=1;i<=totalObjs;i++)add(`${String(offsets[i]).padStart(10,'0')} 00000 n \n`);add(`trailer\n<< /Size ${totalObjs+1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`);const out=new Uint8Array(len);let pos=0;for(const c of chunks){out.set(c,pos);pos+=c.length;}return new Blob([out],{type:'application/pdf'});}
+function hasAndroidBridge(){return !!(window.AndroidBridge&&window.AndroidBridge.saveBase64);}
+function blobToBase64(blob){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result).split(',')[1]||'');r.onerror=reject;r.readAsDataURL(blob);});}
+async function downloadBlob(blob,name){
+  if(hasAndroidBridge()){
+    try{const b64=await blobToBase64(blob);window.AndroidBridge.saveBase64(b64,name,blob.type||'application/octet-stream');return;}catch(e){}
+  }
+  const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);
+}
+async function shareOrDownload(blob,name,shareTitle='پنگ | خروجی بیمه‌ای',shareText='فایل خروجی بیمه‌ای'){
+  if(window.AndroidBridge&&window.AndroidBridge.shareBase64){
+    try{const b64=await blobToBase64(blob);window.AndroidBridge.shareBase64(b64,name,blob.type||'application/pdf');return;}catch(e){}
+  }
+  const file=new File([blob],name,{type:blob.type||'application/pdf'});if(navigator.canShare&&navigator.canShare({files:[file]})&&navigator.share){try{await navigator.share({files:[file],title:shareTitle,text:shareText});return;}catch(e){if(e.name==='AbortError')return;}}
+  downloadBlob(blob,name);alert('اشتراک‌گذاری مستقیم در این مرورگر پشتیبانی نشد؛ فایل دانلود شد و از پوشه Downloads قابل انتقال است.');
+}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}loadProfile();
+</script>
+<script src="stabilization.js"></script>
+<script src="fire-module.js"></script>
+<script src="engine/domain-loader.js"></script>
+<script src="engine/coverage-engine.js"></script>
+<script src="dynamic-foundation.js"></script>
+</body>
+</html>

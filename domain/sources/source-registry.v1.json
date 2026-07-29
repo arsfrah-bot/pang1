@@ -1,0 +1,146 @@
+{
+  "$schema": "https://bazdidyar.local/schemas/source-registry-v1.json",
+  "catalogId": "catalog.source.fire.special",
+  "catalogVersion": "1.0.0",
+  "releaseDate": "2026-07-28",
+  "status": "draft",
+  "verificationStatus": "unverified",
+  "mandatoryVerificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+  "sources": [
+    {
+      "id": "source.requirements.dynamic-insurance-platform",
+      "titleFa": "نیازمندی‌های فنی سکوی پویای بیمه",
+      "titleEn": "Dynamic Insurance Platform Requirements",
+      "descriptionFa": "متن نیازمندی فنی برای معماری موتور دامنه، کاتالوگ محصول، فرم پویای مبتنی بر طرح‌واره، مهاجرت و کنترل نسخه؛ مقرره یا شرایط رسمی بیمه‌نامه نیست.",
+      "sourceType": "technical-requirement",
+      "fileName": "pasted-text.txt",
+      "attachmentId": "38c7f194-ed5d-481d-9746-e6378e51d44a",
+      "mediaType": "text/plain",
+      "originalLocalPath": null,
+      "insurer": null,
+      "documentVersion": null,
+      "effectiveDate": null,
+      "expirationDate": null,
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "design_input",
+      "verificationStatus": "not_applicable_as_regulatory_source",
+      "verificationNoticeFa": "این منبع یک نیازمندی فنی است و مرجع رسمی مقررات، نرخ یا شرایط بیمه‌نامه محسوب نمی‌شود.",
+      "currentValidity": "project_requirement",
+      "universallyApplicable": false,
+      "approvingAuthority": null,
+      "contentHash": null,
+      "applicability": {
+        "productFamilyIds": [],
+        "activityIds": [],
+        "scope": "domain_engine_design",
+        "requiresAuthorizedHumanVerification": false
+      },
+      "dependencies": { "derivedCatalogIds": [] },
+      "reportBindings": { "sectionId": "report.section.source-and-verification", "includeSourceTitle": true, "includeDocumentVersion": false, "includeVerificationStatus": true, "includeVerificationNotice": true },
+      "audit": {
+        "createdAt": "2026-07-28T00:00:00+03:30",
+        "createdBy": "codex-domain-import",
+        "importMethod": "manual_source_registration",
+        "reviewedAt": null,
+        "reviewedBy": null,
+        "changeReason": "ثبت ورودی طراحی سکوی پویای بیمه بدون نسبت‌دادن اعتبار مقرراتی"
+      }
+    },
+    {
+      "id": "source.requirements.special-fire-coverage-engine",
+      "titleFa": "متن ورودی موتور شرایط ویژه پوشش‌های آتش‌سوزی",
+      "titleEn": "Special Fire Coverage Condition Engine",
+      "descriptionFa": "متن ساختاری راهنما برای استخراج بسته‌های قابل تنظیم پوشش، شرط، تکلیف، سؤال، مدرک و گزارش؛ سند رسمی یا اثبات اعتبار جاری شرایط بیمه‌نامه نیست.",
+      "sourceType": "technical-requirement",
+      "fileName": "pasted-text.txt",
+      "attachmentId": "7b332e4f-2f2f-40be-8524-f0e31c5d9a9c",
+      "mediaType": "text/plain",
+      "originalLocalPath": null,
+      "insurer": null,
+      "documentVersion": null,
+      "effectiveDate": null,
+      "expirationDate": null,
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "design_input",
+      "verificationStatus": "not_applicable_as_regulatory_source",
+      "verificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+      "currentValidity": "project_requirement",
+      "universallyApplicable": false,
+      "approvingAuthority": null,
+      "contentHash": null,
+      "applicability": {
+        "productFamilyIds": ["product.fire.property"],
+        "activityIds": [],
+        "requiresPolicyConditionMatch": true,
+        "requiresAuthorizedHumanVerification": true
+      },
+      "dependencies": {
+        "derivedCatalogIds": [
+          "catalog.coverage.fire.special.water-damage",
+          "catalog.coverage.fire.special.theft-forcible-entry",
+          "catalog.coverage.fire.special.glass-breakage",
+          "catalog.condition.fire.special",
+          "catalog.duty.fire.special"
+        ]
+      },
+      "reportBindings": {
+        "sectionId": "report.section.source-and-verification",
+        "includeSourceTitle": true,
+        "includeDocumentVersion": true,
+        "includeVerificationStatus": true,
+        "includeVerificationNotice": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28T00:00:00+03:30",
+        "createdBy": "codex-domain-import",
+        "importMethod": "manual_structured_extraction",
+        "reviewedAt": null,
+        "reviewedBy": null,
+        "changeReason": "ثبت منبع غیررسمی و کنترل‌شده برای کاتالوگ شرایط ویژه"
+      }
+    },
+    {
+      "id": "source.existing-bazdidyar-vehicle-module",
+      "titleFa": "ماژول موجود بازدید بدنه خودرو بازدیدیار",
+      "titleEn": "Existing Bazdidyar Vehicle Inspection Module",
+      "descriptionFa": "پیاده‌سازی موجود خودرو که به‌عنوان خط مبنای رفتاری، ذخیره‌سازی و خروجی برای مهاجرت تدریجی استفاده می‌شود؛ مقرره یا شرایط رسمی بیمه‌نامه نیست.",
+      "sourceType": "existing-software",
+      "fileName": "index.html",
+      "attachmentId": null,
+      "mediaType": "text/html",
+      "originalLocalPath": null,
+      "projectRelativePath": "app/src/main/assets/bazdidyar_pwa/index.html",
+      "insurer": null,
+      "documentVersion": null,
+      "effectiveDate": null,
+      "expirationDate": null,
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "observed_baseline",
+      "verificationStatus": "observed_local_software",
+      "verificationNoticeFa": "این منبع خط مبنای نرم‌افزاری است و مرجع رسمی مقررات، نرخ یا شرایط بیمه‌نامه محسوب نمی‌شود.",
+      "currentValidity": "current_project_baseline",
+      "universallyApplicable": false,
+      "approvingAuthority": null,
+      "contentHash": null,
+      "applicability": {
+        "productFamilyIds": ["product.vehicle.body.standard"],
+        "activityIds": [],
+        "scope": "migration_compatibility_baseline",
+        "requiresAuthorizedHumanVerification": false
+      },
+      "dependencies": { "derivedCatalogIds": [] },
+      "reportBindings": { "sectionId": "report.section.source-and-verification", "includeSourceTitle": true, "includeDocumentVersion": false, "includeVerificationStatus": true, "includeVerificationNotice": true },
+      "audit": {
+        "createdAt": "2026-07-28T00:00:00+03:30",
+        "createdBy": "codex-domain-import",
+        "importMethod": "existing_software_observation",
+        "reviewedAt": null,
+        "reviewedBy": null,
+        "changeReason": "ثبت ماژول موجود خودرو به‌عنوان خط مبنای مهاجرت بدون اعتبار مقرراتی"
+      }
+    }
+  ]
+}

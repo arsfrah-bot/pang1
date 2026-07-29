@@ -1,0 +1,92 @@
+{
+  "$schema": "https://bazdidyar.local/schemas/domain-catalog-v1.json",
+  "catalogId": "catalog.coverage.fire.special.theft-forcible-entry",
+  "catalogVersion": "1.0.0",
+  "releaseDate": "2026-07-28",
+  "status": "draft",
+  "verificationStatus": "unverified",
+  "mandatoryVerificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+  "coveragePacks": [
+    {
+      "id": "coverage.fire.special.theft.forcible-entry",
+      "titleFa": "سرقت با شکست حرز",
+      "descriptionFa": "بسته قابل تنظیم برای ثبت قرائن ورود غیرمجاز، وضعیت حفاظتی، اموال ادعایی و تفکیک سرقت با شکست حرز از فقدان یا انواع دیگر سرقت.",
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "effectiveDate": null,
+      "expirationDate": null,
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "sourceRefs": ["source.requirements.special-fire-coverage-engine"],
+      "approvingAuthority": null,
+      "applicableProductIds": ["product.fire.property"],
+      "applicableActivityIds": [],
+      "activityApplicabilityStatus": "not_specified_in_source",
+      "applicability": {
+        "all": [
+          { "fact": "case.productFamilyId", "operator": "equals", "value": "product.fire.property" },
+          { "fact": "case.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.theft.forcible-entry" }
+        ],
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "برداشت مال بیمه‌شده همراه با قرائن ورود غیرمجاز یا شکست حرز؛ صرف مفقودشدن مال برای احراز پوشش کافی نیست.",
+      "conditions": ["condition.fire.special.theft.forcible-entry"],
+      "incompatibilities": [],
+      "incompatibilityStatus": "not_specified_in_source",
+      "supportedEventCategories": [
+        "climbing_over_walls",
+        "breaking_wall",
+        "breaking_door",
+        "breaking_window",
+        "breaking_locks_or_protective_devices",
+        "false_key",
+        "unusual_opening_tools",
+        "threat_or_violence",
+        "unauthorized_entry_then_removal"
+      ],
+      "dependencies": {
+        "conditionIds": ["condition.fire.special.theft.forcible-entry"],
+        "dutyIds": ["duty.fire.theft.notify-police", "duty.fire.theft.notify-insurer", "duty.fire.theft.submit-property-list", "duty.fire.theft.cooperate-investigation", "duty.fire.theft.notify-later-information"],
+        "claimPackId": "claim.fire.special.theft.forcible-entry",
+        "photoPackId": "photo.fire.special.theft.forcible-entry"
+      },
+      "questionGroups": {
+        "event": ["occurrence_date_time", "discovery_date_time", "discovering_person", "entry_point", "exit_point", "forced_entry_evidence", "lock_condition"],
+        "security": ["alarm_system", "cctv", "guarding", "employees_and_residents", "access_holders"],
+        "officialEvidence": ["police_notification", "police_report_number"],
+        "property": ["stolen_property_list", "proof_of_ownership", "purchase_documents", "item_values"],
+        "context": ["previous_theft", "other_simultaneous_peril"]
+      },
+      "requiredEvidence": ["forced_entry_evidence", "police_notification_evidence", "stolen_property_list", "proof_of_ownership_if_available"],
+      "requiredPhotographs": ["exterior", "entry_point", "broken_lock_or_door", "broken_window", "interior_condition", "empty_location_of_stolen_property", "security_devices", "cctv_equipment"],
+      "classificationOptions": ["theft_with_forcible_entry", "simple_theft", "mysterious_disappearance", "employee_theft", "household_resident_theft", "theft_during_other_peril", "building_damage", "stolen_property", "lock_and_door_repair"],
+      "potentialExclusions": ["simple_theft", "mysterious_disappearance", "employee_theft", "household_resident_theft", "theft_during_fire_flood_earthquake_or_public_disturbance"],
+      "deductibleRule": {
+        "status": "unknown",
+        "formula": null,
+        "minimum": null,
+        "currency": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "decisionPolicy": {
+        "statusCatalogId": "coverage-decision-status-catalog",
+        "missingPropertyAloneEstablishesCoverage": false,
+        "automaticFinalDecisionAllowed": false,
+        "authorizedHumanApprovalRequired": true
+      },
+      "reportBindings": {
+        "sectionId": "report.section.coverage-evaluation",
+        "factPaths": ["coverageTrigger", "forcedEntryClassification", "supportingEvidence", "missingEvidence", "potentialExclusions", "deductibleRule", "expertDecisionStatus", "finalApprovalStatus"],
+        "wordingKey": "report.fire.theft.forcible-entry",
+        "includeVerificationNotice": true
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "lastReviewedAt": null,
+        "lastReviewedBy": null
+      }
+    }
+  ]
+}

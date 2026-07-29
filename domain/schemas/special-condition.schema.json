@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bazdidyar.local/schemas/special-condition.schema.json",
+  "title": "Special fire coverage condition document",
+  "type": "object",
+  "required": [
+    "conditionDocumentId",
+    "titleFa",
+    "insurer",
+    "documentSource",
+    "sourceImageOrFile",
+    "documentVersion",
+    "effectiveDate",
+    "verificationStatus",
+    "applicableProductFamilies",
+    "coverageTrigger",
+    "coverageScope",
+    "exclusions",
+    "deductibleFormula",
+    "minimumDeductible",
+    "dutiesOfInsured",
+    "requiredEvidence",
+    "inspectionQuestions",
+    "claimQuestions",
+    "reportWording",
+    "approvalAuthority",
+    "supersededStatus",
+    "audit"
+  ],
+  "properties": {
+    "conditionDocumentId": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$"},
+    "titleFa": {"type": "string", "minLength": 1},
+    "insurer": {"type": ["string", "null"]},
+    "documentSource": {"type": "string"},
+    "sourceImageOrFile": {
+      "type": "object",
+      "required": ["fileName", "attachmentId", "mediaType"]
+    },
+    "documentVersion": {"type": ["string", "null"]},
+    "effectiveDate": {"type": ["string", "null"], "format": "date"},
+    "verificationStatus": {
+      "enum": ["unverified", "needs-current-circular-check", "expert-reviewed", "officially-approved"]
+    },
+    "verificationNoticeFa": {"type": "string"},
+    "applicableProductFamilies": {"type": "array", "items": {"type": "string"}},
+    "coverageTrigger": {"type": "string"},
+    "coverageScope": {"type": "string"},
+    "exclusions": {"type": "array", "items": {"type": "string"}},
+    "deductibleFormula": {
+      "type": "object",
+      "required": ["status", "formula", "noticeFa"],
+      "properties": {
+        "status": {"enum": ["unknown", "draft", "approved"]},
+        "formula": {"type": ["object", "null"]},
+        "noticeFa": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "minimumDeductible": {
+      "type": "object",
+      "required": ["status", "amount", "currency", "noticeFa"],
+      "properties": {
+        "status": {"enum": ["unknown", "draft", "approved"]},
+        "amount": {"type": ["number", "null"]},
+        "currency": {"type": ["string", "null"]},
+        "noticeFa": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "dutiesOfInsured": {"type": "array", "items": {"type": "string"}},
+    "requiredEvidence": {"type": "array", "items": {"type": "string"}},
+    "inspectionQuestions": {"type": "array", "items": {"type": "string"}},
+    "claimQuestions": {"type": "array", "items": {"type": "string"}},
+    "reportWording": {"type": "string"},
+    "approvalAuthority": {
+      "type": "object",
+      "required": ["required", "role", "specificAuthority", "automaticApprovalAllowed"]
+    },
+    "supersededStatus": {"enum": ["unknown", "current", "superseded"]},
+    "audit": {"type": "object"}
+  },
+  "additionalProperties": false
+}

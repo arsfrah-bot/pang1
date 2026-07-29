@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "photo.fire.special.water.roof-leakage",
+  "version": "1.0.0",
+  "status": "active",
+  "titleFa": "الزامات عکس نشت بام",
+  "claimPackRef": "claim.fire.special.water.roof-leakage",
+  "coverageRef": "coverage.fire.special.water.roof-leakage",
+  "sourceRequirementRef": "source.requirements.special-fire-coverage-engine",
+  "decisionPolicy": {"automatedFinalDecision": false, "missingPhotoStatus": "additional-evidence-required", "missingPhotoNeverAutoRejects": true},
+  "captureProfile": {"archive": {"maxEdgePx": 2400, "jpegQuality": 0.86}, "report": {"maxEdgePx": 1400, "jpegQuality": 0.72}, "thumbnail": {"maxEdgePx": 320, "jpegQuality": 0.65}, "preserveOriginalWhenSupported": true, "requiredMetadata": ["capturedAt", "source", "sequenceNumber"]},
+  "requirements": [
+    {"id": "photo.roof.overview", "titleFa": "نمای کلی بام", "requiredMode": "always", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "mustShowFa": ["سطح، شیب و پوشش بام", "موقعیت تقریبی بالای محل نشت"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.roof.defect-closeup", "titleFa": "نمای نزدیک نقص یا مسیر محتمل", "requiredMode": "always", "minCount": 2, "maxCount": 10, "evidenceClassificationId": "photo-visible", "captureBeforeRepair": true, "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.roof.gutter-drain", "titleFa": "آبرو، ناودان و مسیر تخلیه", "requiredMode": "always", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.roof.exterior-elevation", "titleFa": "نمای بیرونی ضلع درگیر", "requiredMode": "always", "minCount": 1, "maxCount": 4, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.roof.internal-entry-route", "titleFa": "مسیر نشت در داخل", "requiredMode": "always", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "mustShowFa": ["نقطه ظهور آب", "مسیر تا اموال آسیب‌دیده"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.roof.consequential-damage", "titleFa": "خسارت تبعی ساختمان و اموال", "requiredMode": "always", "minCount": 2, "maxCount": 20, "evidenceClassificationId": "photo-visible", "repeatPerDamageGroup": true, "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.roof.repair-state", "titleFa": "وضعیت پس از تعمیر", "requiredMode": "required_or_unavailability_reason", "minCount": 1, "maxCount": 8, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"}
+  ],
+  "reportBindings": [{"reportSectionId": "report.photos.roof-source", "requirementIds": ["photo.roof.overview", "photo.roof.defect-closeup", "photo.roof.gutter-drain", "photo.roof.exterior-elevation"]}, {"reportSectionId": "report.photos.damage", "requirementIds": ["photo.roof.internal-entry-route", "photo.roof.consequential-damage", "photo.roof.repair-state"]}]
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+  <title id="title">لوگوی نوشتاری رسمی پنگ</title>
+  <desc id="desc">نشان شبکه‌ای محافظ پنگ همراه با نام فارسی، نام لاتین و شعار رسمی</desc>
+
+  <g transform="translate(42 40) scale(.625)">
+    <path fill="#0B3D2E" d="M256 24c55 32 111 48 173 53v154c0 119-69 203-173 249C152 434 83 350 83 231V77c62-5 118-21 173-53Z"/>
+    <path fill="none" stroke="#0F8F83" stroke-width="9" stroke-linejoin="round" d="M256 54c46 25 94 39 143 47v130c0 96-52 168-143 212-91-44-143-116-143-212V101c49-8 97-22 143-47Z"/>
+    <g fill="none" stroke="#7BD1C2" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M256 127v219"/>
+      <path d="M256 171c-38 3-70 19-94 48l-25 30M256 171c38 3 70 19 94 48l25 30"/>
+      <path d="M256 224c-51 5-91 26-120 64l-18 24M256 224c51 5 91 26 120 64l18 24"/>
+      <path d="M224 306c-24 13-42 33-53 59M288 306c24 13 42 33 53 59"/>
+    </g>
+    <g fill="#D6A33C" stroke="#F7E1A8" stroke-width="5">
+      <circle cx="256" cy="119" r="13"/><circle cx="134" cy="254" r="13"/><circle cx="378" cy="254" r="13"/>
+      <circle cx="114" cy="318" r="13"/><circle cx="398" cy="318" r="13"/><circle cx="168" cy="371" r="13"/><circle cx="344" cy="371" r="13"/>
+    </g>
+    <circle cx="256" cy="292" r="47" fill="#F6FBF8" stroke="#0F8F83" stroke-width="9"/>
+    <path fill="#D6A33C" d="m256 260 28 16v32l-28 16-28-16v-32l28-16Z"/>
+    <circle cx="256" cy="292" r="9" fill="#0B3D2E"/>
+  </g>
+
+  <path d="M392 72v256" stroke="#D6A33C" stroke-width="5" stroke-linecap="round"/>
+  <text x="1128" y="155" fill="#0B3D2E" font-family="Tahoma, Arial, sans-serif" font-size="126" font-weight="700" text-anchor="end">پنگ</text>
+  <text x="1122" y="225" fill="#0F8F83" font-family="Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="11" text-anchor="end">PANG</text>
+  <text x="1128" y="300" fill="#31574C" font-family="Tahoma, Arial, sans-serif" font-size="31" font-weight="600" text-anchor="end">پنگ؛ یک هسته، صدها شاخه، یک نظم</text>
+</svg>

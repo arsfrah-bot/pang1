@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bazdidyar.local/schemas/special-condition-catalog-v1.json",
+  "title": "Bazdidyar special condition catalog",
+  "type": "object",
+  "required": ["catalogId", "catalogVersion", "status", "verificationStatus", "mandatoryVerificationNoticeFa", "conditions"],
+  "properties": {
+    "catalogId": {"type": "string"},
+    "catalogVersion": {"type": "string"},
+    "status": {"type": "string"},
+    "verificationStatus": {"type": "string"},
+    "mandatoryVerificationNoticeFa": {"type": "string"},
+    "conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "special-condition.schema.json"}
+    }
+  },
+  "additionalProperties": true
+}

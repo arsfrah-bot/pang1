@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "photo.fire.special.water.external-network-damage",
+  "version": "1.0.0",
+  "status": "active",
+  "titleFa": "الزامات عکس خسارت شبکه خارجی آب",
+  "claimPackRef": "claim.fire.special.water.external-network-damage",
+  "coverageRef": "coverage.fire.special.water.external-network-damage",
+  "sourceRequirementRef": "source.requirements.special-fire-coverage-engine",
+  "decisionPolicy": {"automatedFinalDecision": false, "missingPhotoStatus": "additional-evidence-required", "missingPhotoNeverAutoRejects": true},
+  "captureProfile": {"archive": {"maxEdgePx": 2400, "jpegQuality": 0.86}, "report": {"maxEdgePx": 1400, "jpegQuality": 0.72}, "thumbnail": {"maxEdgePx": 320, "jpegQuality": 0.65}, "preserveOriginalWhenSupported": true, "requiredMetadata": ["capturedAt", "source", "sequenceNumber"]},
+  "requirements": [
+    {"id": "photo.external-network.location-boundary", "titleFa": "محل شبکه نسبت به مرز محل خطر", "requiredMode": "always", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "mustShowFa": ["محل جزء معیوب", "نشانه‌های مرز ملک یا معبر"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.external-network.failed-component", "titleFa": "جزء معیوب پیش از تعمیر", "requiredMode": "required_or_unavailability_reason", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "captureBeforeRepair": true, "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.external-network.context-marker", "titleFa": "نمای شبکه و شناسه بهره‌بردار", "requiredMode": "required_or_unavailability_reason", "minCount": 1, "maxCount": 6, "evidenceClassificationId": "photo-visible", "mustShowFa": ["کنتور، شیر، منهول یا نشانه مرتبط", "محیط اطراف"], "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.external-network.excavation", "titleFa": "حفاری و لایه‌های بازشده", "requiredMode": "required_or_not_applicable_reason", "minCount": 2, "maxCount": 10, "evidenceClassificationId": "photo-visible", "requiredWhen": {"fact": "repair.excavationPerformed", "operator": "truthy"}, "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.external-network.water-entry-route", "titleFa": "مسیر ورود آب به محل خسارت", "requiredMode": "always", "minCount": 2, "maxCount": 8, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.external-network.damage", "titleFa": "خسارت تبعی ساختمان، محوطه و اموال", "requiredMode": "always", "minCount": 2, "maxCount": 20, "evidenceClassificationId": "photo-visible", "repeatPerDamageGroup": true, "absenceEffect": "additional-evidence-required"},
+    {"id": "photo.external-network.repair-restoration", "titleFa": "تعمیر شبکه و بازسازی سطح", "requiredMode": "required_or_unavailability_reason", "minCount": 1, "maxCount": 10, "evidenceClassificationId": "photo-visible", "absenceEffect": "additional-evidence-required"}
+  ],
+  "reportBindings": [{"reportSectionId": "report.photos.network-source", "requirementIds": ["photo.external-network.location-boundary", "photo.external-network.failed-component", "photo.external-network.context-marker", "photo.external-network.excavation"]}, {"reportSectionId": "report.photos.damage", "requirementIds": ["photo.external-network.water-entry-route", "photo.external-network.damage", "photo.external-network.repair-restoration"]}]
+}

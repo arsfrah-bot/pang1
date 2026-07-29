@@ -1,0 +1,26 @@
+{
+  "catalogId": "coverage-decision-status-catalog",
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "status": "active",
+  "items": [
+    {"id": "potentially-applicable", "titleFa": "پوشش احتمالاً قابل اعمال است", "final": false},
+    {"id": "not-yet-established", "titleFa": "تحقق پوشش هنوز احراز نشده است", "final": false},
+    {"id": "additional-evidence-required", "titleFa": "مدارک تکمیلی موردنیاز است", "final": false},
+    {"id": "potential-exclusion", "titleFa": "احتمال وجود استثنا", "final": false},
+    {"id": "outside-selected-coverage", "titleFa": "خارج از پوشش انتخاب‌شده", "final": false},
+    {"id": "requires-senior-review", "titleFa": "نیازمند بررسی کارشناس ارشد", "final": false},
+    {"id": "approved-by-authorized-user", "titleFa": "تأییدشده توسط کاربر مجاز", "final": true, "requiresAuthorizedHuman": true},
+    {"id": "rejected-by-authorized-user", "titleFa": "ردشده توسط کاربر مجاز", "final": true, "requiresAuthorizedHuman": true}
+  ],
+  "constraints": {
+    "aiFinalDecisionAllowed": false,
+    "applicationFinalDecisionAllowed": false,
+    "authorizedHumanRequiredForFinalStatus": true
+  },
+  "audit": {
+    "createdAt": "2026-07-28T00:00:00+03:30",
+    "createdBy": "codex-assisted-development",
+    "changeReason": "Coverage workflow statuses required by special-condition engine"
+  }
+}

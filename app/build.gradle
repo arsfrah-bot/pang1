@@ -1,0 +1,58 @@
+plugins { id 'com.android.application' }
+
+def generatedDomainAssetsDir = file("$buildDir/generated/domainAssets")
+
+tasks.register('syncDomainAssets', Sync) {
+    from rootProject.file('domain')
+    into new File(generatedDomainAssetsDir, 'bazdidyar_pwa/domain')
+}
+
+android {
+    namespace 'ir.bimehiran.bazdidyar'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'ir.bimehiran.bazdidyar'
+        minSdk 23
+        targetSdk 35
+        versionCode 20
+        versionName '2.0-pang-brand-foundation'
+    }
+
+    signingConfigs {
+        release {
+            def keystorePath = System.getenv('ANDROID_KEYSTORE_PATH')
+            if (keystorePath != null && keystorePath.trim().length() > 0) {
+                storeFile file(keystorePath)
+                storePassword System.getenv('ANDROID_KEYSTORE_PASSWORD')
+                keyAlias System.getenv('ANDROID_KEY_ALIAS')
+                keyPassword System.getenv('ANDROID_KEY_PASSWORD')
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            applicationIdSuffix '.debug'
+            versionNameSuffix '-debug'
+        }
+        release {
+            debuggable false
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    sourceSets {
+        main.assets.srcDir generatedDomainAssetsDir
+    }
+}
+
+tasks.named('preBuild').configure { dependsOn tasks.named('syncDomainAssets') }
+
+dependencies {
+    implementation 'androidx.core:core:1.13.1'
+    implementation 'androidx.webkit:webkit:1.12.1'
+}

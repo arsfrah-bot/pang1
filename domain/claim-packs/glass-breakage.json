@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "claim.fire.special.glass.breakage",
+  "version": "1.0.0",
+  "status": "draft_requires_source_verification",
+  "titleFa": "شکست شیشه",
+  "lineId": "insurance.fire-property",
+  "coverageRef": "coverage.fire.special.glass.breakage",
+  "sourceRequirementRef": "source.requirements.special-fire-coverage-engine",
+  "conditionDocumentRequirement": {
+    "required": true,
+    "resolution": "runtime-by-policy-and-loss-date",
+    "unknownValidityLabelFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+  },
+  "decisionPolicy": {
+    "automatedFinalDecision": false,
+    "authorizedHumanDecisionRequired": true,
+    "missingEvidenceEffect": "additional-evidence-required",
+    "potentialExclusionEffect": "potential-exclusion",
+    "allowedMachineStatuses": ["potentially-applicable", "not-yet-established", "additional-evidence-required", "potential-exclusion", "outside-selected-coverage", "requires-senior-review"],
+    "humanOnlyStatuses": ["approved-by-authorized-user", "rejected-by-authorized-user"]
+  },
+  "trigger": {
+    "all": [
+      {"fact": "claim.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.glass.breakage"},
+      {"fact": "claim.lossReported", "operator": "truthy"}
+    ]
+  },
+  "sections": [
+    {"id": "glass-identification", "titleFa": "مشخصات شیشه", "questionIds": ["glassLocation", "glassType", "installationPermanence", "glassConstruction", "decorativeArtistic", "dimensions", "thicknessMm", "paneCount"]},
+    {"id": "installation-cause", "titleFa": "نصب و علت شکست", "questionIds": ["installationMethod", "frameType", "causeOfBreakage", "externalImpact", "thermalStress", "installationDefect", "buildingSettlement", "previousCrack"]},
+    {"id": "salvage-related", "titleFa": "بازیافتی و تجهیزات مرتبط", "questionIds": ["salvage", "associatedEquipment"]},
+    {"id": "costs", "titleFa": "تفکیک هزینه", "questionIds": ["glassValue", "installationLabor", "transportation", "frameCost", "hardwareCost", "displayRefrigerationCost", "goodsBehindGlassCost", "salvageValue"]}
+  ],
+  "questions": [
+    {"id": "glassLocation", "fact": "glass.location", "type": "textarea", "labelFa": "محل دقیق و شناسه دهانه شیشه", "required": true},
+    {"id": "glassType", "fact": "glass.useType", "type": "singleChoice", "labelFa": "نوع کاربری شیشه", "required": true, "options": [{"value": "storefront", "labelFa": "ویترین"}, {"value": "door", "labelFa": "در"}, {"value": "window", "labelFa": "پنجره"}, {"value": "partition", "labelFa": "پارتیشن"}, {"value": "roof", "labelFa": "سقف شیشه‌ای"}, {"value": "displayCase", "labelFa": "محفظه نمایش"}, {"value": "other", "labelFa": "سایر"}]},
+    {"id": "installationPermanence", "fact": "glass.installationPermanence", "type": "singleChoice", "labelFa": "شیشه ثابت است یا موقت؟", "required": true, "options": [{"value": "fixed", "labelFa": "ثابت"}, {"value": "temporary", "labelFa": "موقت"}, {"value": "undetermined", "labelFa": "نیازمند بررسی"}]},
+    {"id": "glassConstruction", "fact": "glass.construction", "type": "singleChoice", "labelFa": "ساختار شیشه", "required": true, "options": [{"value": "ordinary", "labelFa": "معمولی"}, {"value": "tempered", "labelFa": "سکوریت"}, {"value": "laminated", "labelFa": "لمینت"}, {"value": "doubleGlazed", "labelFa": "دوجداره"}, {"value": "other", "labelFa": "سایر"}, {"value": "unknown", "labelFa": "نامشخص"}]},
+    {"id": "decorativeArtistic", "fact": "glass.decorativeCategory", "type": "multiChoice", "labelFa": "ویژگی تزئینی یا هنری", "required": true, "options": [{"value": "none", "labelFa": "ندارد"}, {"value": "decorative", "labelFa": "تزئینی"}, {"value": "painted", "labelFa": "نقاشی‌شده"}, {"value": "engraved", "labelFa": "حکاکی‌شده"}, {"value": "artistic", "labelFa": "هنری"}, {"value": "unknown", "labelFa": "نامشخص"}]},
+    {"id": "dimensions", "fact": "glass.dimensions", "type": "dimensionSet", "labelFa": "ابعاد شیشه", "required": true, "units": ["mm", "cm"]},
+    {"id": "thicknessMm", "fact": "glass.thicknessMm", "type": "number", "labelFa": "ضخامت بر حسب میلی‌متر", "required": true, "minimum": 0},
+    {"id": "paneCount", "fact": "glass.paneCount", "type": "number", "labelFa": "تعداد جام یا پنل آسیب‌دیده", "required": true, "minimum": 1},
+    {"id": "installationMethod", "fact": "glass.installationMethod", "type": "textarea", "labelFa": "روش نصب و مهار شیشه", "required": true},
+    {"id": "frameType", "fact": "glass.frameType", "type": "text", "labelFa": "نوع و جنس قاب", "required": true},
+    {"id": "causeOfBreakage", "fact": "event.causeNarrative", "type": "textarea", "labelFa": "شرح علت شکست", "required": true},
+    {"id": "externalImpact", "fact": "event.externalImpact", "type": "singleChoice", "labelFa": "آیا نشانه ضربه خارجی وجود دارد؟", "required": true, "options": [{"value": "yes", "labelFa": "بله"}, {"value": "no", "labelFa": "خیر"}, {"value": "undetermined", "labelFa": "نیازمند بررسی"}]},
+    {"id": "thermalStress", "fact": "event.thermalStress", "type": "singleChoice", "labelFa": "آیا تنش حرارتی محتمل است؟", "required": true, "options": [{"value": "yes", "labelFa": "بله"}, {"value": "no", "labelFa": "خیر"}, {"value": "undetermined", "labelFa": "نیازمند بررسی"}]},
+    {"id": "installationDefect", "fact": "event.installationDefect", "type": "singleChoice", "labelFa": "آیا نقص نصب محتمل است؟", "required": true, "options": [{"value": "yes", "labelFa": "بله"}, {"value": "no", "labelFa": "خیر"}, {"value": "undetermined", "labelFa": "نیازمند بررسی"}]},
+    {"id": "buildingSettlement", "fact": "event.buildingSettlement", "type": "singleChoice", "labelFa": "آیا نشانه نشست ساختمان وجود دارد؟", "required": true, "options": [{"value": "yes", "labelFa": "بله"}, {"value": "no", "labelFa": "خیر"}, {"value": "undetermined", "labelFa": "نیازمند بررسی"}]},
+    {"id": "previousCrack", "fact": "history.previousCrack", "type": "singleChoice", "labelFa": "آیا ترک قبلی وجود داشته است؟", "required": true, "options": [{"value": "yes", "labelFa": "بله"}, {"value": "no", "labelFa": "خیر"}, {"value": "unknown", "labelFa": "نامشخص"}]},
+    {"id": "salvage", "fact": "salvage.description", "type": "textarea", "labelFa": "وضعیت قطعات و شیشه قابل بازیافت", "required": true},
+    {"id": "associatedEquipment", "fact": "equipment.associatedDisplayRefrigeration", "type": "textarea", "labelFa": "تجهیزات سرمایشی یا نمایشی مرتبط", "required": true},
+    {"id": "glassValue", "fact": "cost.glass", "type": "currency", "labelFa": "ارزش شیشه", "required": true, "currency": "IRR"},
+    {"id": "installationLabor", "fact": "cost.installationLabor", "type": "currency", "labelFa": "دستمزد نصب", "required": true, "currency": "IRR"},
+    {"id": "transportation", "fact": "cost.transportation", "type": "currency", "labelFa": "حمل‌ونقل", "required": true, "currency": "IRR"},
+    {"id": "frameCost", "fact": "cost.frame", "type": "currency", "labelFa": "قاب", "required": true, "currency": "IRR"},
+    {"id": "hardwareCost", "fact": "cost.hardware", "type": "currency", "labelFa": "یراق‌آلات", "required": true, "currency": "IRR"},
+    {"id": "displayRefrigerationCost", "fact": "cost.displayRefrigerationEquipment", "type": "currency", "labelFa": "تجهیزات نمایشی یا سرمایشی", "required": true, "currency": "IRR"},
+    {"id": "goodsBehindGlassCost", "fact": "cost.goodsBehindGlass", "type": "currency", "labelFa": "کالاهای پشت شیشه", "required": true, "currency": "IRR"},
+    {"id": "salvageValue", "fact": "cost.salvage", "type": "currency", "labelFa": "ارزش بازیافتی", "required": true, "currency": "IRR"}
+  ],
+  "requiredEvidence": [
+    {"id": "ev.glass-photos", "titleFa": "مجموعه کامل عکس‌های نمای کلی، شکست، اثر ضربه، قطعات، قاب، محیط و اندازه‌گیری", "type": "photoSet", "requiredMode": "always", "photoRequirementPackId": "photo.fire.special.glass.breakage", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.measurements", "titleFa": "اندازه‌گیری ابعاد، ضخامت و تعداد جام", "type": "measurement", "requiredMode": "always", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.glass-specification", "titleFa": "مشخصات فنی یا فاکتور شیشه موجود", "type": "document", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.cause-opinion", "titleFa": "گزارش فنی علت شکست در موارد مبهم", "type": "expertDocument", "requiredWhen": {"any": [{"fact": "event.externalImpact", "operator": "eq", "value": "undetermined"}, {"fact": "event.installationDefect", "operator": "eq", "value": "undetermined"}, {"fact": "event.buildingSettlement", "operator": "eq", "value": "undetermined"}]}, "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.itemized-estimate", "titleFa": "برآورد تفکیکی شیشه، نصب، حمل، قاب و یراق", "type": "document", "requiredMode": "always", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.salvage", "titleFa": "مستند وضعیت و ارزش بازیافتی", "type": "photoOrDocument", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"}
+  ],
+  "photos": [{"requirementPackRef": "photo.fire.special.glass.breakage", "required": true}],
+  "triggerRules": [
+    {"id": "classification.breakage-documented", "when": {"all": [{"fact": "glass.location", "operator": "exists"}, {"fact": "event.causeNarrative", "operator": "exists"}]}, "result": {"status": "potentially-applicable", "messageFa": "شکست شیشه و محل آن ثبت شده است؛ شمول نهایی نیازمند تطبیق نوع شیشه، علت و شرایط پوشش است."}}
+  ],
+  "calculationComponents": [
+    {"id": "calc.glass", "titleFa": "شیشه", "sourceFact": "cost.glass", "coverageTreatment": "candidate_recoverable_item"},
+    {"id": "calc.installation-labor", "titleFa": "دستمزد نصب", "sourceFact": "cost.installationLabor", "coverageTreatment": "separate_expert_determination"},
+    {"id": "calc.transportation", "titleFa": "حمل‌ونقل", "sourceFact": "cost.transportation", "coverageTreatment": "separate_expert_determination"},
+    {"id": "calc.frame", "titleFa": "قاب", "sourceFact": "cost.frame", "coverageTreatment": "potentially_excluded_item"},
+    {"id": "calc.hardware", "titleFa": "یراق‌آلات", "sourceFact": "cost.hardware", "coverageTreatment": "potentially_excluded_item"},
+    {"id": "calc.display-refrigeration", "titleFa": "تجهیزات نمایشی یا سرمایشی", "sourceFact": "cost.displayRefrigerationEquipment", "coverageTreatment": "separate_expert_determination"},
+    {"id": "calc.goods-behind-glass", "titleFa": "کالاهای پشت شیشه", "sourceFact": "cost.goodsBehindGlass", "coverageTreatment": "route_to_property_damage_review"},
+    {"id": "calc.salvage", "titleFa": "بازیافتی", "sourceFact": "cost.salvage", "sign": "subtract_after_authorization"},
+    {"id": "calc.deductible", "titleFa": "فرانشیز", "inputMode": "resolved_rule", "deductibleRuleRef": "condition-document-current-version", "hardcodedAmountAllowed": false}
+  ],
+  "deductibleRule": {"source": "verified-condition-document", "required": true, "hardcodedAmountAllowed": false, "unresolvedEffect": "requires-senior-review"},
+  "potentialExclusions": [
+    {"id": "exclusion.temporary-glass", "titleFa": "شیشه موقت", "when": {"fact": "glass.installationPermanence", "operator": "eq", "value": "temporary"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.decorative-artistic", "titleFa": "شیشه تزئینی، نقاشی‌شده، حکاکی‌شده یا هنری", "when": {"not": {"fact": "glass.decorativeCategory", "operator": "contains", "value": "none"}}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.glass-manufacturing-premises", "titleFa": "شیشه در محل تولید شیشه", "when": {"fact": "risk.activityId", "operator": "eq", "value": "activity.industrial.glass-manufacturing"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.sonic-boom", "titleFa": "موج انفجاری صوتی", "when": {"fact": "event.causeCategories", "operator": "contains", "value": "sonicBoom"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.frames-doors-windows-hardware", "titleFa": "قاب، در، پنجره و یراق‌آلات", "when": {"any": [{"fact": "cost.frame", "operator": "gt", "value": 0}, {"fact": "cost.hardware", "operator": "gt", "value": 0}]}, "effect": "separate_and_flag_for_expert_review"},
+    {"id": "exclusion.war-riot-commotion", "titleFa": "جنگ، شورش یا اغتشاش", "when": {"fact": "event.causeCategories", "operator": "in", "value": ["war", "riot", "civilCommotion"]}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.faulty-design", "titleFa": "طراحی معیوب", "when": {"fact": "event.causeCategories", "operator": "contains", "value": "faultyDesign"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.building-settlement", "titleFa": "نشست ساختمان", "when": {"fact": "event.buildingSettlement", "operator": "eq", "value": "yes"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.unrelated-components", "titleFa": "تعویض اجزای غیرمرتبط", "when": {"fact": "repair.unrelatedComponentsIncluded", "operator": "truthy"}, "effect": "separate_and_flag_for_expert_review"}
+  ],
+  "duties": [
+    {"id": "duty.secure-opening", "titleFa": "ایمن‌سازی معقول دهانه برای جلوگیری از توسعه خسارت", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.preserve-fragments", "titleFa": "نگهداری قطعات و آثار شکست در صورت امکان", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.photograph-before-repair", "titleFa": "عکاسی و اندازه‌گیری پیش از تعویض", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.itemized-estimate", "titleFa": "دریافت برآورد تفکیکی", "failureEffect": "record_warning_and_refer_to_expert"}
+  ],
+  "reportBindings": [
+    {"sectionId": "report.coverage-context", "titleFa": "پوشش و سند مبنا", "facts": ["claim.selectedCoverageIds", "coverage.conditionDocumentId", "coverage.documentVersion", "coverage.verificationStatus"]},
+    {"sectionId": "report.identification", "titleFa": "مشخصات شیشه و دهانه", "facts": ["glass.location", "glass.useType", "glass.installationPermanence", "glass.construction", "glass.decorativeCategory", "glass.dimensions", "glass.thicknessMm", "glass.paneCount"]},
+    {"sectionId": "report.cause", "titleFa": "علت و آثار شکست", "facts": ["event.causeNarrative", "event.externalImpact", "event.thermalStress", "event.installationDefect", "event.buildingSettlement", "history.previousCrack"]},
+    {"sectionId": "report.evidence", "titleFa": "شواهد موجود و کسری مدارک", "bind": "evidenceAssessment"},
+    {"sectionId": "report.exclusions", "titleFa": "موارد نیازمند بررسی شرایط و استثنائات", "bind": "potentialExclusionFlags"},
+    {"sectionId": "report.calculation", "titleFa": "تفکیک اجزای محاسبه", "bind": "calculationComponents"},
+    {"sectionId": "report.decision", "titleFa": "وضعیت تصمیم کارشناس", "bind": "expertDecisionStatus", "humanApprovalRequired": true}
+  ],
+  "reportWording": {
+    "componentDistinctionFa": "ارزش شیشه، دستمزد نصب، حمل، قاب، یراق‌آلات، تجهیزات نمایشی یا سرمایشی، کالاهای پشت شیشه و بازیافتی جداگانه ثبت شده‌اند.",
+    "causeCautionFa": "ثبت شکست شیشه به‌تنهایی علت حادثه یا شمول پوشش را ثابت نمی‌کند و نوع شیشه، روش نصب، آثار ضربه، تنش حرارتی، عیب نصب و نشست ساختمان باید بررسی شوند.",
+    "decisionDisclaimerFa": "این گزارش تصمیم نهایی پوشش یا پرداخت نیست و تأیید یا رد صرفاً توسط کاربر مجاز و پس از بررسی بیمه‌نامه، شرایط معتبر و مدارک انجام می‌شود."
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "claim.fire.special.water.burst-pipe-internal-network",
+  "version": "1.0.0",
+  "status": "draft_requires_source_verification",
+  "titleFa": "ترکیدگی لوله و شبکه داخلی آب",
+  "lineId": "insurance.fire-property",
+  "coverageRef": "coverage.fire.special.water.burst-pipe-internal-network",
+  "sourceRequirementRef": "source.requirements.special-fire-coverage-engine",
+  "conditionDocumentRequirement": {
+    "required": true,
+    "resolution": "runtime-by-policy-and-loss-date",
+    "unknownValidityLabelFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+  },
+  "decisionPolicy": {
+    "automatedFinalDecision": false,
+    "authorizedHumanDecisionRequired": true,
+    "missingEvidenceEffect": "additional-evidence-required",
+    "potentialExclusionEffect": "potential-exclusion",
+    "allowedMachineStatuses": [
+      "potentially-applicable",
+      "not-yet-established",
+      "additional-evidence-required",
+      "potential-exclusion",
+      "outside-selected-coverage",
+      "requires-senior-review"
+    ],
+    "humanOnlyStatuses": ["approved-by-authorized-user", "rejected-by-authorized-user"]
+  },
+  "trigger": {
+    "all": [
+      {"fact": "claim.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.water.burst-pipe-internal-network"},
+      {"fact": "claim.lossReported", "operator": "truthy"}
+    ]
+  },
+  "sections": [
+    {"id": "event-source", "titleFa": "منشأ و نحوه وقوع", "questionIds": ["waterSourceExact", "failedComponentType", "networkPosition", "installationOwnership", "ruptureCause", "failureCharacteristics", "suddenOrGradual", "failedComponentLocation"]},
+    {"id": "damage-scope", "titleFa": "دامنه خسارت", "questionIds": ["resultingDamage", "defectiveComponentRepairCost", "consequentialDamageCost", "cleanupDryingCost"]},
+    {"id": "history-maintenance", "titleFa": "سوابق و نگهداری", "questionIds": ["previousLeakage", "previousLeakageDetails", "maintenanceHistory", "maintenanceDetails"]},
+    {"id": "documents", "titleFa": "مدارک و مستندات", "questionIds": ["photosBeforeRepairAvailable", "plumberReportAvailable", "repairInvoiceAvailable", "defectivePartPreserved"]}
+  ],
+  "questions": [
+    {"id": "waterSourceExact", "fact": "water.sourceExact", "type": "text", "labelFa": "منشأ دقیق آب", "required": true},
+    {"id": "failedComponentType", "fact": "water.failedComponentType", "type": "singleChoice", "labelFa": "نوع جزء یا شبکه معیوب", "required": true, "options": [{"value": "pipe", "labelFa": "لوله"}, {"value": "tank", "labelFa": "مخزن"}, {"value": "appliance", "labelFa": "دستگاه یا وسیله"}, {"value": "sewer", "labelFa": "فاضلاب"}, {"value": "network", "labelFa": "شبکه"}, {"value": "other", "labelFa": "سایر"}]},
+    {"id": "networkPosition", "fact": "water.networkPosition", "type": "singleChoice", "labelFa": "شبکه داخلی است یا خارجی؟", "required": true, "options": [{"value": "internal", "labelFa": "داخلی"}, {"value": "external", "labelFa": "خارجی"}, {"value": "undetermined", "labelFa": "هنوز مشخص نشده"}]},
+    {"id": "installationOwnership", "fact": "water.installationOwnership", "type": "singleChoice", "labelFa": "مالک تأسیسات آسیب‌دیده", "required": true, "options": [{"value": "insured", "labelFa": "بیمه‌گذار یا بیمه‌شده"}, {"value": "landlord", "labelFa": "مالک ملک"}, {"value": "utility", "labelFa": "شرکت خدمات‌رسان"}, {"value": "thirdParty", "labelFa": "شخص ثالث"}, {"value": "unknown", "labelFa": "نامشخص"}]},
+    {"id": "ruptureCause", "fact": "water.ruptureCause", "type": "text", "labelFa": "علت اعلامی یا مشاهده‌شده پارگی یا خرابی", "required": true},
+    {"id": "failureCharacteristics", "fact": "water.failureCharacteristics", "type": "multiChoice", "labelFa": "علائم و عوامل مؤثر", "required": true, "options": [{"value": "corrosion", "labelFa": "خوردگی"}, {"value": "wearAndTear", "labelFa": "فرسودگی"}, {"value": "freezing", "labelFa": "یخ‌زدگی"}, {"value": "blockage", "labelFa": "گرفتگی"}, {"value": "overflow", "labelFa": "سرریز"}, {"value": "impact", "labelFa": "ضربه"}, {"value": "unknown", "labelFa": "نامشخص"}, {"value": "other", "labelFa": "سایر"}]},
+    {"id": "suddenOrGradual", "fact": "water.onset", "type": "singleChoice", "labelFa": "نشت یا خروج آب ناگهانی بوده یا تدریجی؟", "required": true, "options": [{"value": "sudden", "labelFa": "ناگهانی"}, {"value": "gradual", "labelFa": "تدریجی"}, {"value": "mixed", "labelFa": "ترکیبی"}, {"value": "undetermined", "labelFa": "هنوز مشخص نشده"}]},
+    {"id": "failedComponentLocation", "fact": "water.failedComponentLocation", "type": "text", "labelFa": "محل دقیق جزء معیوب", "required": true},
+    {"id": "resultingDamage", "fact": "damage.resultingDamageDescription", "type": "textarea", "labelFa": "شرح خسارت‌های ناشی از آب", "required": true},
+    {"id": "defectiveComponentRepairCost", "fact": "cost.defectiveComponentRepair", "type": "currency", "labelFa": "هزینه تعمیر جزء معیوب", "required": true, "currency": "IRR"},
+    {"id": "consequentialDamageCost", "fact": "cost.consequentialDamage", "type": "currency", "labelFa": "هزینه خسارت تبعی به اموال بیمه‌شده", "required": true, "currency": "IRR"},
+    {"id": "cleanupDryingCost", "fact": "cost.cleanupAndDrying", "type": "currency", "labelFa": "هزینه پاک‌سازی و خشک‌سازی", "required": true, "currency": "IRR"},
+    {"id": "previousLeakage", "fact": "history.previousLeakage", "type": "boolean", "labelFa": "آیا سابقه نشت قبلی وجود دارد؟", "required": true},
+    {"id": "previousLeakageDetails", "fact": "history.previousLeakageDetails", "type": "textarea", "labelFa": "جزئیات نشت قبلی", "requiredWhen": {"fact": "history.previousLeakage", "operator": "truthy"}},
+    {"id": "maintenanceHistory", "fact": "history.maintenancePerformed", "type": "boolean", "labelFa": "آیا سابقه سرویس یا نگهداری وجود دارد؟", "required": true},
+    {"id": "maintenanceDetails", "fact": "history.maintenanceDetails", "type": "textarea", "labelFa": "شرح و تاریخ نگهداری یا تعمیرات", "requiredWhen": {"fact": "history.maintenancePerformed", "operator": "truthy"}},
+    {"id": "photosBeforeRepairAvailable", "fact": "evidence.photosBeforeRepairAvailable", "type": "boolean", "labelFa": "آیا پیش از تعمیر عکس تهیه شده است؟", "required": true},
+    {"id": "plumberReportAvailable", "fact": "evidence.plumberReportAvailable", "type": "boolean", "labelFa": "آیا گزارش لوله‌کش یا تعمیرکار موجود است؟", "required": true},
+    {"id": "repairInvoiceAvailable", "fact": "evidence.repairInvoiceAvailable", "type": "boolean", "labelFa": "آیا فاکتور تعمیر موجود است؟", "required": true},
+    {"id": "defectivePartPreserved", "fact": "evidence.defectivePartPreserved", "type": "boolean", "labelFa": "آیا جزء معیوب، در صورت امکان، نگهداری شده است؟", "required": true}
+  ],
+  "requiredEvidence": [
+    {"id": "ev.pre-repair-photos", "titleFa": "عکس‌های پیش از تعمیر", "type": "photoSet", "requiredMode": "always", "photoRequirementPackId": "photo.fire.special.water.burst-pipe-internal-network", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.plumber-report", "titleFa": "گزارش لوله‌کش یا تعمیرکار درباره محل و علت خرابی", "type": "document", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.repair-invoice", "titleFa": "فاکتور تفکیکی تعمیر جزء معیوب و خسارت تبعی", "type": "document", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.ownership", "titleFa": "مدرک یا اظهارنامه مالکیت تأسیسات", "type": "documentOrStatement", "requiredMode": "always", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.maintenance", "titleFa": "سوابق نگهداری و تعمیرات قبلی", "type": "documentOrStatement", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"}
+  ],
+  "photos": [{"requirementPackRef": "photo.fire.special.water.burst-pipe-internal-network", "required": true}],
+  "calculationComponents": [
+    {"id": "calc.defective-component", "titleFa": "تعمیر لوله، دستگاه یا جزء معیوب", "sourceFact": "cost.defectiveComponentRepair", "coverageTreatment": "separate_expert_determination", "neverAutoInclude": true},
+    {"id": "calc.consequential-damage", "titleFa": "خسارت تبعی به اموال بیمه‌شده", "sourceFact": "cost.consequentialDamage", "coverageTreatment": "candidate_recoverable_item"},
+    {"id": "calc.cleanup-drying", "titleFa": "پاک‌سازی و خشک‌سازی", "sourceFact": "cost.cleanupAndDrying", "coverageTreatment": "separate_expert_determination"},
+    {"id": "calc.wear-tear", "titleFa": "هزینه منتسب به فرسودگی و استهلاک", "inputMode": "expert_itemization", "coverageTreatment": "potentially_excluded_item"},
+    {"id": "calc.recoverable-items", "titleFa": "اقلام قابل بازیافت یا بازیافتی", "inputMode": "expert_itemization", "sign": "subtract_after_authorization"},
+    {"id": "calc.deductible", "titleFa": "فرانشیز", "inputMode": "resolved_rule", "deductibleRuleRef": "condition-document-current-version", "hardcodedAmountAllowed": false}
+  ],
+  "deductibleRule": {"source": "verified-condition-document", "required": true, "hardcodedAmountAllowed": false, "unresolvedEffect": "requires-senior-review"},
+  "potentialExclusions": [
+    {"id": "exclusion.wear-and-tear", "titleFa": "فرسودگی یا استهلاک", "when": {"fact": "water.failureCharacteristics", "operator": "contains", "value": "wearAndTear"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.corrosion", "titleFa": "خوردگی", "when": {"fact": "water.failureCharacteristics", "operator": "contains", "value": "corrosion"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.gradual-leakage", "titleFa": "نشت تدریجی", "when": {"fact": "water.onset", "operator": "in", "value": ["gradual", "mixed"]}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.external-network", "titleFa": "شبکه خارج از محدوده داخلی محل خطر", "when": {"fact": "water.networkPosition", "operator": "eq", "value": "external"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.defective-component-cost", "titleFa": "هزینه تعمیر خود جزء معیوب", "when": {"fact": "cost.defectiveComponentRepair", "operator": "gt", "value": 0}, "effect": "separate_and_flag_for_expert_review"}
+  ],
+  "duties": [
+    {"id": "duty.stop-leak", "titleFa": "قطع یا مهار نشت", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.prevent-development", "titleFa": "جلوگیری معقول از توسعه خسارت", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.preserve-part", "titleFa": "نگهداری جزء معیوب در صورت امکان", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.photograph-before-repair", "titleFa": "عکاسی پیش از تعمیر", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.obtain-repair-report", "titleFa": "دریافت گزارش تعمیر", "failureEffect": "record_warning_and_refer_to_expert"}
+  ],
+  "reportBindings": [
+    {"sectionId": "report.coverage-context", "titleFa": "پوشش و سند مبنا", "facts": ["claim.selectedCoverageIds", "coverage.conditionDocumentId", "coverage.documentVersion", "coverage.verificationStatus"]},
+    {"sectionId": "report.event", "titleFa": "منشأ و نحوه وقوع", "facts": ["water.sourceExact", "water.failedComponentType", "water.networkPosition", "water.installationOwnership", "water.ruptureCause", "water.failureCharacteristics", "water.onset", "water.failedComponentLocation"]},
+    {"sectionId": "report.damage", "titleFa": "خسارت مستقیم و تبعی", "facts": ["damage.resultingDamageDescription", "cost.defectiveComponentRepair", "cost.consequentialDamage", "cost.cleanupAndDrying"]},
+    {"sectionId": "report.evidence", "titleFa": "شواهد موجود و کسری مدارک", "bind": "evidenceAssessment"},
+    {"sectionId": "report.exclusions", "titleFa": "موارد نیازمند بررسی شرایط و استثنائات", "bind": "potentialExclusionFlags"},
+    {"sectionId": "report.calculation", "titleFa": "تفکیک اجزای محاسبه", "bind": "calculationComponents"},
+    {"sectionId": "report.decision", "titleFa": "وضعیت تصمیم کارشناس", "bind": "expertDecisionStatus", "humanApprovalRequired": true}
+  ],
+  "reportWording": {
+    "neutralFindingFa": "اطلاعات این بخش برای بررسی منشأ آب، خسارت تبعی و انطباق با شرایط معتبر بیمه‌نامه گردآوری شده است.",
+    "defectiveComponentCautionFa": "هزینه تعمیر خود لوله، دستگاه یا جزء معیوب به‌صورت جدا ثبت شده و صرف ثبت آن به معنای شمول در خسارت قابل پرداخت نیست.",
+    "decisionDisclaimerFa": "این گزارش تصمیم نهایی پوشش یا پرداخت نیست و تأیید یا رد صرفاً توسط کاربر مجاز و پس از بررسی بیمه‌نامه، شرایط معتبر و مدارک انجام می‌شود."
+  }
+}

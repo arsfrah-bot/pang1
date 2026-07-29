@@ -1,0 +1,1165 @@
+{
+  "$schema": "https://bazdidyar.local/schemas/special-condition-catalog-v1.json",
+  "catalogId": "catalog.condition.fire.special",
+  "catalogVersion": "1.0.0",
+  "releaseDate": "2026-07-28",
+  "status": "draft",
+  "verificationStatus": "unverified",
+  "mandatoryVerificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+  "conditions": [
+    {
+      "id": "condition.fire.special.water.burst-pipe-internal-network",
+      "conditionDocumentId": "condition.fire.special.water.burst-pipe-internal-network",
+      "persianTitle": "شرط ویژه ترکیدگی لوله و شبکه داخلی آب",
+      "insurer": "unknown",
+      "documentSource": "source.requirements.special-fire-coverage-engine",
+      "sourceImageOrFile": {
+        "fileName": "pasted-text.txt",
+        "attachmentId": "7b332e4f-2f2f-40be-8524-f0e31c5d9a9c",
+        "mediaType": "text/plain"
+      },
+      "documentVersion": "unknown",
+      "effectiveDate": null,
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "verificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+      "applicableProductFamilies": [
+        "product.fire.property"
+      ],
+      "applicability": {
+        "selectedCoverageId": "coverage.fire.special.water.burst-pipe-internal-network",
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "خروج آب از لوله، مخزن، وسیله، فاضلاب یا شبکه؛ منشأ، محل، علت و ناگهانی یا تدریجی بودن باید ثبت شود.",
+      "coverageScope": "خسارت تبعی واردشده به اموال بیمه‌شده با تفکیک هزینه جزء معیوب، پاک‌سازی و خشک‌سازی.",
+      "exclusions": [
+        "wear_and_tear",
+        "gradual_deterioration",
+        "defective_component_repair_cost"
+      ],
+      "deductibleFormula": {
+        "status": "unknown",
+        "formula": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "minimumDeductible": {
+        "status": "unknown",
+        "amount": null,
+        "currency": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "dutiesOfInsured": [
+        "duty.fire.water.stop-leak",
+        "duty.fire.water.mitigate-damage",
+        "duty.fire.water.preserve-part",
+        "duty.fire.water.photo-before-repair",
+        "duty.fire.water.obtain-repair-report"
+      ],
+      "requiredEvidence": [
+        "photos_before_repair",
+        "plumber_report",
+        "repair_invoice"
+      ],
+      "inspectionQuestions": [
+        "source_type_pipe_tank_appliance_sewer_network",
+        "network_internal_or_external",
+        "installation_owner",
+        "failed_component_location",
+        "corrosion",
+        "maintenance_history",
+        "previous_leakage"
+      ],
+      "claimQuestions": [
+        "exact_water_source",
+        "rupture_cause",
+        "wear_and_tear",
+        "freezing",
+        "blockage",
+        "overflow",
+        "sudden_or_gradual",
+        "resulting_damage",
+        "failed_component_repair_cost",
+        "consequential_damage_repair_cost",
+        "photos_before_repair",
+        "plumber_report",
+        "repair_invoice"
+      ],
+      "reportWording": "پوشش صرفاً به‌صورت بالقوه بررسی شده است. هزینه تعمیر لوله یا وسیله معیوب از خسارت تبعی تفکیک می‌شود و تصمیم نهایی منوط به بررسی کارشناس مجاز است. نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت.",
+      "approvalAuthority": {
+        "required": true,
+        "role": "authorized_human_user",
+        "specificAuthority": "unknown",
+        "automaticApprovalAllowed": false
+      },
+      "supersededStatus": "unknown",
+      "dependencies": {
+        "coverageIds": [
+          "coverage.fire.special.water.burst-pipe-internal-network"
+        ],
+        "dutyCatalogId": "catalog.duty.fire.special",
+        "sourceIds": [
+          "source.requirements.special-fire-coverage-engine"
+        ]
+      },
+      "reportBindings": {
+        "sectionId": "report.section.coverage-evaluation",
+        "wordingKey": "report.fire.water.burst-pipe-internal-network",
+        "requiredFacts": [
+          "triggerFacts",
+          "supportingEvidence",
+          "missingEvidence",
+          "potentialExclusions",
+          "deductibleRule",
+          "expertDecisionStatus",
+          "finalApprovalStatus"
+        ]
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "importMethod": "manual_structured_extraction",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "contentHash": null,
+        "reviewedAt": null,
+        "reviewedBy": null
+      },
+      "titleFa": "شرط ویژه ترکیدگی لوله و شبکه داخلی آب"
+    },
+    {
+      "id": "condition.fire.special.water.sewer-overflow",
+      "conditionDocumentId": "condition.fire.special.water.sewer-overflow",
+      "persianTitle": "شرط ویژه پس‌زدگی و سرریز شبکه فاضلاب",
+      "insurer": "unknown",
+      "documentSource": "source.requirements.special-fire-coverage-engine",
+      "sourceImageOrFile": {
+        "fileName": "pasted-text.txt",
+        "attachmentId": "7b332e4f-2f2f-40be-8524-f0e31c5d9a9c",
+        "mediaType": "text/plain"
+      },
+      "documentVersion": "unknown",
+      "effectiveDate": null,
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "verificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+      "applicableProductFamilies": [
+        "product.fire.property"
+      ],
+      "applicability": {
+        "selectedCoverageId": "coverage.fire.special.water.sewer-overflow",
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "ورود یا سرریز آب و مواد از شبکه فاضلاب با ثبت منشأ، علت، مسیر ورود و مالکیت شبکه.",
+      "coverageScope": "خسارت تبعی، آلودگی، پاک‌سازی و خشک‌سازی با تفکیک هزینه رفع نقص یا تعمیر شبکه.",
+      "exclusions": [
+        "drain_or_pipe_clearing",
+        "network_repair",
+        "maintenance_deficiency"
+      ],
+      "deductibleFormula": {
+        "status": "unknown",
+        "formula": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "minimumDeductible": {
+        "status": "unknown",
+        "amount": null,
+        "currency": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "dutiesOfInsured": [
+        "duty.fire.water.mitigate-damage",
+        "duty.fire.water.photo-before-repair",
+        "duty.fire.water.obtain-repair-report"
+      ],
+      "requiredEvidence": [
+        "photos_before_cleanup",
+        "plumber_report"
+      ],
+      "inspectionQuestions": [
+        "network_internal_or_external",
+        "installation_owner",
+        "maintenance_history",
+        "previous_incident"
+      ],
+      "claimQuestions": [
+        "exact_water_source",
+        "blockage",
+        "overflow",
+        "entry_route",
+        "contamination",
+        "cleanup_cost",
+        "plumber_report",
+        "municipal_evidence"
+      ],
+      "reportWording": "رویداد به‌عنوان پس‌زدگی یا سرریز احتمالی فاضلاب ثبت شده است؛ خسارت تبعی از هزینه رفع نقص شبکه تفکیک و تصمیم به کارشناس مجاز ارجاع می‌شود. نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت.",
+      "approvalAuthority": {
+        "required": true,
+        "role": "authorized_human_user",
+        "specificAuthority": "unknown",
+        "automaticApprovalAllowed": false
+      },
+      "supersededStatus": "unknown",
+      "dependencies": {
+        "coverageIds": [
+          "coverage.fire.special.water.sewer-overflow"
+        ],
+        "dutyCatalogId": "catalog.duty.fire.special",
+        "sourceIds": [
+          "source.requirements.special-fire-coverage-engine"
+        ]
+      },
+      "reportBindings": {
+        "sectionId": "report.section.coverage-evaluation",
+        "wordingKey": "report.fire.water.sewer-overflow",
+        "requiredFacts": [
+          "triggerFacts",
+          "supportingEvidence",
+          "missingEvidence",
+          "potentialExclusions",
+          "deductibleRule",
+          "expertDecisionStatus",
+          "finalApprovalStatus"
+        ]
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "importMethod": "manual_structured_extraction",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "contentHash": null,
+        "reviewedAt": null,
+        "reviewedBy": null
+      },
+      "titleFa": "شرط ویژه پس‌زدگی و سرریز شبکه فاضلاب"
+    },
+    {
+      "id": "condition.fire.special.water.rain-snow-hail-ingress",
+      "conditionDocumentId": "condition.fire.special.water.rain-snow-hail-ingress",
+      "persianTitle": "شرط ویژه نفوذ آب باران، برف و تگرگ",
+      "insurer": "unknown",
+      "documentSource": "source.requirements.special-fire-coverage-engine",
+      "sourceImageOrFile": {
+        "fileName": "pasted-text.txt",
+        "attachmentId": "7b332e4f-2f2f-40be-8524-f0e31c5d9a9c",
+        "mediaType": "text/plain"
+      },
+      "documentVersion": "unknown",
+      "effectiveDate": null,
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "verificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+      "applicableProductFamilies": [
+        "product.fire.property"
+      ],
+      "applicability": {
+        "selectedCoverageId": "coverage.fire.special.water.rain-snow-hail-ingress",
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "نفوذ آب مرتبط با باران، برف یا تگرگ با تعیین مسیر ورود و سبب مستقیم؛ هر خسارت باران به‌طور خودکار سیل طبقه‌بندی نمی‌شود.",
+      "coverageScope": "تفکیک خسارت تبعی آب از جزء معیوب ساختمان، ضعف نگهداری، تعمیر بام یا عایق، اموال فضای باز و خطر دیگر.",
+      "exclusions": [
+        "defective_building_component",
+        "maintenance_deficiency",
+        "open_air_property",
+        "damage_by_other_peril"
+      ],
+      "deductibleFormula": {
+        "status": "unknown",
+        "formula": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "minimumDeductible": {
+        "status": "unknown",
+        "amount": null,
+        "currency": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "dutiesOfInsured": [
+        "duty.fire.water.mitigate-damage",
+        "duty.fire.water.photo-before-repair",
+        "duty.fire.water.obtain-repair-report"
+      ],
+      "requiredEvidence": [
+        "entry_route_photos",
+        "roof_and_drainage_photos",
+        "weather_evidence",
+        "repair_assessment"
+      ],
+      "inspectionQuestions": [
+        "blocked_gutters",
+        "overflowing_drains",
+        "damaged_downpipes",
+        "defective_roof",
+        "defective_glass_roof",
+        "construction_defect",
+        "lack_of_maintenance"
+      ],
+      "claimQuestions": [
+        "broken_pipes",
+        "overflowing_water_tanks",
+        "open_windows_or_doors",
+        "direct_rainfall",
+        "wind_driven_rain",
+        "consequential_water_damage",
+        "open_air_property",
+        "other_peril"
+      ],
+      "reportWording": "منشأ نفوذ آب و مسیر ورود ثبت و از سیل و سایر خطرها تفکیک شده است. نتیجه پوشش قطعی نیست و به تأیید کارشناس مجاز نیاز دارد. نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت.",
+      "approvalAuthority": {
+        "required": true,
+        "role": "authorized_human_user",
+        "specificAuthority": "unknown",
+        "automaticApprovalAllowed": false
+      },
+      "supersededStatus": "unknown",
+      "dependencies": {
+        "coverageIds": [
+          "coverage.fire.special.water.rain-snow-hail-ingress"
+        ],
+        "dutyCatalogId": "catalog.duty.fire.special",
+        "sourceIds": [
+          "source.requirements.special-fire-coverage-engine"
+        ]
+      },
+      "reportBindings": {
+        "sectionId": "report.section.coverage-evaluation",
+        "wordingKey": "report.fire.water.rain-snow-hail-ingress",
+        "requiredFacts": [
+          "triggerFacts",
+          "waterIngressClassification",
+          "supportingEvidence",
+          "missingEvidence",
+          "potentialExclusions",
+          "deductibleRule",
+          "expertDecisionStatus",
+          "finalApprovalStatus"
+        ]
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "importMethod": "manual_structured_extraction",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "contentHash": null,
+        "reviewedAt": null,
+        "reviewedBy": null
+      },
+      "titleFa": "شرط ویژه نفوذ آب باران، برف و تگرگ"
+    },
+    {
+      "id": "condition.fire.special.water.flood-river-overflow",
+      "conditionDocumentId": "condition.fire.special.water.flood-river-overflow",
+      "persianTitle": "شرط ویژه سیل و طغیان رودخانه",
+      "insurer": "unknown",
+      "documentSource": "source.requirements.special-fire-coverage-engine",
+      "sourceImageOrFile": {
+        "fileName": "pasted-text.txt",
+        "attachmentId": "7b332e4f-2f2f-40be-8524-f0e31c5d9a9c",
+        "mediaType": "text/plain"
+      },
+      "documentVersion": "unknown",
+      "effectiveDate": null,
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "verificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+      "applicableProductFamilies": [
+        "product.fire.property"
+      ],
+      "applicability": {
+        "selectedCoverageId": "coverage.fire.special.water.flood-river-overflow",
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "ورود آب منتسب به رودخانه، کانال، روان‌آب، سد یا دریا با ثبت خروج از بستر طبیعی، مسیر ورود، عمق و مدت.",
+      "coverageScope": "تفکیک سیل از نشت بام، نفوذ باران، ترکیدگی لوله، پس‌زدگی فاضلاب، آب زیرزمینی، رطوبت صعودی، رویداد دریایی و حرکت زمین.",
+      "exclusions": [
+        "boundary_walls_and_gates",
+        "drain_or_pipe_clearing_or_repair",
+        "underground_water",
+        "tidal_effects",
+        "sea_water_events",
+        "landslide_or_ground_movement",
+        "pipe_thawing",
+        "heavy_rain_roof_leakage"
+      ],
+      "deductibleFormula": {
+        "status": "unknown",
+        "formula": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "minimumDeductible": {
+        "status": "unknown",
+        "amount": null,
+        "currency": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "dutiesOfInsured": [
+        "duty.fire.flood.salvage-measures",
+        "duty.fire.flood.preserve-water-level-evidence",
+        "duty.fire.flood.separate-contaminated-goods",
+        "duty.fire.flood.record-cleanup-salvage-costs"
+      ],
+      "requiredEvidence": [
+        "water_level_photos",
+        "affected_area_photos",
+        "geographic_coordinates",
+        "weather_warning_if_available",
+        "municipal_or_governmental_evidence_if_available"
+      ],
+      "inspectionQuestions": [
+        "ground_elevation",
+        "basement_or_below_ground",
+        "previous_flood_history",
+        "nearby_waterways",
+        "drainage_condition",
+        "geographic_coordinates"
+      ],
+      "claimQuestions": [
+        "water_source",
+        "river_channel_runoff_dam_or_sea",
+        "left_natural_bed",
+        "entry_route",
+        "water_depth",
+        "duration",
+        "mud_and_contamination",
+        "maximum_affected_area",
+        "weather_warning",
+        "municipal_or_governmental_evidence"
+      ],
+      "reportWording": "رویداد از سایر منشأهای آب تفکیک و شواهد سیلابی ثبت شده است. استثنائات بالقوه و فرانشیز فقط پس از تطبیق سند معتبر و تأیید کارشناس اعمال می‌شود. نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت.",
+      "approvalAuthority": {
+        "required": true,
+        "role": "authorized_human_user",
+        "specificAuthority": "unknown",
+        "automaticApprovalAllowed": false
+      },
+      "supersededStatus": "unknown",
+      "dependencies": {
+        "coverageIds": [
+          "coverage.fire.special.water.flood-river-overflow"
+        ],
+        "dutyCatalogId": "catalog.duty.fire.special",
+        "sourceIds": [
+          "source.requirements.special-fire-coverage-engine"
+        ]
+      },
+      "reportBindings": {
+        "sectionId": "report.section.coverage-evaluation",
+        "wordingKey": "report.fire.water.flood-river-overflow",
+        "requiredFacts": [
+          "triggerFacts",
+          "perilClassification",
+          "supportingEvidence",
+          "missingEvidence",
+          "potentialExclusions",
+          "deductibleRule",
+          "expertDecisionStatus",
+          "finalApprovalStatus"
+        ]
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "importMethod": "manual_structured_extraction",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "contentHash": null,
+        "reviewedAt": null,
+        "reviewedBy": null
+      },
+      "titleFa": "شرط ویژه سیل و طغیان رودخانه"
+    },
+    {
+      "id": "condition.fire.special.water.sprinkler-leakage-discharge",
+      "conditionDocumentId": "condition.fire.special.water.sprinkler-leakage-discharge",
+      "persianTitle": "شرط ویژه نشت یا تخلیه سامانه اسپرینکلر",
+      "insurer": "unknown",
+      "documentSource": "source.requirements.special-fire-coverage-engine",
+      "sourceImageOrFile": {
+        "fileName": "pasted-text.txt",
+        "attachmentId": "7b332e4f-2f2f-40be-8524-f0e31c5d9a9c",
+        "mediaType": "text/plain"
+      },
+      "documentVersion": "unknown",
+      "effectiveDate": null,
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "verificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+      "applicableProductFamilies": [
+        "product.fire.property"
+      ],
+      "applicability": {
+        "selectedCoverageId": "coverage.fire.special.water.sprinkler-leakage-discharge",
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "نشت یا تخلیه آب از اسپرینکلر با ثبت محل، علت فعال‌شدن یا خرابی و وجود یا عدم وجود حریق.",
+      "coverageScope": "خسارت تبعی آب با تفکیک تعمیر سامانه، اجزای معیوب، پاک‌سازی و خشک‌سازی.",
+      "exclusions": [
+        "system_repair",
+        "maintenance_deficiency",
+        "wear_and_tear"
+      ],
+      "deductibleFormula": {
+        "status": "unknown",
+        "formula": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "minimumDeductible": {
+        "status": "unknown",
+        "amount": null,
+        "currency": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "dutiesOfInsured": [
+        "duty.fire.water.stop-leak",
+        "duty.fire.water.mitigate-damage",
+        "duty.fire.water.preserve-part",
+        "duty.fire.water.photo-before-repair",
+        "duty.fire.water.obtain-repair-report"
+      ],
+      "requiredEvidence": [
+        "system_photos",
+        "specialist_report"
+      ],
+      "inspectionQuestions": [
+        "system_presence",
+        "system_condition",
+        "system_maintenance_history"
+      ],
+      "claimQuestions": [
+        "discharge_location",
+        "activation_or_failure_cause",
+        "fire_event_present",
+        "failed_component",
+        "resulting_damage",
+        "repair_invoice"
+      ],
+      "reportWording": "نشت یا تخلیه اسپرینکلر و علت اعلامی ثبت شده و خسارت تبعی از تعمیر سامانه تفکیک می‌شود. نتیجه پوشش به تأیید کارشناس مجاز نیاز دارد. نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت.",
+      "approvalAuthority": {
+        "required": true,
+        "role": "authorized_human_user",
+        "specificAuthority": "unknown",
+        "automaticApprovalAllowed": false
+      },
+      "supersededStatus": "unknown",
+      "dependencies": {
+        "coverageIds": [
+          "coverage.fire.special.water.sprinkler-leakage-discharge"
+        ],
+        "dutyCatalogId": "catalog.duty.fire.special",
+        "sourceIds": [
+          "source.requirements.special-fire-coverage-engine"
+        ]
+      },
+      "reportBindings": {
+        "sectionId": "report.section.coverage-evaluation",
+        "wordingKey": "report.fire.water.sprinkler-leakage-discharge",
+        "requiredFacts": [
+          "triggerFacts",
+          "supportingEvidence",
+          "missingEvidence",
+          "potentialExclusions",
+          "deductibleRule",
+          "expertDecisionStatus",
+          "finalApprovalStatus"
+        ]
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "importMethod": "manual_structured_extraction",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "contentHash": null,
+        "reviewedAt": null,
+        "reviewedBy": null
+      },
+      "titleFa": "شرط ویژه نشت یا تخلیه سامانه اسپرینکلر"
+    },
+    {
+      "id": "condition.fire.special.water.groundwater-rising-damp",
+      "conditionDocumentId": "condition.fire.special.water.groundwater-rising-damp",
+      "persianTitle": "شرط ویژه آب زیرزمینی و رطوبت صعودی",
+      "insurer": "unknown",
+      "documentSource": "source.requirements.special-fire-coverage-engine",
+      "sourceImageOrFile": {
+        "fileName": "pasted-text.txt",
+        "attachmentId": "7b332e4f-2f2f-40be-8524-f0e31c5d9a9c",
+        "mediaType": "text/plain"
+      },
+      "documentVersion": "unknown",
+      "effectiveDate": null,
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "verificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+      "applicableProductFamilies": [
+        "product.fire.property"
+      ],
+      "applicability": {
+        "selectedCoverageId": "coverage.fire.special.water.groundwater-rising-damp",
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "نشانه‌های آب زیرزمینی یا رطوبت صعودی با ثبت منشأ، تراز، الگوی رطوبت و روند زمانی.",
+      "coverageScope": "ثبت مستقل و تفکیک از سیل، نشت لوله، نفوذ باران و نقص عایق.",
+      "exclusions": [
+        "underground_water",
+        "gradual_deterioration",
+        "waterproofing_defect",
+        "maintenance_deficiency"
+      ],
+      "deductibleFormula": {
+        "status": "unknown",
+        "formula": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "minimumDeductible": {
+        "status": "unknown",
+        "amount": null,
+        "currency": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "dutiesOfInsured": [
+        "duty.fire.water.mitigate-damage",
+        "duty.fire.water.photo-before-repair",
+        "duty.fire.water.obtain-repair-report"
+      ],
+      "requiredEvidence": [
+        "moisture_pattern_photos",
+        "site_report"
+      ],
+      "inspectionQuestions": [
+        "basement_or_below_ground",
+        "waterproofing_condition",
+        "previous_incident",
+        "ground_elevation"
+      ],
+      "claimQuestions": [
+        "water_source",
+        "groundwater_level",
+        "rising_damp_indicators",
+        "sudden_or_gradual",
+        "affected_area",
+        "drying_cost"
+      ],
+      "reportWording": "منشأ احتمالی آب زیرزمینی یا رطوبت صعودی ثبت و از سایر خطرهای آب تفکیک شده است. این ثبت به‌معنای احراز پوشش نیست. نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت.",
+      "approvalAuthority": {
+        "required": true,
+        "role": "authorized_human_user",
+        "specificAuthority": "unknown",
+        "automaticApprovalAllowed": false
+      },
+      "supersededStatus": "unknown",
+      "dependencies": {
+        "coverageIds": [
+          "coverage.fire.special.water.groundwater-rising-damp"
+        ],
+        "dutyCatalogId": "catalog.duty.fire.special",
+        "sourceIds": [
+          "source.requirements.special-fire-coverage-engine"
+        ]
+      },
+      "reportBindings": {
+        "sectionId": "report.section.coverage-evaluation",
+        "wordingKey": "report.fire.water.groundwater-rising-damp",
+        "requiredFacts": [
+          "triggerFacts",
+          "perilClassification",
+          "supportingEvidence",
+          "missingEvidence",
+          "potentialExclusions",
+          "deductibleRule",
+          "expertDecisionStatus",
+          "finalApprovalStatus"
+        ]
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "importMethod": "manual_structured_extraction",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "contentHash": null,
+        "reviewedAt": null,
+        "reviewedBy": null
+      },
+      "titleFa": "شرط ویژه آب زیرزمینی و رطوبت صعودی"
+    },
+    {
+      "id": "condition.fire.special.water.roof-leakage",
+      "conditionDocumentId": "condition.fire.special.water.roof-leakage",
+      "persianTitle": "شرط ویژه نشت بام",
+      "insurer": "unknown",
+      "documentSource": "source.requirements.special-fire-coverage-engine",
+      "sourceImageOrFile": {
+        "fileName": "pasted-text.txt",
+        "attachmentId": "7b332e4f-2f2f-40be-8524-f0e31c5d9a9c",
+        "mediaType": "text/plain"
+      },
+      "documentVersion": "unknown",
+      "effectiveDate": null,
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "verificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+      "applicableProductFamilies": [
+        "product.fire.property"
+      ],
+      "applicability": {
+        "selectedCoverageId": "coverage.fire.special.water.roof-leakage",
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "ورود آب از بام یا عایق با ثبت مسیر ورود، وضعیت بام، زهکشی و نگهداری.",
+      "coverageScope": "تفکیک خسارت تبعی داخل ساختمان از تعمیر بام یا عایق و ضعف نگهداری.",
+      "exclusions": [
+        "roof_or_waterproofing_repair",
+        "construction_defect",
+        "maintenance_deficiency",
+        "heavy_rain_roof_leakage"
+      ],
+      "deductibleFormula": {
+        "status": "unknown",
+        "formula": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "minimumDeductible": {
+        "status": "unknown",
+        "amount": null,
+        "currency": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "dutiesOfInsured": [
+        "duty.fire.water.mitigate-damage",
+        "duty.fire.water.photo-before-repair",
+        "duty.fire.water.obtain-repair-report"
+      ],
+      "requiredEvidence": [
+        "roof_photos",
+        "interior_damage_photos",
+        "repair_assessment"
+      ],
+      "inspectionQuestions": [
+        "defective_roof",
+        "defective_glass_roof",
+        "blocked_gutters",
+        "overflowing_drains",
+        "construction_defect",
+        "lack_of_maintenance"
+      ],
+      "claimQuestions": [
+        "entry_route",
+        "direct_rainfall",
+        "wind_driven_rain",
+        "consequential_water_damage",
+        "roof_or_waterproofing_repair_cost"
+      ],
+      "reportWording": "مسیر نشت بام، جزء معیوب و خسارت تبعی به‌صورت جدا ثبت شده‌اند. پوشش و هزینه قابل قبول فقط توسط کارشناس مجاز تعیین می‌شود. نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت.",
+      "approvalAuthority": {
+        "required": true,
+        "role": "authorized_human_user",
+        "specificAuthority": "unknown",
+        "automaticApprovalAllowed": false
+      },
+      "supersededStatus": "unknown",
+      "dependencies": {
+        "coverageIds": [
+          "coverage.fire.special.water.roof-leakage"
+        ],
+        "dutyCatalogId": "catalog.duty.fire.special",
+        "sourceIds": [
+          "source.requirements.special-fire-coverage-engine"
+        ]
+      },
+      "reportBindings": {
+        "sectionId": "report.section.coverage-evaluation",
+        "wordingKey": "report.fire.water.roof-leakage",
+        "requiredFacts": [
+          "triggerFacts",
+          "supportingEvidence",
+          "missingEvidence",
+          "potentialExclusions",
+          "deductibleRule",
+          "expertDecisionStatus",
+          "finalApprovalStatus"
+        ]
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "importMethod": "manual_structured_extraction",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "contentHash": null,
+        "reviewedAt": null,
+        "reviewedBy": null
+      },
+      "titleFa": "شرط ویژه نشت بام"
+    },
+    {
+      "id": "condition.fire.special.water.external-network-damage",
+      "conditionDocumentId": "condition.fire.special.water.external-network-damage",
+      "persianTitle": "شرط ویژه خسارت شبکه خارجی آب",
+      "insurer": "unknown",
+      "documentSource": "source.requirements.special-fire-coverage-engine",
+      "sourceImageOrFile": {
+        "fileName": "pasted-text.txt",
+        "attachmentId": "7b332e4f-2f2f-40be-8524-f0e31c5d9a9c",
+        "mediaType": "text/plain"
+      },
+      "documentVersion": "unknown",
+      "effectiveDate": null,
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "verificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+      "applicableProductFamilies": [
+        "product.fire.property"
+      ],
+      "applicability": {
+        "selectedCoverageId": "coverage.fire.special.water.external-network-damage",
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "خروج آب یا خسارت منتسب به شبکه خارجی با ثبت محل خرابی، مالکیت و مسئول نگهداری.",
+      "coverageScope": "تفکیک خسارت تبعی اموال بیمه‌شده از تعمیر شبکه خارجی و امکان رجوع به شخص ثالث.",
+      "exclusions": [
+        "external_network_repair",
+        "third_party_owned_installation",
+        "wear_and_tear",
+        "maintenance_deficiency"
+      ],
+      "deductibleFormula": {
+        "status": "unknown",
+        "formula": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "minimumDeductible": {
+        "status": "unknown",
+        "amount": null,
+        "currency": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "dutiesOfInsured": [
+        "duty.fire.water.stop-leak",
+        "duty.fire.water.mitigate-damage",
+        "duty.fire.water.photo-before-repair",
+        "duty.fire.water.obtain-repair-report"
+      ],
+      "requiredEvidence": [
+        "failure_location_photos",
+        "network_owner_or_repair_report"
+      ],
+      "inspectionQuestions": [
+        "network_internal_or_external",
+        "installation_owner",
+        "responsible_maintenance_party",
+        "failed_component_location"
+      ],
+      "claimQuestions": [
+        "exact_water_source",
+        "rupture_cause",
+        "resulting_damage",
+        "external_network_repair_cost",
+        "third_party_recovery_status"
+      ],
+      "reportWording": "مالکیت و مسئولیت نگهداری شبکه خارجی و خسارت تبعی جداگانه ثبت شده‌اند. نتیجه پوشش یا رجوع به ثالث خودکار نیست. نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت.",
+      "approvalAuthority": {
+        "required": true,
+        "role": "authorized_human_user",
+        "specificAuthority": "unknown",
+        "automaticApprovalAllowed": false
+      },
+      "supersededStatus": "unknown",
+      "dependencies": {
+        "coverageIds": [
+          "coverage.fire.special.water.external-network-damage"
+        ],
+        "dutyCatalogId": "catalog.duty.fire.special",
+        "sourceIds": [
+          "source.requirements.special-fire-coverage-engine"
+        ]
+      },
+      "reportBindings": {
+        "sectionId": "report.section.coverage-evaluation",
+        "wordingKey": "report.fire.water.external-network-damage",
+        "requiredFacts": [
+          "triggerFacts",
+          "ownershipAndResponsibility",
+          "supportingEvidence",
+          "missingEvidence",
+          "potentialExclusions",
+          "deductibleRule",
+          "expertDecisionStatus",
+          "finalApprovalStatus"
+        ]
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "importMethod": "manual_structured_extraction",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "contentHash": null,
+        "reviewedAt": null,
+        "reviewedBy": null
+      },
+      "titleFa": "شرط ویژه خسارت شبکه خارجی آب"
+    },
+    {
+      "id": "condition.fire.special.theft.forcible-entry",
+      "conditionDocumentId": "condition.fire.special.theft.forcible-entry",
+      "persianTitle": "شرط ویژه سرقت با شکست حرز",
+      "insurer": "unknown",
+      "documentSource": "source.requirements.special-fire-coverage-engine",
+      "sourceImageOrFile": {
+        "fileName": "pasted-text.txt",
+        "attachmentId": "7b332e4f-2f2f-40be-8524-f0e31c5d9a9c",
+        "mediaType": "text/plain"
+      },
+      "documentVersion": "unknown",
+      "effectiveDate": null,
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "verificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+      "applicableProductFamilies": [
+        "product.fire.property"
+      ],
+      "applicability": {
+        "selectedCoverageId": "coverage.fire.special.theft.forcible-entry",
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "برداشت مال بیمه‌شده همراه با قرائن ورود غیرمجاز یا شکست حرز؛ صرف فقدان مال احراز پوشش نیست.",
+      "coverageScope": "بررسی جداگانه ورود، اموال مسروقه، خسارت ساختمان، تعمیر قفل و در و هم‌زمانی خطرهای دیگر.",
+      "exclusions": [
+        "simple_theft",
+        "mysterious_disappearance",
+        "employee_theft",
+        "household_resident_theft",
+        "theft_during_fire_flood_earthquake_or_public_disturbance"
+      ],
+      "deductibleFormula": {
+        "status": "unknown",
+        "formula": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "minimumDeductible": {
+        "status": "unknown",
+        "amount": null,
+        "currency": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "dutiesOfInsured": [
+        "duty.fire.theft.notify-police",
+        "duty.fire.theft.notify-insurer",
+        "duty.fire.theft.submit-property-list",
+        "duty.fire.theft.cooperate-investigation",
+        "duty.fire.theft.notify-later-information"
+      ],
+      "requiredEvidence": [
+        "forced_entry_evidence",
+        "police_notification_evidence",
+        "stolen_property_list",
+        "proof_of_ownership_if_available"
+      ],
+      "inspectionQuestions": [
+        "alarm_system",
+        "cctv",
+        "guarding",
+        "employees_and_residents",
+        "access_holders",
+        "previous_theft"
+      ],
+      "claimQuestions": [
+        "occurrence_date_time",
+        "discovery_date_time",
+        "discovering_person",
+        "entry_point",
+        "exit_point",
+        "forced_entry_evidence",
+        "lock_condition",
+        "police_notification",
+        "police_report_number",
+        "stolen_property_list",
+        "proof_of_ownership",
+        "purchase_documents",
+        "item_values",
+        "other_simultaneous_peril"
+      ],
+      "reportWording": "قرائن ورود و خروج، وضعیت حفاظتی و مدارک اموال ثبت شده‌اند. صرف مفقودشدن مال به‌معنای احراز سرقت با شکست حرز یا پوشش نیست و تصمیم نهایی با کاربر مجاز است. نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت.",
+      "approvalAuthority": {
+        "required": true,
+        "role": "authorized_human_user",
+        "specificAuthority": "unknown",
+        "automaticApprovalAllowed": false
+      },
+      "supersededStatus": "unknown",
+      "dependencies": {
+        "coverageIds": [
+          "coverage.fire.special.theft.forcible-entry"
+        ],
+        "dutyCatalogId": "catalog.duty.fire.special",
+        "sourceIds": [
+          "source.requirements.special-fire-coverage-engine"
+        ]
+      },
+      "reportBindings": {
+        "sectionId": "report.section.coverage-evaluation",
+        "wordingKey": "report.fire.theft.forcible-entry",
+        "requiredFacts": [
+          "triggerFacts",
+          "forcedEntryClassification",
+          "supportingEvidence",
+          "missingEvidence",
+          "potentialExclusions",
+          "deductibleRule",
+          "expertDecisionStatus",
+          "finalApprovalStatus"
+        ]
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "importMethod": "manual_structured_extraction",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "contentHash": null,
+        "reviewedAt": null,
+        "reviewedBy": null
+      },
+      "titleFa": "شرط ویژه سرقت با شکست حرز"
+    },
+    {
+      "id": "condition.fire.special.glass.breakage",
+      "conditionDocumentId": "condition.fire.special.glass.breakage",
+      "persianTitle": "شرط ویژه شکست شیشه",
+      "insurer": "unknown",
+      "documentSource": "source.requirements.special-fire-coverage-engine",
+      "sourceImageOrFile": {
+        "fileName": "pasted-text.txt",
+        "attachmentId": "7b332e4f-2f2f-40be-8524-f0e31c5d9a9c",
+        "mediaType": "text/plain"
+      },
+      "documentVersion": "unknown",
+      "effectiveDate": null,
+      "version": "1.0.0",
+      "versionDate": "2026-07-28",
+      "status": "draft",
+      "verificationStatus": "unverified",
+      "verificationNoticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت",
+      "applicableProductFamilies": [
+        "product.fire.property"
+      ],
+      "applicability": {
+        "selectedCoverageId": "coverage.fire.special.glass.breakage",
+        "humanConfirmationRequired": true
+      },
+      "coverageTrigger": "شکست شیشه بیمه‌شده با ثبت محل، نوع، وضعیت نصب، اندازه‌ها و علت.",
+      "coverageScope": "تفکیک بهای شیشه، نصب، قاب، یراق، تجهیزات نمایش یا برودتی، کالای پشت شیشه و بازیافتی.",
+      "exclusions": [
+        "temporary_glass",
+        "decorative_painted_engraved_or_artistic_glass",
+        "glass_manufacturing_premises",
+        "sonic_boom",
+        "frames_doors_windows_and_hardware",
+        "war_riot_and_civil_commotion",
+        "faulty_design",
+        "building_settlement",
+        "unrelated_component_replacement"
+      ],
+      "deductibleFormula": {
+        "status": "unknown",
+        "formula": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "minimumDeductible": {
+        "status": "unknown",
+        "amount": null,
+        "currency": null,
+        "noticeFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+      },
+      "dutiesOfInsured": [],
+      "requiredEvidence": [
+        "measurements",
+        "glass_identification",
+        "cause_evidence",
+        "ownership_or_insurance_evidence"
+      ],
+      "inspectionQuestions": [
+        "glass_location",
+        "glass_type",
+        "fixed_or_temporary",
+        "ordinary_tempered_laminated_or_double_glazed",
+        "decorative_or_artistic",
+        "dimensions",
+        "thickness",
+        "pane_count",
+        "installation_method",
+        "frame_type"
+      ],
+      "claimQuestions": [
+        "breakage_cause",
+        "external_impact",
+        "thermal_stress",
+        "installation_defect",
+        "building_settlement",
+        "previous_crack",
+        "salvage",
+        "glass_value",
+        "installation_labor",
+        "transportation",
+        "frame_and_hardware",
+        "associated_refrigeration_or_display_equipment"
+      ],
+      "reportWording": "مشخصات شیشه، علت اعلامی و اجزای هزینه جداگانه ثبت شده‌اند. استثنائات و فرانشیز بالقوه فقط پس از بررسی سند معتبر و تأیید کارشناس مجاز اعمال می‌شوند. نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت.",
+      "approvalAuthority": {
+        "required": true,
+        "role": "authorized_human_user",
+        "specificAuthority": "unknown",
+        "automaticApprovalAllowed": false
+      },
+      "supersededStatus": "unknown",
+      "dependencies": {
+        "coverageIds": [
+          "coverage.fire.special.glass.breakage"
+        ],
+        "dutyCatalogId": "catalog.duty.fire.special",
+        "sourceIds": [
+          "source.requirements.special-fire-coverage-engine"
+        ]
+      },
+      "reportBindings": {
+        "sectionId": "report.section.coverage-evaluation",
+        "wordingKey": "report.fire.glass.breakage",
+        "requiredFacts": [
+          "triggerFacts",
+          "glassIdentification",
+          "causeClassification",
+          "supportingEvidence",
+          "missingEvidence",
+          "potentialExclusions",
+          "calculationComponents",
+          "deductibleRule",
+          "expertDecisionStatus",
+          "finalApprovalStatus"
+        ]
+      },
+      "audit": {
+        "createdAt": "2026-07-28",
+        "createdBy": "codex-domain-import",
+        "importMethod": "manual_structured_extraction",
+        "sourceId": "source.requirements.special-fire-coverage-engine",
+        "contentHash": null,
+        "reviewedAt": null,
+        "reviewedBy": null
+      },
+      "titleFa": "شرط ویژه شکست شیشه"
+    }
+  ]
+}

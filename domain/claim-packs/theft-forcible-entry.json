@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "claim.fire.special.theft.forcible-entry",
+  "version": "1.0.0",
+  "status": "draft_requires_source_verification",
+  "titleFa": "سرقت با ورود اجباری",
+  "lineId": "insurance.fire-property",
+  "coverageRef": "coverage.fire.special.theft.forcible-entry",
+  "sourceRequirementRef": "source.requirements.special-fire-coverage-engine",
+  "conditionDocumentRequirement": {
+    "required": true,
+    "resolution": "runtime-by-policy-and-loss-date",
+    "unknownValidityLabelFa": "نیازمند تطبیق با آخرین شرایط و بخشنامه‌های شرکت"
+  },
+  "decisionPolicy": {
+    "automatedFinalDecision": false,
+    "authorizedHumanDecisionRequired": true,
+    "missingPropertyIsNotProofOfCoveredTheft": true,
+    "missingEvidenceEffect": "additional-evidence-required",
+    "potentialExclusionEffect": "potential-exclusion",
+    "allowedMachineStatuses": ["potentially-applicable", "not-yet-established", "additional-evidence-required", "potential-exclusion", "outside-selected-coverage", "requires-senior-review"],
+    "humanOnlyStatuses": ["approved-by-authorized-user", "rejected-by-authorized-user"]
+  },
+  "trigger": {
+    "all": [
+      {"fact": "claim.selectedCoverageIds", "operator": "contains", "value": "coverage.fire.special.theft.forcible-entry"},
+      {"fact": "claim.lossReported", "operator": "truthy"}
+    ]
+  },
+  "sections": [
+    {"id": "timeline-discovery", "titleFa": "زمان‌بندی و کشف", "questionIds": ["occurrenceDateTime", "discoveryDateTime", "discoveringPerson", "lastSecureTime"]},
+    {"id": "entry-exit", "titleFa": "ورود، خروج و آثار اجبار", "questionIds": ["supportedEventCategories", "entryPoint", "exitPoint", "forcedEntryEvidence", "lockCondition", "otherSimultaneousPeril"]},
+    {"id": "security-people", "titleFa": "حفاظت و اشخاص دارای دسترسی", "questionIds": ["alarmSystem", "cctv", "guarding", "employeesResidents", "accessHolders", "previousTheft"]},
+    {"id": "police-property", "titleFa": "گزارش انتظامی و اموال", "questionIds": ["policeNotification", "policeReportNumber", "stolenPropertyList", "proofOfOwnership", "purchaseDocuments", "itemValues"]},
+    {"id": "loss-separation", "titleFa": "تفکیک خسارت", "questionIds": ["buildingDamageCost", "stolenPropertyCost", "lockDoorRepairCost", "otherPerilDamageCost"]}
+  ],
+  "questions": [
+    {"id": "occurrenceDateTime", "fact": "theft.occurrenceDateTime", "type": "datetime", "labelFa": "تاریخ و ساعت وقوع یا بازه احتمالی", "required": true},
+    {"id": "discoveryDateTime", "fact": "theft.discoveryDateTime", "type": "datetime", "labelFa": "تاریخ و ساعت کشف", "required": true},
+    {"id": "discoveringPerson", "fact": "theft.discoveringPerson", "type": "text", "labelFa": "نام و سمت شخص کشف‌کننده", "required": true},
+    {"id": "lastSecureTime", "fact": "theft.lastSecureDateTime", "type": "datetime", "labelFa": "آخرین زمان اطمینان از بسته و سالم‌بودن محل", "required": true},
+    {"id": "supportedEventCategories", "fact": "theft.eventCategories", "type": "multiChoice", "labelFa": "نحوه ورود یا وقوع مورد ادعا", "required": true, "options": [{"value": "climbedWall", "labelFa": "بالارفتن از دیوار"}, {"value": "brokeWall", "labelFa": "شکستن دیوار"}, {"value": "brokeDoor", "labelFa": "شکستن در"}, {"value": "brokeWindow", "labelFa": "شکستن پنجره"}, {"value": "brokeLockProtection", "labelFa": "شکستن قفل یا وسیله حفاظتی"}, {"value": "falseKey", "labelFa": "استفاده از کلید تقلبی"}, {"value": "unusualOpeningTool", "labelFa": "استفاده از ابزار غیرمتعارف بازکردن"}, {"value": "threatViolence", "labelFa": "تهدید یا خشونت"}, {"value": "unauthorizedEntryRemoval", "labelFa": "ورود غیرمجاز و سپس خروج اموال"}, {"value": "noVisibleForcedEntry", "labelFa": "اثر ظاهری ورود اجباری مشاهده نشد"}, {"value": "undetermined", "labelFa": "هنوز مشخص نشده"}]},
+    {"id": "entryPoint", "fact": "theft.entryPoint", "type": "textarea", "labelFa": "نقطه و مسیر ورود", "required": true},
+    {"id": "exitPoint", "fact": "theft.exitPoint", "type": "textarea", "labelFa": "نقطه و مسیر خروج", "required": true},
+    {"id": "forcedEntryEvidence", "fact": "theft.forcedEntryEvidence", "type": "textarea", "labelFa": "آثار و شواهد ورود اجباری", "required": true},
+    {"id": "lockCondition", "fact": "security.lockCondition", "type": "textarea", "labelFa": "وضعیت قفل‌ها و وسایل حفاظتی", "required": true},
+    {"id": "otherSimultaneousPeril", "fact": "theft.otherSimultaneousPerils", "type": "multiChoice", "labelFa": "خطر هم‌زمان", "required": true, "options": [{"value": "fire", "labelFa": "آتش‌سوزی"}, {"value": "flood", "labelFa": "سیل"}, {"value": "earthquake", "labelFa": "زلزله"}, {"value": "publicDisturbance", "labelFa": "آشوب یا ناآرامی عمومی"}, {"value": "none", "labelFa": "وجود ندارد"}, {"value": "other", "labelFa": "سایر"}]},
+    {"id": "alarmSystem", "fact": "security.alarmSystem", "type": "textarea", "labelFa": "سیستم اعلام سرقت، وضعیت و رویداد ثبت‌شده", "required": true},
+    {"id": "cctv", "fact": "security.cctv", "type": "textarea", "labelFa": "دوربین مداربسته، وضعیت ضبط و دسترسی به تصاویر", "required": true},
+    {"id": "guarding", "fact": "security.guarding", "type": "textarea", "labelFa": "وضعیت نگهبانی", "required": true},
+    {"id": "employeesResidents", "fact": "people.employeesAndResidents", "type": "textarea", "labelFa": "فهرست کارکنان و ساکنان مرتبط", "required": true},
+    {"id": "accessHolders", "fact": "people.accessHolders", "type": "textarea", "labelFa": "اشخاص دارای کلید، رمز یا مجوز دسترسی", "required": true},
+    {"id": "previousTheft", "fact": "history.previousTheft", "type": "textarea", "labelFa": "سابقه سرقت یا تلاش برای سرقت", "required": true},
+    {"id": "policeNotification", "fact": "police.notificationStatus", "type": "singleChoice", "labelFa": "وضعیت اعلام به پلیس", "required": true, "options": [{"value": "notified", "labelFa": "اعلام شده"}, {"value": "notNotified", "labelFa": "اعلام نشده"}, {"value": "unknown", "labelFa": "نامشخص"}]},
+    {"id": "policeReportNumber", "fact": "police.reportNumber", "type": "text", "labelFa": "شماره گزارش یا پرونده پلیس", "requiredWhen": {"fact": "police.notificationStatus", "operator": "eq", "value": "notified"}},
+    {"id": "stolenPropertyList", "fact": "property.stolenItems", "type": "repeatableItemTable", "labelFa": "فهرست تفصیلی اموال ادعایی مفقودشده", "required": true, "columns": [{"id": "description", "labelFa": "شرح"}, {"id": "brandModel", "labelFa": "برند و مدل"}, {"id": "serial", "labelFa": "سریال"}, {"id": "quantity", "labelFa": "تعداد"}, {"id": "claimedValue", "labelFa": "ارزش ادعایی"}]},
+    {"id": "proofOfOwnership", "fact": "property.proofOfOwnershipStatus", "type": "singleChoice", "labelFa": "وضعیت اثبات مالکیت", "required": true, "options": [{"value": "available", "labelFa": "موجود"}, {"value": "partial", "labelFa": "ناقص"}, {"value": "unavailable", "labelFa": "موجود نیست"}, {"value": "pending", "labelFa": "در حال تهیه"}]},
+    {"id": "purchaseDocuments", "fact": "property.purchaseDocumentsStatus", "type": "singleChoice", "labelFa": "وضعیت اسناد خرید", "required": true, "options": [{"value": "available", "labelFa": "موجود"}, {"value": "partial", "labelFa": "ناقص"}, {"value": "unavailable", "labelFa": "موجود نیست"}, {"value": "pending", "labelFa": "در حال تهیه"}]},
+    {"id": "itemValues", "fact": "property.valuationBasis", "type": "textarea", "labelFa": "مبنای تعیین ارزش هر قلم", "required": true},
+    {"id": "buildingDamageCost", "fact": "cost.buildingDamage", "type": "currency", "labelFa": "خسارت ساختمان ناشی از ورود یا خروج", "required": true, "currency": "IRR"},
+    {"id": "stolenPropertyCost", "fact": "cost.stolenProperty", "type": "currency", "labelFa": "ارزش ادعایی اموال مفقودشده", "required": true, "currency": "IRR"},
+    {"id": "lockDoorRepairCost", "fact": "cost.lockDoorRepair", "type": "currency", "labelFa": "هزینه تعمیر قفل و در", "required": true, "currency": "IRR"},
+    {"id": "otherPerilDamageCost", "fact": "cost.otherPerilDamage", "type": "currency", "labelFa": "خسارت ناشی از خطر هم‌زمان", "required": true, "currency": "IRR"}
+  ],
+  "requiredEvidence": [
+    {"id": "ev.theft-photos", "titleFa": "مجموعه کامل عکس‌های محل، ورود، قفل، پنجره، فضای داخلی و تجهیزات حفاظتی", "type": "photoSet", "requiredMode": "always", "photoRequirementPackId": "photo.fire.special.theft.forcible-entry", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.police-report", "titleFa": "گزارش یا گواهی اعلام به پلیس", "type": "externalRecord", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.forced-entry", "titleFa": "شواهد قابل انتساب به ورود اجباری یا تهدید و خشونت", "type": "physicalOrDocumentedEvidence", "requiredMode": "always", "absenceEffect": "not-yet-established"},
+    {"id": "ev.cctv-alarm", "titleFa": "تصاویر دوربین، گزارش دزدگیر یا دلیل عدم دسترسی", "type": "digitalEvidence", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.stolen-item-list", "titleFa": "فهرست تفصیلی اقلام ادعایی", "type": "document", "requiredMode": "always", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.ownership-purchase", "titleFa": "مدارک مالکیت و خرید اقلام", "type": "document", "requiredMode": "required_or_unavailability_reason", "absenceEffect": "additional-evidence-required"},
+    {"id": "ev.access-list", "titleFa": "فهرست دارندگان کلید، رمز یا دسترسی", "type": "statement", "requiredMode": "always", "absenceEffect": "additional-evidence-required"}
+  ],
+  "photos": [{"requirementPackRef": "photo.fire.special.theft.forcible-entry", "required": true}],
+  "triggerRules": [
+    {"id": "classification.forced-entry-evidence-present", "when": {"all": [{"fact": "theft.eventCategories", "operator": "notIn", "value": ["noVisibleForcedEntry", "undetermined"]}, {"fact": "theft.forcedEntryEvidence", "operator": "exists"}]}, "result": {"status": "potentially-applicable", "messageFa": "اطلاعات اولیه از یک روش ورود اجباری یا تهدید پشتیبانی می‌کند؛ تصمیم نهایی نیازمند تطبیق مدارک و شرایط پوشش است."}},
+    {"id": "classification.no-forced-entry-proof", "when": {"fact": "theft.eventCategories", "operator": "contains", "value": "noVisibleForcedEntry"}, "result": {"status": "not-yet-established", "messageFa": "مفقودبودن مال به‌تنهایی اثبات‌کننده سرقت با ورود اجباری نیست و شواهد تکمیلی لازم است."}}
+  ],
+  "calculationComponents": [
+    {"id": "calc.building-damage", "titleFa": "خسارت ساختمان ناشی از ورود یا خروج", "sourceFact": "cost.buildingDamage", "coverageTreatment": "separate_expert_determination"},
+    {"id": "calc.stolen-property", "titleFa": "اموال ادعایی مفقودشده", "sourceFact": "cost.stolenProperty", "coverageTreatment": "candidate_recoverable_item_after_ownership_and_event_review"},
+    {"id": "calc.lock-door-repair", "titleFa": "تعمیر قفل و در", "sourceFact": "cost.lockDoorRepair", "coverageTreatment": "separate_expert_determination"},
+    {"id": "calc.other-peril-damage", "titleFa": "خسارت ناشی از خطر هم‌زمان", "sourceFact": "cost.otherPerilDamage", "coverageTreatment": "route_to_related_peril_pack"},
+    {"id": "calc.recovered-property", "titleFa": "اموال کشف یا مستردشده", "inputMode": "expert_itemization", "sign": "subtract_or_revalue_after_authorization"},
+    {"id": "calc.deductible", "titleFa": "فرانشیز", "inputMode": "resolved_rule", "deductibleRuleRef": "condition-document-current-version", "hardcodedAmountAllowed": false}
+  ],
+  "deductibleRule": {"source": "verified-condition-document", "required": true, "hardcodedAmountAllowed": false, "unresolvedEffect": "requires-senior-review"},
+  "potentialExclusions": [
+    {"id": "exclusion.simple-theft", "titleFa": "سرقت ساده بدون شواهد ورود اجباری", "when": {"fact": "theft.eventCategories", "operator": "contains", "value": "noVisibleForcedEntry"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.mysterious-disappearance", "titleFa": "مفقودی با علت نامشخص", "when": {"fact": "theft.eventCategories", "operator": "contains", "value": "undetermined"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.employee-theft", "titleFa": "احتمال دخالت کارمند", "when": {"fact": "theft.suspectedActorCategory", "operator": "eq", "value": "employee"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.household-resident", "titleFa": "احتمال دخالت ساکن محل", "when": {"fact": "theft.suspectedActorCategory", "operator": "eq", "value": "householdResident"}, "effect": "flag_for_expert_review"},
+    {"id": "exclusion.other-peril", "titleFa": "سرقت هم‌زمان با خطر دیگر", "when": {"not": {"fact": "theft.otherSimultaneousPerils", "operator": "contains", "value": "none"}}, "effect": "flag_and_route_to_related_peril_review"},
+    {"id": "exclusion.missing-ownership-evidence", "titleFa": "کسری مدرک مالکیت یا خرید", "when": {"fact": "property.proofOfOwnershipStatus", "operator": "in", "value": ["partial", "unavailable", "pending"]}, "effect": "additional-evidence-required"}
+  ],
+  "duties": [
+    {"id": "duty.notify-police", "titleFa": "اعلام فوری به پلیس", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.notify-insurer", "titleFa": "اعلام فوری به بیمه‌گر", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.submit-property-list", "titleFa": "ارائه فهرست تفصیلی اموال", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.cooperate-investigation", "titleFa": "همکاری با بررسی و تحقیق", "failureEffect": "record_warning_and_refer_to_expert"},
+    {"id": "duty.notify-later-information", "titleFa": "اعلام اطلاعات و کشفیات بعدی", "failureEffect": "record_warning_and_refer_to_expert"}
+  ],
+  "reportBindings": [
+    {"sectionId": "report.coverage-context", "titleFa": "پوشش و سند مبنا", "facts": ["claim.selectedCoverageIds", "coverage.conditionDocumentId", "coverage.documentVersion", "coverage.verificationStatus"]},
+    {"sectionId": "report.timeline", "titleFa": "زمان‌بندی و کشف", "facts": ["theft.occurrenceDateTime", "theft.discoveryDateTime", "theft.lastSecureDateTime", "theft.discoveringPerson"]},
+    {"sectionId": "report.entry-evidence", "titleFa": "ورود، خروج و شواهد اجبار", "facts": ["theft.eventCategories", "theft.entryPoint", "theft.exitPoint", "theft.forcedEntryEvidence", "security.lockCondition"]},
+    {"sectionId": "report.security-access", "titleFa": "حفاظت و دسترسی", "facts": ["security.alarmSystem", "security.cctv", "security.guarding", "people.employeesAndResidents", "people.accessHolders"]},
+    {"sectionId": "report.property", "titleFa": "اموال ادعایی و مدارک مالکیت", "facts": ["property.stolenItems", "property.proofOfOwnershipStatus", "property.purchaseDocumentsStatus", "property.valuationBasis"]},
+    {"sectionId": "report.classification", "titleFa": "تفکیک نوع رویداد و خسارت", "bind": "classificationAndCalculationComponents"},
+    {"sectionId": "report.evidence", "titleFa": "شواهد موجود و کسری مدارک", "bind": "evidenceAssessment"},
+    {"sectionId": "report.exclusions", "titleFa": "موارد نیازمند بررسی شرایط و استثنائات", "bind": "potentialExclusionFlags"},
+    {"sectionId": "report.decision", "titleFa": "وضعیت تصمیم کارشناس", "bind": "expertDecisionStatus", "humanApprovalRequired": true}
+  ],
+  "reportWording": {
+    "classificationCautionFa": "وجود کسری اموال به‌تنهایی اثبات‌کننده سرقت با ورود اجباری نیست؛ روش ورود، آثار فیزیکی، گزارش انتظامی، دسترسی اشخاص و سایر شواهد باید با هم بررسی شوند.",
+    "lossDistinctionFa": "خسارت ساختمان، اموال ادعایی مفقودشده و هزینه تعمیر قفل یا در به‌صورت جداگانه ثبت شده‌اند.",
+    "decisionDisclaimerFa": "این گزارش تصمیم نهایی پوشش یا پرداخت نیست و تأیید یا رد صرفاً توسط کاربر مجاز و پس از بررسی بیمه‌نامه، شرایط معتبر و مدارک انجام می‌شود."
+  }
+}
